@@ -1,0 +1,2966 @@
+﻿user: cat@cat.it
+timestampStart: 1569681696242
+timestampEnd: 1569681705938
+message: meteo ruvo
+intent: Meteo
+confidence: 0.7637416
+answer: res: 2019-09-29;03:00;17.85;cielo sereno<br>2019-09-29;06:00;18.97;cielo sereno<br>2019-09-29;09:00;24.75;cielo sereno<br>2019-09-29;12:00;28.05;cielo sereno<br>2019-09-29;15:00;28.04;cielo sereno<br>2019-09-29;18:00;23.74;nubi sparse<br>2019-09-29;21:00;20.96;poco nuvoloso<br>
+city: Ruvo di Puglia
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1569681851499
+timestampEnd: 1569681857145
+message: ciao
+intent: 
+confidence: 1
+answer: Ciao! 👋
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1569681865504
+timestampEnd: 1569681867526
+message: suggerisci una dolce
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: cat@cat.it
+timestampStart: 1586365267826
+timestampEnd: 1586365271953
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/0kzGjSRHGVcaWxagzQwAyD
+explain: Ti ho consigliato questa playlist perchè sei giovane e hai uno stile di vita attivo
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586366608272
+timestampEnd: 1586366629730
+message: si
+intent: 
+confidence: 1
+answer: Certamente!
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586366717505
+timestampEnd: 1586366745433
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7866512
+answer: explain: Ti consiglio questo programma perchè sei in uno stato emotivo positivo di neutralità e qualsiasi programma va bene.
+result: Ti consiglio:<br>Su Italia 1 alle ore23.05
+ va in onda Timeline - Ai confini del tempo (FILM) Fantastico-avventura 2003
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586366834580
+timestampEnd: 1586366837633
+message: voglio vedere un film d'azione
+intent: Ritrovamento programma
+confidence: 1
+answer: Ecco il contenuto che mi hai richiesto:<br>Su Rete 4 di genere: Criminalità-azione 2007 andrà in onda Hitman - L'assassino alle ore 23.30
+
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586366873933
+timestampEnd: 1586366874686
+message: i
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: cat@cat.it
+timestampStart: 1586367506022
+timestampEnd: 1586367514910
+message: si
+intent: 
+confidence: 1
+answer: Ok, sì.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586367559837
+timestampEnd: 1586367560583
+message: consigliami una news
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586367565701
+timestampEnd: 1586367573893
+message: suggeriscimi una news
+intent: News
+confidence: 0.8025904
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.solodonna.it/tv/selvaggia-lucarelli-critica-giulia-de-lellis-e-la-sua-storia-tossica.php
+image: https://www.solodonna.it/wp-content/uploads/2019/04/gli-occhiali-di-giulia-de-lellis-vanno-a-ruba-schermata-2019-04-06-alle-21.40.59.png
+title: Selvaggia Lucarelli critica Giulia De Lellis e la sua “storia tossica” - SoloDonna
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586367632308
+timestampEnd: 1586367633186
+message: video
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586367654950
+timestampEnd: 1586367658035
+message: consigliami un programma
+intent: Raccomandazione programma
+confidence: 1
+answer: Puoi guardare Italia 1:<br>Alle 21.20
+va in onda Brick Mansions.<br>Alle 23.05
+va in onda Timeline - Ai confini del tempo.<br>
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586369693225
+timestampEnd: 1586369723761
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7780769
+answer: url: https://darebee.com/workouts/party-workout.html
+imgUrl: https://darebee.com/images/workouts/party-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di obesità di primo grado(determinato in base al tuo BMI) e sei in uno stato emotivo di  neutralità.
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586372337754
+timestampEnd: 1586372338714
+message: che succede?
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586373392990
+timestampEnd: 1586373397422
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/aladdin-workout.html
+imgUrl: https://darebee.com/images/workouts/aladdin-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586374979879
+timestampEnd: 1586374989679
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/precursor-workout.html
+imgUrl: https://darebee.com/images/workouts/precursor-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586375883607
+timestampEnd: 1586375886999
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/airplane-workout.html
+imgUrl: https://darebee.com/images/workouts/airplane-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586378326955
+timestampEnd: 1586378335803
+message: suggeriscimi una news 
+intent: News
+confidence: 0.8025904
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: http://www.rainews.it/dl/rainews/articoli/Coronavirus-Oms-Europa-al-centro-della-pandemia-861be93c-d00c-4dd5-9da0-fc550290db81.html
+image: http://www.rai.it/cropgd/476x249/dl/img/2020/04/1586080322405.spagna.jpg
+title: Coronavirus, Oms: Europa al centro della pandemia, non allentare misure - Rai News
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586423316808
+timestampEnd: 1586423323687
+message: suggeriscimi una ricetta
+intent: Cibo
+confidence: 0.7032806
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586423649993
+timestampEnd: 1586423656152
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/master-plan-workout.html
+imgUrl: https://darebee.com/images/workouts/master-plan-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586424159257
+timestampEnd: 1586424159996
+message: consigliami una news
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586424174521
+timestampEnd: 1586424175351
+message: consigliami una news da leggere
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1586424182927
+timestampEnd: 1586424187036
+message: suggeriscimi una news
+intent: News
+confidence: 0.8025904
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ansa.it/sito/notizie/mondo/2020/04/08/coronavirus-un-milione-e-mezzo-di-contagi-nel-mondo_a063b049-8083-4ccd-b99c-c4db1264c70a.html
+image: https://www.ansa.it/webimages/img_700/2020/4/9/51b9cc26239e350208a539c8837d41b0.jpg
+title: Coronavirus, un milione e mezzo di contagi nel mondo - Agenzia ANSA
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586424389137
+timestampEnd: 1586424399197
+message: suggeriscimi cosa guardare in tv
+intent: Raccomandazione programma
+confidence: 0.82749784
+answer: Puoi guardare Italia 1:<br>Alle 21.15
+va in onda The Departed - Il bene e il male.<br>Alle 0.00
+va in onda Devil.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586429199539
+timestampEnd: 1586429203992
+message: suggeriscimi un allenamento yoga
+intent: Allenamento generico
+confidence: 0.7286583
+answer: url: https://darebee.com/workouts/everyday-yoga-workout.html
+imgUrl: https://darebee.com/images/workouts/everyday-yoga-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586429199539
+timestampEnd: 1586429206330
+message: suggeriscimi un film
+intent: Ritrovamento programma
+confidence: 0.7152285
+answer: Ecco il contenuto che mi hai richiesto:<br>Su Rai 2 di genere: Fantascienza-guerra 2011 andrà in onda Captain America - Il primo vendicatore alle ore 21.20
+
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586429199539
+timestampEnd: 1586429208023
+message: suggeriscimi un programma tv
+intent: Raccomandazione programma
+confidence: 0.7922534
+answer: Puoi guardare Italia 1:<br>Alle 21.15
+va in onda The Departed - Il bene e il male.<br>Alle 0.00
+va in onda Devil.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586429199539
+timestampEnd: 1586429210369
+message: suggeriscimi un allenamento
+intent: Allenamento personalizzato
+confidence: 0.8677008
+answer: url: https://darebee.com/workouts/stress-buster-workout.html
+imgUrl: https://darebee.com/images/workouts/stress-buster-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586429199539
+timestampEnd: 1586429213124
+message: suggeriscimi una ricetta
+intent: Cibo
+confidence: 0.7032806
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586540739384
+timestampEnd: 1586540744046
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/cardio-fix-workout.html
+imgUrl: https://darebee.com/images/workouts/cardio-fix-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di obesità di primo grado(determinato in base al tuo BMI) e sei in uno stato emotivo di  neutralità.
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586540756570
+timestampEnd: 1586540760419
+message: allenamento yoga
+intent: Allenamento generico
+confidence: 1
+answer: url: https://darebee.com/workouts/face-the-day-workout.html
+imgUrl: https://darebee.com/images/workouts/face-the-day-workout.jpg
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586540768727
+timestampEnd: 1586540771591
+message: cosa fa stasera su italia 1?
+intent: Ritrovamento programma
+confidence: 1
+answer: Alle 21.15
+va in onda Twilight.<br>Alle 23.30
+va in onda Noi siamo infinito.<br>
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586540790623
+timestampEnd: 1586540791326
+message: consigliami un programma di attualità
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: cat@cat.it
+timestampStart: 1586540833926
+timestampEnd: 1586540837159
+message: consigliami un film biografico
+intent: Ritrovamento programma
+confidence: 1
+answer: Ecco il contenuto che mi hai richiesto:<br>Su Rete 4 di genere: Biografico-religioso 1961 andrà in onda Il re dei re alle ore 21.25
+
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586540857955
+timestampEnd: 1586540861660
+message: consigliami una notizia
+intent: News
+confidence: 0.7863852
+answer: link: https://newsapi.org/v2/everything?q=recsys&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.infoq.cn/article/XQwkJrT6hwJYmet4Oji1
+image: 
+title: AI顶会灌水严重，论文疲于赶场，科学研究变味了？
+explain: Ti ho consigliato questo articolo perchè sei interessato a recsys
+click: false
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586789478086
+timestampEnd: 1586789482817
+message: allenamento per me
+intent: Allenamento personalizzato
+confidence: 1
+answer: url: https://darebee.com/workouts/thief-workout.html
+imgUrl: https://darebee.com/images/workouts/thief-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586789507360
+timestampEnd: 1586789508823
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/54PxYcGpSUCmlpGdFGTaYR
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586789520076
+timestampEnd: 1586789524991
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.8663088
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586789530193
+timestampEnd: 1586789535207
+message: consigliami una notizia
+intent: News
+confidence: 0.7863852
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.milannews.it/dall-estero/mundo-deportivo-barcellona-rakitic-sul-suo-futuro-saro-io-a-deciderlo-non-sono-un-sacco-di-patate-367662
+image: https://net-storage.tccstatic.com/storage/milannews.it/img_notizie/thumb3/4d/4dfd72e32d94224630831cf82cfef711-74736-2949380efa673bd8c4523694a3f5f4dd.jpeg
+title: Mundo Deportivo - Barcellona, Rakitic sul suo futuro: "Sarò io a deciderlo. Non sono un sacco di patate" - Milan News
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1586789590057
+timestampEnd: 1586789595280
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7866512
+answer: Puoi guardare Italia 1:<br>Alle 21.20
+va in onda Jurassic Park.<br>Alle 23.50
+va in onda "I Griffin ""Blue Harvest""".<br>Alle 0.30
+va in onda The Watch - La foresta dei misteri.<br>
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586789657036
+timestampEnd: 1586789666199
+message: dammi le previsioni meteo
+intent: Meteo
+confidence: 0.7317621
+answer: res: 2020-04-14;03:00;12.05;nuvoloso<br>2020-04-14;06:00;13.22;nuvoloso<br>2020-04-14;09:00;14.51;pioggia leggera<br>2020-04-14;12:00;15.31;pioggia leggera<br>2020-04-14;15:00;13.95;pioggia leggera<br>2020-04-14;18:00;11.21;pioggia leggera<br>2020-04-14;21:00;10.44;parzialmente nuvoloso<br>
+city: Corato
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586789683466
+timestampEnd: 1586789688087
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/364dI1bYnvamSnBJ8JcNzN
+explain: Ti ho consigliato questa playlist perchè sei giovane e hai uno stile di vita attivo
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586789696006
+timestampEnd: 1586789700106
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7780769
+answer: url: https://darebee.com/workouts/fresh-start-workout.html
+imgUrl: https://darebee.com/images/workouts/fresh-start-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di obesità di primo grado(determinato in base al tuo BMI) e sei in uno stato emotivo di  neutralità.
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586789706317
+timestampEnd: 1586789709360
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7866512
+answer: explain: Ti consiglio questo programma perchè sei in uno stato emotivo positivo di neutralità e qualsiasi programma va bene.
+result: Ti consiglio:<br>Su Rai 5 alle ore21.15
+ va in onda "In scena ""Ritratto di Ferrara ebraica""" (CULT.) Giornata della Memoria
+feedback:si
+
+user: cat@cat.it
+timestampStart: 1586789754001
+timestampEnd: 1586789755464
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.8663088
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  fai abbastanza attività fisica 🥘
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938470056
+timestampEnd: 1586938478972
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/0FkcmHJOsWE80rlpzfT0Pq
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938556108
+timestampEnd: 1586938564897
+message: consigliami un articolo
+intent: News
+confidence: 0.67537844
+answer: link: https://newsapi.org/v2/everything?q=Business&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.dagospia.com/rubrica-4/business/primum-vivere-deinde-globalizzare-guerrera-ldquo-stiamo-entrare-233406.htm
+image: https://cdn-static.dagospia.com/img/patch/10-2016/globalizzazione-840842.gif
+title: PRIMUM VIVERE, DEINDE GLOBALIZZARE - GUERRERA: “ STIAMO PER ENTRARE IN UN INTENSO PERIODO DI "DE-GLOBALIZZAZIONE". IL VIRUS POTREBBE PORTARE ALLA FINE DI UN'ERA DI ESPANSIONE NEI NOSTRI ORIZZONTI ECONOMICI, CULTURALI E FISICI. UN MOMENTO STORICO IN CUI LA SOPRAVVIVENZA CONTERÀ PIÙ DELL'ARRICCHIMENTO FINANZIARIO ED INTELLETTUALE” - LA RECESSIONE POTREBBE SPINGERE LE GRANDI AZIENDE AD AVERE MENO DIPENDENTI E PIÙ TECNOLOGIA...
+explain: Ti ho consigliato questo articolo perchè sei interessato a Business
+click: false
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938626269
+timestampEnd: 1586938642538
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.8660419
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘 e perchè sei intollerante al lattosio
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938688800
+timestampEnd: 1586938691725
+message: mostrami il meteo di oggi
+intent: Meteo
+confidence: 0.7785082
+answer: res: 2020-04-15;09:00;14.29;cielo sereno<br>2020-04-15;12:00;14.62;cielo sereno<br>2020-04-15;15:00;12.95;cielo sereno<br>2020-04-15;18:00;9.02;cielo sereno<br>2020-04-15;21:00;7.01;cielo sereno<br>
+city: Gioia del Colle
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938720710
+timestampEnd: 1586938725501
+message: consigliami qualcosa da guardare in TV
+intent: Raccomandazione programma
+confidence: 0.77860606
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rai 1 alle ore 23.45
+ va in onda Porta a porta (APPROFONDIMENTO) Dibattito, politica
+feedback:si
+
+user: gp@gp.it
+timestampStart: 1586938756300
+timestampEnd: 1586938761901
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7775273
+answer: url: https://darebee.com/workouts/free-spirit-workout.html
+imgUrl: https://darebee.com/images/workouts/free-spirit-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942051187
+timestampEnd: 1586942056161
+message: consigliami una news
+intent: News
+confidence: 0.87055266
+answer: link: https://newsapi.org/v2/everything?q=Business&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.hwupgrade.it/news/telefonia/google-pixel-processore-sviluppato-in-casa-nei-modelli-del-prossimo-anno_88578.html
+image: https://www.hwupgrade.it/i/n/Pixel4Camera_720.jpg
+title: Google Pixel, processore sviluppato in casa nei modelli del prossimo anno?
+explain: Ti ho consigliato questo articolo perchè sei interessato a Business
+click: false
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942096610
+timestampEnd: 1586942105183
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/6Ep2XErOa5SCBGzARBpCr4
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942120175
+timestampEnd: 1586942125311
+message: consigliami una notizia
+intent: News
+confidence: 0.77943873
+answer: link: https://newsapi.org/v2/everything?q=Business&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilgiornale.it/news/tecnologia/ewitness-1853886.html
+image: https://img.ilgcdn.com/sites/default/files/foto/2020/04/14/1586882728-ewitness.jpg
+title: Sicurezza, tecnologia e avanguardia: ecco il futuro digitale di eWitness
+explain: Ti ho consigliato questo articolo perchè sei interessato a Business
+click: false
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942164038
+timestampEnd: 1586942168183
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.8655691
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘 e perchè sei intollerante al lattosio
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942190591
+timestampEnd: 1586942196071
+message: meteo
+intent: Meteo
+confidence: 0.88579834
+answer: res: 2020-04-16;03:00;9;nubi sparse<br>2020-04-16;06:00;11;poco nuvoloso<br>2020-04-16;09:00;15.31;cielo sereno<br>2020-04-16;12:00;17.29;cielo sereno<br>2020-04-16;15:00;16.66;cielo sereno<br>2020-04-16;18:00;13.36;cielo sereno<br>2020-04-16;21:00;12.76;nubi sparse<br>
+city: Triggiano
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942230936
+timestampEnd: 1586942233727
+message: consigliami cosa vedere in tv
+intent: Raccomandazione programma
+confidence: 0.8517159
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: mars@mars.it
+timestampStart: 1586942267371
+timestampEnd: 1586942277519
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.78109914
+answer: url: https://darebee.com/workouts/bad-knees-workout.html
+imgUrl: https://darebee.com/images/workouts/bad-knees-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di sottopeso (calcolato in base al tuo bmi) e stai provando neutralità. Un alenamento di forza ti aiuterà ad aumentare la tua massa muscolare
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945436461
+timestampEnd: 1586945447561
+message: suggeriscimi una canzone
+intent: Musica
+confidence: 0.66564137
+answer: param: 
+url: https://open.spotify.com/embed/track/305WCRhhS10XUcH6AEwZk6
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945475950
+timestampEnd: 1586945490807
+message: suggeriscimi una notizia
+intent: News
+confidence: 0.7082009
+answer: link: https://newsapi.org/v2/top-headlines?country=it&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.solodonna.it/tv/il-paradiso-delle-signore-anticipazioni-15-aprile.php
+image: https://www.solodonna.it/wp-content/uploads/2020/04/il-paradiso-delle-signore-anticipazioni-14-aprile-riccardo-non-vuole-sposare-ludovica-schermata-2020-04-13-alle-15.47.12.png
+title: Il Paradiso delle signore anticipazioni 15 aprile: Il ricatto di Ludovica fa tremare Riccardo - SoloDonna
+click: false
+feedback:no
+
+user: simo@simo.it
+timestampStart: 1586945513930
+timestampEnd: 1586945523391
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Business&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: 
+http://www.diritto24.ilsole24ore.com/art/avvocatoAffari/newsStudiLegaliEOrdini/2020-04-15/accenture-acquisisce-nike-group-111007.php
+
+image: http://www.diritto24.ilsole24ore.com/_Immagini/AvvocatoAffari/NewsStudiLegaliEOrdini/Clipboard-0948.jpg
+title: Accenture acquisisce NIKE Group
+explain: Ti ho consigliato questo articolo perchè sei interessato a Business
+click: false
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945560122
+timestampEnd: 1586945569341
+message: suggeriscimi una ricetta
+intent: Cibo
+confidence: 0.702429
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  fai abbastanza attività fisica 🥘
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945596422
+timestampEnd: 1586945601053
+message: mostrami le previsioni meteo
+intent: Meteo
+confidence: 0.71350783
+answer: res: 2020-04-16;03:00;9;nubi sparse<br>2020-04-16;06:00;11;poco nuvoloso<br>2020-04-16;09:00;15.31;cielo sereno<br>2020-04-16;12:00;17.29;cielo sereno<br>2020-04-16;15:00;16.66;cielo sereno<br>2020-04-16;18:00;13.36;cielo sereno<br>2020-04-16;21:00;12.76;nubi sparse<br>
+city: Triggiano
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945623870
+timestampEnd: 1586945627547
+message: suggeriscimi qualcosa da vedere in tv
+intent: Raccomandazione programma
+confidence: 1
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: simo@simo.it
+timestampStart: 1586945662917
+timestampEnd: 1586945668692
+message: suggeriscimi un allenamento
+intent: Allenamento personalizzato
+confidence: 0.8673259
+answer: url: https://darebee.com/workouts/fresh-start-workout.html
+imgUrl: https://darebee.com/images/workouts/fresh-start-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954085408
+timestampEnd: 1586954091803
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Scienza&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.tuttomercatoweb.com/serie-a/live-tmw-emergenza-coronavirus-oggi-riunione-figc-comitato-scientifico-dybala-rugani-negativi-1371313
+image: https://tmw-storage.tccstatic.com/storage/tuttomercatoweb.com/img_notizie/thumb3/1d0416385e6a737bc65ed592d289e1cd-36073-95723157c8ebcac4750156d2b21ac04e.jpeg
+title: LIVE TMW - Emergenza Coronavirus, oggi riunione FIGC-comitato scientifico. Dybala-Rugani negativi
+explain: Ti ho consigliato questo articolo perchè sei interessato a Scienza
+click: false
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954122680
+timestampEnd: 1586954130299
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954151961
+timestampEnd: 1586954155348
+message: mostrami le previsioni meteo
+intent: Meteo
+confidence: 0.71350783
+answer: res: 2020-04-16;03:00;8.78;cielo sereno<br>2020-04-16;06:00;10.48;cielo sereno<br>2020-04-16;09:00;15.21;cielo sereno<br>2020-04-16;12:00;17.23;cielo sereno<br>2020-04-16;15:00;16.09;cielo sereno<br>2020-04-16;18:00;13.1;cielo sereno<br>2020-04-16;21:00;12.67;cielo sereno<br>
+city: Triggiano
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954174577
+timestampEnd: 1586954178465
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954200066
+timestampEnd: 1586954206673
+message: consigliami un allenamento 
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/2-minute-warmup-workout.html
+imgUrl: https://darebee.com/images/workouts/2-minute-warmup-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: stasia@stasia.it
+timestampStart: 1586954230618
+timestampEnd: 1586954235259
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/body-flow-workout.html
+imgUrl: https://darebee.com/images/workouts/body-flow-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956263309
+timestampEnd: 1586956268678
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/7oK9VyNzrYvRFo7nQEYkWN
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956316278
+timestampEnd: 1586956328303
+message: dammi una notizia
+intent: News
+confidence: 0.7906345
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilpost.it/2020/04/15/vietnam-coronavirus/
+image: https://www.ilpost.it/wp-content/uploads/2020/04/vietnam-coronavirus.jpg
+title: La risposta del Vietnam al coronavirus - Il Post
+click: true
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956366235
+timestampEnd: 1586956373244
+message: dammi una ricetta
+intent: Cibo
+confidence: 1
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘 e perchè sei celiaco
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956519252
+timestampEnd: 1586956526004
+message: dammi il meteo 
+intent: Meteo
+confidence: 0.8143823
+answer: res: 2020-04-16;03:00;9.92;cielo sereno<br>2020-04-16;06:00;11.02;cielo sereno<br>2020-04-16;09:00;14.79;cielo sereno<br>2020-04-16;12:00;16.4;cielo sereno<br>2020-04-16;15:00;15.59;cielo sereno<br>2020-04-16;18:00;13.59;cielo sereno<br>2020-04-16;21:00;13.24;cielo sereno<br>
+city: Mola di Bari
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956558738
+timestampEnd: 1586956563757
+message: dammi un programma da vedere in tv
+intent: Raccomandazione programma
+confidence: 0.84902734
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: spi@spi.it
+timestampStart: 1586956593125
+timestampEnd: 1586956596413
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/balance-yoga-workout.html
+imgUrl: https://darebee.com/images/workouts/balance-yoga-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: rox@rox.it
+timestampStart: 1586962189521
+timestampEnd: 1586962200262
+message: suggeriscimi una canzone
+intent: Musica
+confidence: 0.66564137
+answer: param: 
+url: https://open.spotify.com/embed/track/7qkYgOdbGqqFNpUcJ5QG5B
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:no
+
+user: rox@rox.it
+timestampStart: 1586962254907
+timestampEnd: 1586962277601
+message: suggeriscimi una notizia
+intent: News
+confidence: 0.7082009
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.tuttojuve.com/altre-notizie/live-tj-rugani-e-matuidi-guariti-dal-covid-19-nessuna-data-ufficiale-per-il-ritorno-dei-giocatori-all-estero-510591
+image: https://net-storage.tccstatic.com/storage/tuttojuve.com/img_notizie/thumb3/10/10a52040bb5602095538f8dec465b5e3-62600-8087c39faad72121becb6d1778778c8e.jpeg
+title: LIVE TJ - Nelle prossime ore Dybala e Rugani faranno il secondo tampone. Per Matuidi termina il... - Tutto Juve
+click: false
+feedback:si
+
+user: rox@rox.it
+timestampStart: 1586962292867
+timestampEnd: 1586962302496
+message: suggeriscimi una ricetta
+intent: Cibo
+confidence: 0.702429
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  fai abbastanza attività fisica 🥘
+feedback:si
+
+user: rox@rox.it
+timestampStart: 1586962354963
+timestampEnd: 1586962362880
+message: mostrami le previsione meteo
+intent: Meteo
+confidence: 0.761781
+answer: res: 2020-04-16;03:00;2.9;cielo sereno<br>2020-04-16;06:00;7.5;cielo sereno<br>2020-04-16;09:00;14.49;cielo sereno<br>2020-04-16;12:00;17.93;cielo sereno<br>2020-04-16;15:00;16.35;cielo sereno<br>2020-04-16;18:00;9.1;cielo sereno<br>2020-04-16;21:00;7.84;poco nuvoloso<br>
+city: Gravina in Puglia
+feedback:si
+
+user: rox@rox.it
+timestampStart: 1586962395818
+timestampEnd: 1586962404612
+message: suggeriscimi qualcosa da vedere in tv
+intent: Raccomandazione programma
+confidence: 1
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: rox@rox.it
+timestampStart: 1586962460574
+timestampEnd: 1586962473109
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/clean-slate-workout.html
+imgUrl: https://darebee.com/images/workouts/clean-slate-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: an@an.it
+timestampStart: 1586967723127
+timestampEnd: 1586967747305
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/0cnB6Zq7HWLbyTrH6uXj0I
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:no
+
+user: an@an.it
+timestampStart: 1586967835671
+timestampEnd: 1586967839791
+message: consigliami una noizia
+intent: News
+confidence: 0.700261
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.gazzetta.it/Calcio/Serie-A/Lazio/15-04-2020/lazio-diaconale-finiamo-campionato-oppure-si-finisce-tribunale-370228010812.shtml
+image: https://images2.gazzettaobjects.it/methode_image/2020/04/15/Calcio/Foto_Calcio_-_Trattate/4fafc8e1fbdfa5e0ed793d3add61f532_1200x675.JPG?v=202004151749
+title: Lazio, Diaconale: "Il campionato va concluso, altrimenti si finisce in tribunale"
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: an@an.it
+timestampStart: 1586967876255
+timestampEnd: 1586967883263
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: an@an.it
+timestampStart: 1586967903713
+timestampEnd: 1586967907494
+message: fammi vedere il meteo
+intent: Meteo
+confidence: 0.7404202
+answer: res: 2020-04-16;03:00;8.84;cielo sereno<br>2020-04-16;06:00;10.71;cielo sereno<br>2020-04-16;09:00;15.1;cielo sereno<br>2020-04-16;12:00;17.21;cielo sereno<br>2020-04-16;15:00;16.26;cielo sereno<br>2020-04-16;18:00;13.12;cielo sereno<br>2020-04-16;21:00;12.77;poco nuvoloso<br>
+city: Bari
+feedback:si
+
+user: an@an.it
+timestampStart: 1586967935639
+timestampEnd: 1586967949070
+message: consigliami qualcosa da vedere in tv
+intent: Raccomandazione programma
+confidence: 0.8404237
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Canale 5 alle ore 21.40
+ va in onda Animali fantastici e dove trovarli (FILM) Avventura-fantastico 2016
+feedback:si
+
+user: an@an.it
+timestampStart: 1586967962391
+timestampEnd: 1586967967591
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/diffuser-workout.html
+imgUrl: https://darebee.com/images/workouts/diffuser-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di sovrappeso(determinato in base al tuo BMI) e sei in uno stato emotivo di: neutralità.
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970521370
+timestampEnd: 1586970544572
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/4nWtDExgGzlOQwxmp5JjUT
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970605105
+timestampEnd: 1586970616435
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Salute&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.today.it/attualita/coronavirus-bollettino-oggi-mercoledi-15-aprile-2020.html
+image: https://www.today.it/~media/horizontal-hi/56686312495045/angelo-borrelli-ansa-2.jpg
+title: Coronavirus, il bollettino: 578 morti in un giorno, preoccupa la provincia di Milano - Today
+explain: Ti ho consigliato questo articolo perchè sei interessato a Salute
+click: false
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970642678
+timestampEnd: 1586970648296
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970702781
+timestampEnd: 1586970707177
+message: voglio vedere le previdioni del meteo
+intent: Meteo
+confidence: 0.72823656
+answer: res: 2020-04-16;03:00;5.64;cielo sereno<br>2020-04-16;06:00;7.76;cielo sereno<br>2020-04-16;09:00;13.74;cielo sereno<br>2020-04-16;12:00;15.5;cielo sereno<br>2020-04-16;15:00;14.42;cielo sereno<br>2020-04-16;18:00;10.09;cielo sereno<br>2020-04-16;21:00;9.31;cielo sereno<br>
+city: Gioia del Colle
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970736217
+timestampEnd: 1586970740274
+message: cosa c'è in tv?
+intent: Raccomandazione programma
+confidence: 0.76458156
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rai 1 alle ore 23.45
+ va in onda Porta a porta (APPROFONDIMENTO) Dibattito, politica
+feedback:si
+
+user: sv@sv.it
+timestampStart: 1586970763515
+timestampEnd: 1586970769743
+message: mi consigli un allenamento?
+intent: Allenamento personalizzato
+confidence: 0.770872
+answer: url: https://darebee.com/workouts/lower-back-chair-workout.html
+imgUrl: https://darebee.com/images/workouts/lower-back-chair-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: pr@pr.it
+timestampStart: 1587023292364
+timestampEnd: 1587023301577
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/48i055G1OT5KxGGftwFxWy
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: pr@pr.it
+timestampStart: 1587023336461
+timestampEnd: 1587023341035
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Tecnologia&Language=it&sortBy=publishedAt&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corrieredellosport.it/news/attualit/cronaca/2020/04/16-68891224/coronavirus_la_fase_2_partir_dopo_queste_6_indicazioni/
+image: https://cdn.corrieredellosport.it/images/2020/04/15/232056444-95153060-fbd7-4608-bde6-95a0ffbf2d0d.jpg
+title: Coronavirus, la Fase 2 partirà dopo queste 6 indicazioni
+explain: Ti ho consigliato questo articolo perchè sei interessato a Tecnologia
+click: false
+feedback:no
+
+user: pr@pr.it
+timestampStart: 1587023376154
+timestampEnd: 1587023381739
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  sei depresso e  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: pr@pr.it
+timestampStart: 1587023449950
+timestampEnd: 1587023454941
+message: Guarda le previsioni meteo
+intent: Meteo
+confidence: 0.7191197
+answer: res: 2020-04-17;03:00;12.74;nuvoloso<br>2020-04-17;06:00;13.46;nuvoloso<br>2020-04-17;09:00;16.37;parzialmente nuvoloso<br>2020-04-17;12:00;17.51;nubi sparse<br>2020-04-17;15:00;17.06;cielo sereno<br>2020-04-17;18:00;14.98;cielo sereno<br>2020-04-17;21:00;14.37;cielo sereno<br>
+city: Polignano a Mare
+feedback:si
+
+user: pr@pr.it
+timestampStart: 1587023476408
+timestampEnd: 1587023485711
+message: Consigliami un programma tv stasera
+intent: Raccomandazione programma
+confidence: 0.8297545
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: pr@pr.it
+timestampStart: 1587023507743
+timestampEnd: 1587023516340
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/party-workout.html
+imgUrl: https://darebee.com/images/workouts/party-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando tristezza. Il cardio ti aiuterà ad aumentare la tua produzione di dopamina, migliorando il tuo umore
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025171944
+timestampEnd: 1587025177224
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/4eWQlBRaTjPPUlzacqEeoQ
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025198764
+timestampEnd: 1587025207333
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Scienza&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://palermo.repubblica.it/cronaca/2020/04/16/news/coronavirus_l_appello_alle_istituzioni_firmato_da_genitori_e_insegnanti_fate_uscire_i_bambini_-254147512/
+image: https://www.repstatic.it/content/localirep/img/rep-palermo/2020/04/16/071912014-32bb3456-63d8-4e76-b1a2-5e7dc7aaf732.jpg
+title: Coronavirus, l'appello alle istituzioni firmato da genitori e insegnanti: "Fate uscire i bambini"
+explain: Ti ho consigliato questo articolo perchè sei interessato a Scienza
+click: false
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025223935
+timestampEnd: 1587025231394
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025255869
+timestampEnd: 1587025266238
+message: previsioni del meteo
+intent: Meteo
+confidence: 0.7826779
+answer: res: 2020-04-17;03:00;9.22;nuvoloso<br>2020-04-17;06:00;10.86;nuvoloso<br>2020-04-17;09:00;15.03;parzialmente nuvoloso<br>2020-04-17;12:00;16.34;nubi sparse<br>2020-04-17;15:00;15.99;cielo sereno<br>2020-04-17;18:00;12.23;cielo sereno<br>2020-04-17;21:00;11.34;cielo sereno<br>
+city: Putignano
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025300349
+timestampEnd: 1587025309743
+message: consigliami programmi tv
+intent: Raccomandazione programma
+confidence: 0.6585429
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: nora@nora.it
+timestampStart: 1587025324535
+timestampEnd: 1587025331184
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/party-workout.html
+imgUrl: https://darebee.com/images/workouts/party-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028354587
+timestampEnd: 1587028362841
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/5HNCy40Ni5BZJFw1TKzRsC
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028383257
+timestampEnd: 1587028387694
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corrieredellosport.it/news/calcio/serie-a/napoli/2020/04/16-68897588/napoli_totti_a_cannavaro_insigne_ha_lasciato_raiola_l_ho_telefonato_/
+image: https://cdn.corrieredellosport.it/images/2020/04/16/103510391-faf706f1-9470-4246-b875-0453f99505e2.jpg
+title: Napoli, Totti a Cannavaro: "Insigne ha lasciato Raiola? L'ho telefonato"
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028407070
+timestampEnd: 1587028410645
+message: mostrami le previsioni meteo
+intent: Meteo
+confidence: 0.71350783
+answer: res: 2020-04-17;03:00;12.33;nuvoloso<br>2020-04-17;06:00;13.44;nuvoloso<br>2020-04-17;09:00;16.97;parzialmente nuvoloso<br>2020-04-17;12:00;18.23;nubi sparse<br>2020-04-17;15:00;17.65;cielo sereno<br>2020-04-17;18:00;15.02;cielo sereno<br>2020-04-17;21:00;14.27;cielo sereno<br>
+city: Mola di Bari
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028436386
+timestampEnd: 1587028443029
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028467183
+timestampEnd: 1587028474377
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: str@str.it
+timestampStart: 1587028489818
+timestampEnd: 1587028495289
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/super-burpee-workout.html
+imgUrl: https://darebee.com/images/workouts/super-burpee-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032440590
+timestampEnd: 1587032449042
+message: consiglia canzone
+intent: Musica
+confidence: 0.6264335
+answer: param: 
+url: https://open.spotify.com/embed/track/5UuikgHTxSRFRnC0zXx10i
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032473562
+timestampEnd: 1587032476084
+message: consigliami notizie
+intent: News
+confidence: 0.74735767
+answer: link: https://newsapi.org/v2/everything?q=Salute&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilgiornale.it/news/cronache/coronavirus-i-test-sui-gatti-domestici-v-1854651.html
+image: https://img.ilgcdn.com/sites/default/files/foto/2020/04/16/1587030747-cat-1543541-960-7202.jpg
+title: Coronavirus, al via i test sui gatti domestici di Vò
+explain: Ti ho consigliato questo articolo perchè sei interessato a Salute
+click: false
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032506455
+timestampEnd: 1587032509077
+message: consigliami ricetta
+intent: Cibo
+confidence: 0.86726665
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  fai abbastanza attività fisica 🥘
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032528946
+timestampEnd: 1587032531653
+message: meteo
+intent: Meteo
+confidence: 0.8852928
+answer: res: 2020-04-17;03:00;11.81;nuvoloso<br>2020-04-17;06:00;13.47;nuvoloso<br>2020-04-17;09:00;17.37;nubi sparse<br>2020-04-17;12:00;18.84;poco nuvoloso<br>2020-04-17;15:00;18.09;cielo sereno<br>2020-04-17;18:00;14.58;cielo sereno<br>2020-04-17;21:00;13.91;poco nuvoloso<br>
+city: Bari
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032550170
+timestampEnd: 1587032553296
+message: consigliami qualcosa da vedere in tv
+intent: Raccomandazione programma
+confidence: 0.8404237
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032572740
+timestampEnd: 1587032574580
+message: consigliami allenamento
+intent: Allenamento personalizzato
+confidence: 0.71379894
+answer: url: https://darebee.com/workouts/twist-and-fold-workout.html
+imgUrl: https://darebee.com/images/workouts/twist-and-fold-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587032588616
+timestampEnd: 1587032591854
+message: consigliami allenamento
+intent: Allenamento personalizzato
+confidence: 0.71379894
+answer: url: https://darebee.com/workouts/wakeup-and-connect-workout.html
+imgUrl: https://darebee.com/images/workouts/wakeup-and-connect-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039393800
+timestampEnd: 1587039399032
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/24lMtPOCzP5g4hrg3NklLa
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039463027
+timestampEnd: 1587039472333
+message: consigliami una news
+intent: News
+confidence: 0.8701122
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corrieredellosport.it/news/volley/superlega/2020/04/16-68904554/cormio_creeremo_delle_nuove_star_/
+image: https://cdn.corrieredellosport.it/images/2020/04/16/134432974-5ed3f5f2-0b5c-48fd-90f6-fce4cdcf36ff.jpg
+title: Cormio: «creeremo delle nuove star »
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039483261
+timestampEnd: 1587039504704
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039578729
+timestampEnd: 1587039582519
+message: dammi informazioni sul meteo
+intent: Meteo
+confidence: 0.6179182
+answer: res: 2020-04-17;03:00;6.66;nuvoloso<br>2020-04-17;06:00;10.16;nuvoloso<br>2020-04-17;09:00;16.36;nubi sparse<br>2020-04-17;12:00;18.63;nubi sparse<br>2020-04-17;15:00;17.58;cielo sereno<br>2020-04-17;18:00;10.22;cielo sereno<br>2020-04-17;21:00;9.42;nubi sparse<br>
+city: Altamura
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039600144
+timestampEnd: 1587039612420
+message: suggeriscimi un programma da vedere in tv
+intent: Raccomandazione programma
+confidence: 0.8951527
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: zio@zio.it
+timestampStart: 1587039714027
+timestampEnd: 1587039721291
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/off-day-workout.html
+imgUrl: https://darebee.com/images/workouts/off-day-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando gioia, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042505109
+timestampEnd: 1587042509896
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/4bMfWDvKPCFQ2df7Qf2UTs
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042538324
+timestampEnd: 1587042546951
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Tecnologia&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ansa.it/sito/notizie/tecnologia/software_app/2020/04/16/microsoft-svela-il-computer-planetario_cc92c3f0-9dd5-44fb-8543-ce6e78066bd4.html
+image: https://www.ansa.it/webimages/img_700/2020/4/16/53d403c9d5664c8511cc22be4481ceec.jpg
+title: Microsoft ambientalista, svela il "Computer Planetario"
+explain: Ti ho consigliato questo articolo perchè sei interessato a Tecnologia
+click: false
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042608198
+timestampEnd: 1587042639959
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042658466
+timestampEnd: 1587042662702
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-17;03:00;11.77;nuvoloso<br>2020-04-17;06:00;13.51;nuvoloso<br>2020-04-17;09:00;17.42;nubi sparse<br>2020-04-17;12:00;18.96;poco nuvoloso<br>2020-04-17;15:00;18.06;cielo sereno<br>2020-04-17;18:00;14.58;cielo sereno<br>2020-04-17;21:00;13.93;nubi sparse<br>
+city: Bari
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042682475
+timestampEnd: 1587042688183
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: mar@mar.it
+timestampStart: 1587042731799
+timestampEnd: 1587042740390
+message: consigliami un allenament
+intent: Allenamento personalizzato
+confidence: 0.7009482
+answer: url: https://darebee.com/workouts/stay-awake-workout.html
+imgUrl: https://darebee.com/images/workouts/stay-wake-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587047845405
+timestampEnd: 1587047849556
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/31WvlK2vEalVKWHJNLu9T9
+explain: Ti consiglio questa canzone perchè ho trovato il genere rock nei tuoi interessi
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587047881504
+timestampEnd: 1587047883227
+message: Consigliami una notizia 
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.tuttomercatoweb.com/serie-b/livorno-e-il-giorno-dell-attesa-al-tramonto-l-era-spinelli-un-futuro-da-scrivere-1372565
+image: https://tmw-storage.tccstatic.com/storage/tuttomercatoweb.com/img_notizie/thumb3/4aee86ec32d14b9db072962609ac9b0b-70632-95723157c8ebcac4750156d2b21ac04e.jpeg
+title: Livorno, è il giorno dell'attesa. Al tramonto l'era Spinelli: un futuro da scrivere
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587047895331
+timestampEnd: 1587047903773
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587047922063
+timestampEnd: 1587047929740
+message: Mostrami il meteo
+intent: Meteo
+confidence: 0.79349345
+answer: res: 2020-04-17;03:00;5.21;nuvoloso<br>2020-04-17;06:00;9.37;parzialmente nuvoloso<br>2020-04-17;09:00;16.2;cielo sereno<br>2020-04-17;12:00;18.54;poco nuvoloso<br>2020-04-17;15:00;17.81;cielo sereno<br>2020-04-17;18:00;10.74;poco nuvoloso<br>2020-04-17;21:00;9.29;parzialmente nuvoloso<br>
+city: Biccari
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587047984982
+timestampEnd: 1587047993897
+message: Consigliami un programma t
+intent: Raccomandazione programma
+confidence: 0.82424736
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: zer@zer.it
+timestampStart: 1587048040003
+timestampEnd: 1587048043129
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/party-workout.html
+imgUrl: https://darebee.com/images/workouts/party-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052607349
+timestampEnd: 1587052618471
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/3kIxACxR2tDPtKCWWa16lq
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052657201
+timestampEnd: 1587052672934
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Tecnologia&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.everyeye.it/notizie/ps5-potente-ultimi-pc-gaming-gli-autori-quantum-error-dubitano-440112.html
+image: https://images.everyeye.it/img-notizie/ps5-potente-moderno-pc-gaming-autori-quantum-error-dubitano-v3-440112.jpg
+title: PS5 più potente di un moderno PC gaming? Gli autori di Quantum Error ne dubitano
+explain: Ti ho consigliato questo articolo perchè sei interessato a Tecnologia
+click: false
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052689942
+timestampEnd: 1587052701736
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  sei depresso e  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052723045
+timestampEnd: 1587052729667
+message: consigliami previsioni meteo
+intent: Meteo
+confidence: 0.735862
+answer: res: 2020-04-17;03:00;11.43;nuvoloso<br>2020-04-17;06:00;13.29;nuvoloso<br>2020-04-17;09:00;17.55;nubi sparse<br>2020-04-17;12:00;19.06;poco nuvoloso<br>2020-04-17;15:00;18.1;cielo sereno<br>2020-04-17;18:00;14.64;cielo sereno<br>2020-04-17;21:00;13.84;nubi sparse<br>
+city: Triggiano
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052755627
+timestampEnd: 1587052771124
+message: consigliami programma tv
+intent: Raccomandazione programma
+confidence: 0.7733557
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Italia 1 alle ore 21.15
+ va in onda Jurassic Park Ⅱ - Il mondo perduto (FILM) Fantascienza-avventura 1997
+feedback:si
+
+user: catia@catia.it
+timestampStart: 1587052803094
+timestampEnd: 1587052815175
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/super-burpee-workout.html
+imgUrl: https://darebee.com/images/workouts/super-burpee-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei in uno stato di sovrappeso(calcolato in base al tuo bmi) e stai provando tristezza. Il cardio aumentarà la produzione di dopamina, migliorando il tuo umore
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059273620
+timestampEnd: 1587059288307
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/696DnlkuDOXcMAnKlTgXXK
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059345403
+timestampEnd: 1587059347993
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corrieredellosport.it/news/tv-sport/2020/04/16-68913719/anche_immobile_protagonista_alla_race_for_the_world/
+image: https://cdn.corrieredellosport.it/images/2020/04/16/184428343-230c1872-c075-4ec8-b440-96006e296f11.jpg
+title: Anche Immobile protagonista alla Race For The World
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059376363
+timestampEnd: 1587059382746
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059440668
+timestampEnd: 1587059444897
+message: Previsioni del meteo
+intent: Meteo
+confidence: 0.7826779
+answer: res: 2020-04-17;03:00;10.6;nuvoloso<br>2020-04-17;06:00;13.13;nuvoloso<br>2020-04-17;09:00;17.67;nubi sparse<br>2020-04-17;12:00;19.29;poco nuvoloso<br>2020-04-17;15:00;18.18;cielo sereno<br>2020-04-17;18:00;14.32;cielo sereno<br>2020-04-17;21:00;13.53;nubi sparse<br>
+city: Valenzano
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059472243
+timestampEnd: 1587059482313
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Rete 4 alle ore 23.30
+ va in onda "Il Bagaglino ""La Presidente""" (DIVERTIMENTO) Teatro, satira
+feedback:si
+
+user: mil@mil.it
+timestampStart: 1587059512252
+timestampEnd: 1587059518146
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/winter-is-here-workout.html
+imgUrl: https://darebee.com/images/workouts/winter-is-here-workout.jpg
+explain: Ti consiglio questo allenamento perchè sei in uno stato di sottopeso (calcolato in base al tuo bmi) e stai provando sorpresa. Un alenamento di forza ti aiuterà ad aumentare la tua massa muscolare
+feedback:si
+
+user: ivan@ivan.it
+timestampStart: 1587060760689
+timestampEnd: 1587060767572
+message: Consigliami un brano
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/6ooluO7DiEhI1zmK94nRCM
+explain: Ti consiglio questa canzone perchè ho trovato il genere indie_alt nei tuoi interessi
+feedback:si
+
+user: ivan@ivan.it
+timestampStart: 1587060784977
+timestampEnd: 1587060791144
+message: Consigliami una news
+intent: News
+confidence: 0.8701122
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: http://questionedistile.gazzetta.it/2020/04/16/la-portabandiera-diventata-portavoce/
+image: http://questionedistile.gazzetta.it/files/2018/11/31.0.411063043-250x300.jpg
+title: La portabandiera diventata portavoce
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: ivan@ivan.it
+timestampStart: 1587060808117
+timestampEnd: 1587060814592
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  sei di cattivo umore e  non fai abbastanza attività fisica 🥘
+feedback:no
+
+user: ivan@ivan.it
+timestampStart: 1587060833624
+timestampEnd: 1587060838995
+message: Dammi le previsioni meteo
+intent: Meteo
+confidence: 0.7338294
+answer: res: 2020-04-17;03:00;11.45;nuvoloso<br>2020-04-17;06:00;12.54;nuvoloso<br>2020-04-17;09:00;16.13;parzialmente nuvoloso<br>2020-04-17;12:00;17.52;nubi sparse<br>2020-04-17;15:00;16.75;cielo sereno<br>2020-04-17;18:00;13.77;cielo sereno<br>2020-04-17;21:00;12.94;nubi sparse<br>
+city: Conversano
+feedback:si
+
+user: ivan@ivan.it
+timestampStart: 1587060856457
+timestampEnd: 1587060860508
+message: Consigliami un programma TV
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè rientra nei tuoi interessi
+result: Ti consiglio:<br>Su Italia 1 alle ore 21.15
+ va in onda Jurassic Park Ⅱ - Il mondo perduto (FILM) Fantascienza-avventura 1997
+feedback:si
+
+user: ivan@ivan.it
+timestampStart: 1587060880090
+timestampEnd: 1587060885850
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/posture-perfect-workout.html
+imgUrl: https://darebee.com/images/workouts/posture-perfect-workout.jpg
+explain: Ti consiglio questo allenamento leggero, poichè hai dormito poco
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587111321776
+timestampEnd: 1587111368384
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2rRJrJEo19S2J82BDsQ3F7
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587111379986
+timestampEnd: 1587111401840
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corriere.it/spettacoli/20_aprile_17/morto-brian-dennehy-sceriffo-violento-arrogante-rambo-2a2fe540-8032-11ea-8804-717fbf79e066.shtml
+image: https://images2.corriereobjects.it/methode_image/socialshare/2020/04/17/d3f4bec0-8032-11ea-8804-717fbf79e066.jpg
+title: Morto Brian Dennehy, lo sceriffo violento e arrogante di «Rambo» - Corriere della Sera
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587111432636
+timestampEnd: 1587111442232
+message: consigliami una ricetta 
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587111472650
+timestampEnd: 1587111493111
+message: consigliami le previsioni meteo
+intent: Meteo
+confidence: 0.7338294
+answer: res: 2020-04-18;03:00;11.97;nuvoloso2020-04-18;06:00;12.77;parzialmente nuvoloso2020-04-18;09:00;17.7;nuvoloso2020-04-18;12:00;21.38;nuvoloso2020-04-18;15:00;22.48;nuvoloso2020-04-18;18:00;18.97;parzialmente nuvoloso2020-04-18;21:00;15.62;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587111507432
+timestampEnd: 1587111515668
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587111524840
+timestampEnd: 1587111554200
+message: consigliami un allenamento 
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/maverick-workout.html
+imgUrl: https://darebee.com/images/workouts/maverick-workout.jpg
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587112402585
+timestampEnd: 1587112429435
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2cf1g08CvDuhwXFqxjetQi
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587112449926
+timestampEnd: 1587112464569
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.corriere.it/cronache/20_aprile_17/coronavirus-ultime-notizie-dall-italia-mondo-001fd112-8068-11ea-ac8a-0c2cb4ad9c17.shtml
+image: https://images2.corriereobjects.it/methode_image/socialshare/2020/04/17/2125ef76-8069-11ea-ac8a-0c2cb4ad9c17.jpg
+title: Coronavirus, le ultime notizie dall’Italia e dal mondo - Corriere della Sera
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587112480786
+timestampEnd: 1587112489095
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587112513254
+timestampEnd: 1587112537390
+message: Dimmi le previsioni del meteo
+intent: Meteo
+confidence: 0.79945743
+answer: res: 2020-04-18;03:00;12.93;cielo sereno2020-04-18;06:00;15.5;cielo sereno2020-04-18;09:00;19.84;cielo sereno2020-04-18;12:00;21.8;cielo sereno2020-04-18;15:00;21.01;parzialmente nuvoloso2020-04-18;18:00;17.34;nubi sparse2020-04-18;21:00;16.58;parzialmente nuvoloso
+city: Bari
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587112562974
+timestampEnd: 1587112569635
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587112587755
+timestampEnd: 1587112600277
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/exorcism-workout.html
+imgUrl: https://darebee.com/images/workouts/exorcism-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587116085084
+timestampEnd: 1587116096043
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/7eHHKYb2cRRqqzl8bbiwA3
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587116113869
+timestampEnd: 1587116121682
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.open.online/2020/04/17/coronavirus-arriva-immuni-app-per-il-tracciamento-dei-contagi-scelta-dal-governo/
+image: https://www.open.online/wp-content/uploads/2020/04/coronavirus-7.jpg?w=1200&amp;min-h=630&amp;fit=crop&amp;crop=center
+title: Coronavirus, arriva «Immuni»: l’app per il tracciamento dei contagi scelta dal governo - Open
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587116141737
+timestampEnd: 1587116149379
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587116162726
+timestampEnd: 1587116181001
+message: Meteo
+intent: Meteo
+confidence: 0.8852928
+answer: res: 2020-04-18;03:00;11.97;nuvoloso2020-04-18;06:00;12.77;parzialmente nuvoloso2020-04-18;09:00;17.7;nuvoloso2020-04-18;12:00;21.38;nuvoloso2020-04-18;15:00;22.48;nuvoloso2020-04-18;18:00;18.97;parzialmente nuvoloso2020-04-18;21:00;15.62;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587116202501
+timestampEnd: 1587116211121
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587116227111
+timestampEnd: 1587116235162
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/master-plan-workout.html
+imgUrl: https://darebee.com/images/workouts/master-plan-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587119303584
+timestampEnd: 1587119314341
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2JbPEAf12Ju2CxSIoZC89d
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587119402242
+timestampEnd: 1587119415895
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587119432022
+timestampEnd: 1587119448279
+message: mostrami le previsioni del meteo
+intent: Meteo
+confidence: 0.74392986
+answer: res: 2020-04-18;03:00;12.93;cielo sereno<br>2020-04-18;06:00;15.5;cielo sereno<br>2020-04-18;09:00;19.84;cielo sereno<br>2020-04-18;12:00;21.8;cielo sereno<br>2020-04-18;15:00;21.01;parzialmente nuvoloso<br>2020-04-18;18:00;17.34;nubi sparse<br>2020-04-18;21:00;16.58;parzialmente nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587119464627
+timestampEnd: 1587119481458
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:<br>Alle 21.15
+va in onda Momentum.<br>Alle 23.05
+va in onda Never Back Down - Mai arrendersi.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587119505655
+timestampEnd: 1587119552878
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/precursor-workout.html
+imgUrl: https://darebee.com/images/workouts/precursor-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587125578183
+timestampEnd: 1587125590266
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2cf1g08CvDuhwXFqxjetQi
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587125606143
+timestampEnd: 1587125610315
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://multiplayer.it/notizie/ps4-il-firmware-750-causando-gravi-problemi-alcuni-giocatori.html
+image: https://multiplayer.net-cdn.it/thumbs/images/2013/05/15/ps4_cropped_420_0_1180_700_jpg_750x400_crop_upscale_q85.jpg
+title: PS4, il firmware 7.50 sta causando dei gravi problemi ad alcuni giocatori - Multiplayer.it
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587125624263
+timestampEnd: 1587125630002
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587125658854
+timestampEnd: 1587125683561
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-18;03:00;11.97;nuvoloso<br>2020-04-18;06:00;12.77;parzialmente nuvoloso<br>2020-04-18;09:00;17.7;nuvoloso<br>2020-04-18;12:00;21.38;nuvoloso<br>2020-04-18;15:00;22.48;nuvoloso<br>2020-04-18;18:00;18.97;parzialmente nuvoloso<br>2020-04-18;21:00;15.62;nuvoloso<br>
+city: Milano
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587125705302
+timestampEnd: 1587125711942
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587125728246
+timestampEnd: 1587125733830
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/great-hold-workout.html
+imgUrl: https://darebee.com/images/workouts/great-hold-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587127051451
+timestampEnd: 1587127095599
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/7eHHKYb2cRRqqzl8bbiwA3
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587127113732
+timestampEnd: 1587127122538
+message: consigliami una notizia 
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.gazzetta.it/Calcio/Serie-A/Inter/17-04-2020/setien-allenatore-barcellona-neymer-o-lautaro-tutti-due-370269835396.shtml
+image: https://images2.gazzettaobjects.it/methode_image/2020/04/17/Calcio/Foto_Calcio_-_Trattate/c15797d6-8084-11ea-8691-9ca28641b4d2_1200x675.jpg?v=202004171043
+title: Setien: “Neymar o Lautaro? Tutti e due. Rigiochiamo, il Barça non vuole la Liga a tavolino” - La Gazzetta dello Sport
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587127138126
+timestampEnd: 1587127153843
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587127172655
+timestampEnd: 1587127183612
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-18;03:00;11.97;nuvoloso2020-04-18;06:00;12.77;parzialmente nuvoloso2020-04-18;09:00;17.7;nuvoloso2020-04-18;12:00;21.38;nuvoloso2020-04-18;15:00;22.48;nuvoloso2020-04-18;18:00;18.97;parzialmente nuvoloso2020-04-18;21:00;15.62;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587127203398
+timestampEnd: 1587127228147
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587127241593
+timestampEnd: 1587127264181
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/thief-workout.html
+imgUrl: https://darebee.com/images/workouts/thief-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587128235048
+timestampEnd: 1587128252980
+message: CONSIGLIAMI UNA CANZONE
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2JbPEAf12Ju2CxSIoZC89d
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587128284192
+timestampEnd: 1587128295368
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.liberoquotidiano.it/news/esteri/22156416/coronavirus_cina_ritocca_bilancio_morti_contagi_wuhan.html
+image: https://img2.liberoquotidiano.it/images/2020/04/17/085824169-430b3a36-aae8-459f-b58f-703b3fbecbc1.jpg
+title: Coronavirus, la Cina ritocca al rialzo il numero dei decessi a Wuhan: ma le cifre non sono ancora credibili - Liberoquotidiano.it
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587128313216
+timestampEnd: 1587128325961
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587128342377
+timestampEnd: 1587128358011
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-18;03:00;12.78;cielo sereno<br>2020-04-18;06:00;15.43;cielo sereno<br>2020-04-18;09:00;20.02;cielo sereno<br>2020-04-18;12:00;21.95;cielo sereno<br>2020-04-18;15:00;20.84;parzialmente nuvoloso<br>2020-04-18;18:00;17.31;nubi sparse<br>2020-04-18;21:00;16.75;parzialmente nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587128372891
+timestampEnd: 1587128391955
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587128405350
+timestampEnd: 1587128444292
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/thief-workout.html
+imgUrl: https://darebee.com/images/workouts/thief-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587131999502
+timestampEnd: 1587132004596
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587132017889
+timestampEnd: 1587132024739
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.liberoquotidiano.it/news/italia/22159032/coronavirus_giovanni_rezza_iss_zero_contagi_impossibile_maggio.html
+image: https://img2.liberoquotidiano.it/images/2020/04/17/110330350-8d4bfbd0-9174-418a-80f2-d2a0484ab0e0.jpg
+title: Coronavirus, Giovanni Rezza dell'Iss: "Zero contagi impossibili per metà maggio. Il picco? Artificioso" - Liberoquotidiano.it
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587132036432
+timestampEnd: 1587132044117
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587132066119
+timestampEnd: 1587132066940
+message: previsioni del tempo pls
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587132075005
+timestampEnd: 1587132084644
+message: previsioni del meteo
+intent: Meteo
+confidence: 0.7826779
+answer: res: 2020-04-18;03:00;12.04;nuvoloso2020-04-18;06:00;12.97;parzialmente nuvoloso2020-04-18;09:00;17.93;nuvoloso2020-04-18;12:00;21.27;nuvoloso2020-04-18;15:00;22.67;parzialmente nuvoloso2020-04-18;18:00;19.15;parzialmente nuvoloso2020-04-18;21:00;15.99;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587132126776
+timestampEnd: 1587132136587
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587132150598
+timestampEnd: 1587132160251
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/airplane-workout.html
+imgUrl: https://darebee.com/images/workouts/airplane-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587136570347
+timestampEnd: 1587136576786
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/5dsz7MTrNdN9aMTrnp7sOG
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587136616869
+timestampEnd: 1587136627495
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.repubblica.it/economia/2020/04/17/news/prestiti_garantiti_dallo_stato_ecco_chi_puo_accedere_e_chi_invece_resta_fuori-254256671/
+image: https://www.repstatic.it/content/nazionale/img/2020/04/17/112713523-ec5b521f-60dd-4a5d-a96c-b36caddf5fd0.jpg
+title: Prestiti garantiti dallo Stato, ecco chi può accedere e chi invece resta fuori - la Repubblica
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587136647109
+timestampEnd: 1587136654823
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587136673784
+timestampEnd: 1587136683183
+message: Meteo
+intent: Meteo
+confidence: 0.8852928
+answer: res: 2020-04-18;03:00;12.16;nuvoloso<br>2020-04-18;06:00;12.97;parzialmente nuvoloso<br>2020-04-18;09:00;17.93;nuvoloso<br>2020-04-18;12:00;21.27;nuvoloso<br>2020-04-18;15:00;22.67;parzialmente nuvoloso<br>2020-04-18;18:00;19.15;parzialmente nuvoloso<br>2020-04-18;21:00;15.99;nuvoloso<br>
+city: Milano
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587136705671
+timestampEnd: 1587136715494
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:<br>Alle 21.15
+va in onda Momentum.<br>Alle 23.05
+va in onda Never Back Down - Mai arrendersi.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587136733746
+timestampEnd: 1587136752363
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/master-plan-workout.html
+imgUrl: https://darebee.com/images/workouts/master-plan-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587139105857
+timestampEnd: 1587139134574
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/696DnlkuDOXcMAnKlTgXXK
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587139151365
+timestampEnd: 1587139161524
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilmessaggero.it/politica/coronavirus_campania_ultime_notizie_oggi_de_luca_confini_chiusi-5176551.html
+image: https://statics.cedscdn.it/photos/MED/65/51/5176551_1518_coronavirus_campania_ultime_notizie_confini_regione_chiusi_de_luca.jpg
+title: Coronavirus Campania, De Luca: chiudo i confini se la Lombardia riapre - Il Messaggero
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587139186825
+timestampEnd: 1587139208340
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587139241666
+timestampEnd: 1587139247657
+message: Previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-18;03:00;12.18;nuvoloso<br>2020-04-18;06:00;12.97;parzialmente nuvoloso<br>2020-04-18;09:00;17.93;nuvoloso<br>2020-04-18;12:00;21.27;nuvoloso<br>2020-04-18;15:00;22.67;parzialmente nuvoloso<br>2020-04-18;18:00;19.15;parzialmente nuvoloso<br>2020-04-18;21:00;15.99;nuvoloso<br>
+city: Milano
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587139279475
+timestampEnd: 1587139291749
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.15
+va in onda Momentum.Alle 23.05
+va in onda Never Back Down - Mai arrendersi.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587139322743
+timestampEnd: 1587139338453
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/top-of-the-world-workout.html
+imgUrl: https://darebee.com/images/workouts/top-of-the-world-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587145018227
+timestampEnd: 1587145032278
+message: consiglia canzone
+intent: Musica
+confidence: 0.6264335
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/7eJMfftS33KTjuF7lTsMCx
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587145050955
+timestampEnd: 1587145057052
+message: consiglia notizia
+intent: News
+confidence: 0.63850754
+answer: link: https://newsapi.org/v2/top-headlines?country=it&apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.lastampa.it/sport/calcio/2020/04/17/news/sarri-l-odio-verso-la-juventus-mi-ha-fatto-diventare-gobbo-1.38729843
+image: https://www.lastampa.it/image/contentid/policy:1.38729842:1587132858/Sarri.JPG?f=detail_558&h=720&w=1280&$p$f$h$w=c0ff388
+title: Sarri: “L’odio verso la Juventus mi ha fatto diventare ‘gobbo’...” - La Stampa
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587145077576
+timestampEnd: 1587145090909
+message: consiglia ricetta
+intent: Cibo
+confidence: 0.71911865
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587145103203
+timestampEnd: 1587145117942
+message: meteo
+intent: Meteo
+confidence: 0.8852928
+answer: res: 2020-04-18;03:00;12.33;cielo sereno<br>2020-04-18;06:00;15.43;cielo sereno<br>2020-04-18;09:00;20.02;cielo sereno<br>2020-04-18;12:00;21.95;cielo sereno<br>2020-04-18;15:00;20.84;parzialmente nuvoloso<br>2020-04-18;18:00;17.31;nubi sparse<br>2020-04-18;21:00;16.75;parzialmente nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587145149101
+timestampEnd: 1587145173214
+message: consiglio programma tv
+intent: Raccomandazione programma
+confidence: 0.74441546
+answer: Puoi guardare Italia 1:<br>Alle 21.15
+va in onda Twilight Ⅱ - New Moon.<br>Alle 23.40
+va in onda Warm Bodies.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587202278760
+timestampEnd: 1587202294741
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/6swHvavSroD4ur3Q18MjYz
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587202326091
+timestampEnd: 1587202333336
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.tgcom24.mediaset.it/mondo/coronavirus-italiano-a-seul-modello-corea-studiato-in-tutto-il-mondo_17376061-202002a.shtml
+image: https://img-prod.tgcom24.mediaset.it/images/2020/04/17/225941268-a8eb134c-8aba-4455-ae53-159057299ece.png
+title: Coronavirus, italiano a Seul: "Modello Corea studiato in tutto il mondo" - TGCOM
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587202347922
+timestampEnd: 1587202359472
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587202413321
+timestampEnd: 1587202426035
+message: consigliami le previsioni del meteo
+intent: Meteo
+confidence: 0.7641434
+answer: res: 2020-04-19;03:00;16.25;nuvoloso<br>2020-04-19;06:00;17.92;nuvoloso<br>2020-04-19;09:00;20;nuvoloso<br>2020-04-19;12:00;22.71;nuvoloso<br>2020-04-19;15:00;22.26;nubi sparse<br>2020-04-19;18:00;18.21;parzialmente nuvoloso<br>2020-04-19;21:00;17.73;nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587202446179
+timestampEnd: 1587202469650
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587202483937
+timestampEnd: 1587202509311
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/werewolf-workout.html
+imgUrl: https://darebee.com/images/workouts/werewolf-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587203886432
+timestampEnd: 1587203892196
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/54PxYcGpSUCmlpGdFGTaYR
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587203911456
+timestampEnd: 1587203920747
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilpost.it/2020/04/18/brasile-coronavirus-bolsonaro/
+image: https://www.ilpost.it/wp-content/uploads/2020/04/GettyImages-1219267262.jpg
+title: Bolsonaro non ha ancora cambiato idea sul coronavirus - Il Post
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587203934808
+timestampEnd: 1587203949792
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587203964319
+timestampEnd: 1587203973707
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;16.25;nuvoloso<br>2020-04-19;06:00;17.92;nuvoloso<br>2020-04-19;09:00;20;nuvoloso<br>2020-04-19;12:00;22.71;nuvoloso<br>2020-04-19;15:00;22.26;nubi sparse<br>2020-04-19;18:00;18.21;parzialmente nuvoloso<br>2020-04-19;21:00;17.73;nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587203986618
+timestampEnd: 1587204007531
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587204023858
+timestampEnd: 1587204039698
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/werewolf-workout.html
+imgUrl: https://darebee.com/images/workouts/werewolf-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587206036893
+timestampEnd: 1587206046480
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/7k4t7uLgtOxPwTpFmtJNTY
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587206071271
+timestampEnd: 1587206078225
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://milano.corriere.it/notizie/cronaca/20_aprile_18/lombardia-test-sierologici-23-aprile-come-coronavirus-7e4c91c8-80dc-11ea-ac8a-0c2cb4ad9c17.shtml
+image: https://images2-milano.corriereobjects.it/methode_image/2020/04/18/Interni/Foto-Interni-Trattate/14902669-0003-kPzF-U3180807884202qxC-526x284@Corriere-Web-Milano.jpg
+title: Coronavirus in Lombardia, il 23 aprile i primi test sierologici: come funziona e chi li farà - Living
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587206090888
+timestampEnd: 1587206103202
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587206118076
+timestampEnd: 1587206138437
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;16.25;nuvoloso<br>2020-04-19;06:00;17.92;nuvoloso<br>2020-04-19;09:00;20;nuvoloso<br>2020-04-19;12:00;22.71;nuvoloso<br>2020-04-19;15:00;22.26;nubi sparse<br>2020-04-19;18:00;18.21;parzialmente nuvoloso<br>2020-04-19;21:00;17.73;nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587206154629
+timestampEnd: 1587206167564
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587206184113
+timestampEnd: 1587206199584
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/exorcism-workout.html
+imgUrl: https://darebee.com/images/workouts/exorcism-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587212424738
+timestampEnd: 1587212437462
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/27aFwi2IT23cI7vckgG0s8
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587212448627
+timestampEnd: 1587212455006
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2020/04/18/coronavirus-guerra-oms-inevitabili-nuovi-focolai_63d88cc5-3c34-48b1-aa96-092ed9e7ddd2.html
+image: https://www.ansa.it/webimages/ch_700/2020/4/16/4b5c9b8592070c76808cdb56f982c819.jpg
+title: Coronavirus: Guerra (Oms), inevitabili nuovi focolai - Sanità - Agenzia ANSA
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587212468808
+timestampEnd: 1587212476179
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587212496045
+timestampEnd: 1587212505385
+message: Dimmi le previsioni meteo
+intent: Meteo
+confidence: 0.76980174
+answer: res: 2020-04-19;03:00;13.5;nuvoloso2020-04-19;06:00;13.99;nuvoloso2020-04-19;09:00;19.1;poco nuvoloso2020-04-19;12:00;23.58;poco nuvoloso2020-04-19;15:00;23.61;nuvoloso2020-04-19;18:00;20.13;nuvoloso2020-04-19;21:00;17.56;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587212528746
+timestampEnd: 1587212541024
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:<br>Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.<br>Alle 23.00
+va in onda È arrivato il Broncio.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587212569244
+timestampEnd: 1587212584087
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/great-hold-workout.html
+imgUrl: https://darebee.com/images/workouts/great-hold-workout.jpg
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587214999712
+timestampEnd: 1587215019115
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/5ChFLb70vqPgcH5zRbQ6h3
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587215080135
+timestampEnd: 1587215098964
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587215115261
+timestampEnd: 1587215124324
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;15.9;nuvoloso<br>2020-04-19;06:00;17.43;nuvoloso<br>2020-04-19;09:00;21.89;nuvoloso<br>2020-04-19;12:00;22.27;nuvoloso<br>2020-04-19;15:00;21.68;parzialmente nuvoloso<br>2020-04-19;18:00;18.28;parzialmente nuvoloso<br>2020-04-19;21:00;17.4;parzialmente nuvoloso<br>
+city: Bari
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587215139544
+timestampEnd: 1587215154948
+message: consigliami un  programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:<br>Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.<br>Alle 23.00
+va in onda È arrivato il Broncio.<br>
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587223387225
+timestampEnd: 1587223400261
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/5yfE6GXTuJaAlepKoE0wJE
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587223418294
+timestampEnd: 1587223431699
+message: hai una notizia per me?
+intent: News
+confidence: 0.72214997
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilmessaggero.it/salute/focus/coronavirus_veneto_morti_guariti_dimessi_zaia_regole_fase_2_ultime_notizie_news-5178303.html
+image: https://statics.cedscdn.it/photos/MED/83/03/5178303_1328_coronavisu_zaia_in.jpg
+title: Coronavirus Veneto, 23 nuovi decessi. Zaia: «Allentare subito le regole» - Il Messaggero Salute
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587223454280
+timestampEnd: 1587223455074
+message: ho fame, cosa mi consigli?
+intent: 
+confidence: 
+answer: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587223473760
+timestampEnd: 1587223482461
+message: che ricetta mi consgli?
+intent: Cibo
+confidence: 0.6365521
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587223585502
+timestampEnd: 1587223597820
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;13.36;nuvoloso2020-04-19;06:00;13.95;nubi sparse2020-04-19;09:00;19.2;cielo sereno2020-04-19;12:00;22.49;nubi sparse2020-04-19;15:00;22.96;nuvoloso2020-04-19;18:00;19.9;nuvoloso2020-04-19;21:00;17.28;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587223620061
+timestampEnd: 1587223636280
+message: che programma tv posso vedere?
+intent: Raccomandazione programma
+confidence: 0.7524325
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587228221417
+timestampEnd: 1587228239894
+message: Consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2rRJrJEo19S2J82BDsQ3F7
+explain: 
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587228266135
+timestampEnd: 1587228273649
+message: Consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.ilmessaggero.it/salute/focus/coronavirus_veneto_morti_guariti_dimessi_zaia_regole_fase_2_ultime_notizie_news-5178303.html
+image: https://statics.cedscdn.it/photos/MED/83/03/5178303_1328_coronavisu_zaia_in.jpg
+title: Coronavirus Veneto, 23 nuovi decessi. Zaia: «Allentare subito le regole» - Il Messaggero Salute
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587228286071
+timestampEnd: 1587228292016
+message: Consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587228307723
+timestampEnd: 1587228320686
+message: Previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;13.31;nuvoloso2020-04-19;06:00;13.95;nubi sparse2020-04-19;09:00;19.2;cielo sereno2020-04-19;12:00;22.49;nubi sparse2020-04-19;15:00;22.96;nuvoloso2020-04-19;18:00;19.9;nuvoloso2020-04-19;21:00;17.28;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587228336943
+timestampEnd: 1587228347615
+message: Consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587228361388
+timestampEnd: 1587228367555
+message: Consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/triathlete-workout.html
+imgUrl: https://darebee.com/images/workouts/triathlete-workout.jpg
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233458283
+timestampEnd: 1587233461922
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: 
+url: https://open.spotify.com/embed/track/2tVNMtgZ2CQpTx7vgcuTkL
+explain: Ti consiglio questa canzone perchè ho trovato il genere pop nei tuoi interessi
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233477699
+timestampEnd: 1587233483182
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/everything?q=Sport&amp;Language=it&amp;sortBy=publishedAt&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.tuttomercatoweb.com/serie-a/briatore-serie-a-se-gli-operai-tornano-in-fabbrica-possono-riprendere-anche-i-giocatori-1373236
+image: https://tmw-storage.tccstatic.com/storage/tuttomercatoweb.com/img_notizie/thumb3/c9e0d0c819d9987f561b12f327b6eb23-81198-95723157c8ebcac4750156d2b21ac04e.jpeg
+title: Briatore: "Serie A? Se gli operai tornano in fabbrica possono riprendere anche i giocatori"
+explain: Ti ho consigliato questo articolo perchè sei interessato a Sport
+click: false
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233510348
+timestampEnd: 1587233535442
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché  non fai abbastanza attività fisica 🥘
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233549891
+timestampEnd: 1587233559580
+message: previsioni meteo
+intent: Meteo
+confidence: 0.75676954
+answer: res: 2020-04-19;03:00;15;nuvoloso<br>2020-04-19;06:00;16.46;nuvoloso<br>2020-04-19;09:00;19.23;nuvoloso<br>2020-04-19;12:00;20.78;nuvoloso<br>2020-04-19;15:00;19.68;parzialmente nuvoloso<br>2020-04-19;18:00;16.02;parzialmente nuvoloso<br>2020-04-19;21:00;15.27;parzialmente nuvoloso<br>
+city: Andria
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233615755
+timestampEnd: 1587233639133
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: explain: Ti consiglio questo programma poichè il genere Commedia rientra nei tuoi interessi
+result: Ti consiglio:<br>Su La 7 alle ore 21.20
+ va in onda Cara, insopportabile Tess (FILM) Commedia-psicologico 1994
+feedback:si
+
+user: mirko@mirko.it
+timestampStart: 1587233679923
+timestampEnd: 1587233716213
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/super-hiit-workout.html
+imgUrl: https://darebee.com/images/workouts/super-hiit-workout.jpg
+explain: Ti ho consigliato questo allenamento perchè sei normopeso(calcolato in base al tuo bmi) e stai provando neutralità, quindi puoi svolgere qualunque tipo di allenamento
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587236690984
+timestampEnd: 1587236696826
+message: consigliami una notizia
+intent: News
+confidence: 0.77806777
+answer: link: https://newsapi.org/v2/top-headlines?country=it&amp;apiKey=17c1953c3cc7450d958ff14f9e262c02
+url: https://www.adnkronos.com/fatti/politica/2020/04/18/governo-valuta-jogging-anche-lontano-casa_l2mZArxqUf8T21f7ojNTGM.html
+image: https://www.adnkronos.com/rf/image_size_1280x960/Pub/AdnKronos/Assets/Immagini/2020/03/15/Coronavirus_Corsa_FG.jpg
+title: Governo valuta sì a jogging anche lontano da casa - Adnkronos
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587236690984
+timestampEnd: 1587236698850
+message: consigliami una canzone
+intent: Musica
+confidence: 1
+answer: param: vuoto
+url: https://open.spotify.com/embed/track/2rRJrJEo19S2J82BDsQ3F7
+explain: 
+feedback:si
+
+user: UtenteAnonimo
+timestampStart: 1587236690984
+timestampEnd: 1587236701021
+message: meteo
+intent: Meteo
+confidence: 0.8852928
+answer: res: 2020-04-19;03:00;13.41;nuvoloso2020-04-19;06:00;14.05;nubi sparse2020-04-19;09:00;19.2;cielo sereno2020-04-19;12:00;22.49;nubi sparse2020-04-19;15:00;22.96;nuvoloso2020-04-19;18:00;19.9;nuvoloso2020-04-19;21:00;17.28;nuvoloso
+city: Milano
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587236690984
+timestampEnd: 1587236719641
+message: consigliami una ricetta
+intent: Cibo
+confidence: 0.86517566
+answer: recipes: Array
+explain: Ti consiglio questa ricetta perché è molto popolare 🥘
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587236747028
+timestampEnd: 1587236832280
+message: consigliami un programma tv
+intent: Raccomandazione programma
+confidence: 0.7847395
+answer: Puoi guardare Italia 1:Alle 21.10
+va in onda Ozzy - Cucciolo coraggioso.Alle 23.00
+va in onda È arrivato il Broncio.
+feedback:no
+
+user: UtenteAnonimo
+timestampStart: 1587236839091
+timestampEnd: 1587236849562
+message: consigliami un allenamento
+intent: Allenamento personalizzato
+confidence: 0.7788313
+answer: url: https://darebee.com/workouts/refresh-workout.html
+imgUrl: https://darebee.com/images/workouts/refresh-workout.jpg
+feedback:si
+

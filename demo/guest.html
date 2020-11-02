@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class=''>
+  <head>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+   
+
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+
+    <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+    <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+    <link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" />
+    
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
+
+    <script src="https://use.typekit.net/hoy3lrg.js"></script>
+
+    <script>
+      try{
+        Typekit.load({ async: true });
+      }catch(e){
+      }
+    </script>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="css/stile.css" rel="stylesheet" type="text/css">
+
+
+  </head>
+
+  <body onload="welcomeIntent()">
+        <input id="contesto" type="hidden" value ="" />
+		<input id="spiegazione" type="hidden" value ="" />
+		<input id="intent" type="hidden" value ="" />
+		<input id="procedimento" type="hidden" value ="" />
+    <div id="frame">
+    	<div id="sidepanel">
+    		<div id="profile">
+    			<div class="wrap">
+    				<img id="profile-img" src="immagini/user.png" class="online" alt="" />
+
+    				<p class="nomeUtente">Nome utente</p> <!------- NOME PRESO DA MYRROR ---------->
+
+    			</div>
+    		</div>
+
+        <div id="contacts">
+    			<ul>
+    				
+    				<li class="contact active">
+    					<div class="wrap">
+    						<span class="contact-status busy"></span>
+    						<img src="immagini/chatbot.png" alt="" />
+    						<div class="meta">
+    							<p class="name">MyrrorBot</p> <!------------------------------ NOME DEL CHATBOT --------------------------------------------------->
+
+    							<p class="preview">Ciao! 😄 Sono il tuo assistente personale. Sono in grado di fornirti informazioni sul tuo stato fisico, sui tuoi interessi e sulla personalità. Posso consigliarti canzoni, musica e video in base alle tue emozioni e preferenze.</p>
+    						</div>
+    					</div>
+    				</li>
+    			</ul>
+    		</div>
+            <div id="bottom-bar">
+                <button id="logout"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span><a href="index.html">Logout</a></span></button>
+            </div>
+    	</div>
+    	<div class="content">
+    		<div class="contact-profile">
+    			<img src="immagini/chatbot.png" alt="" />
+
+    			<p>MyrrorBot</p> <!------------------------------------ NOME DEL CHATBOT --------------------------------------------------->
+
+    			<div class="social-media">
+                    <a href=""><img src ="immagini/itaFlag.png" aria-hidden="true" alt="" /></a>
+                    <a href="/en/guest.html"><img src ="immagini/ukFlag.png" aria-hidden="true" alt="" /></a>
+                </div>
+    		</div>
+    		<div class="messages">
+    			<ul class="chat"> <!-- In questo spazio vengono incluse le domande con le risposte (script.js) -->
+    				<!--<li class="sent">
+    					<img src="immagini/user.png" alt="" />
+    					<p>Ciao come stai?!</p>
+    				</li>
+    				<li class="replies">
+    					<img src="immagini/chatbot.png" alt="" />
+    					<p>Tutto bene</p>
+    				</li>
+    				-->
+    			</ul>
+    		</div>
+    		<div class="message-input">
+    			<div class="wrap">
+    			<input type="text" placeholder="Scrivi il tuo messaggio..." />
+    			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    			</div>
+    		</div>
+    	</div>
+
+    </div>
+
+ 
+
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWpwNL0Q3Jow97zfsKtc-lspifV-s6ezw"
+  type="text/javascript"></script>
+  
+    <script src='js/guest.js'></script>
+  <script src='js/position.js'></script>
+  <script src='js/rate.js'></script>
+
+
+  </body>
+</html>

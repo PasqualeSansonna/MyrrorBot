@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="Login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="Login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="Login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="Login/css/main.css">
+<!--===============================================================================================-->
+
+<link rel="stylesheet" type="text/css" href="Login/css/loginStyle.css">
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">  
+    $(document).ready(function() {  
+    
+    	//Loader non presente
+    	document.getElementById("loader").style.display = "none";
+
+
+      $("#form").submit(function(){  
+        var email = $("#email").val();  
+        var password = $("#password").val();  
+        
+	
+        $.ajax({  
+          type: "POST",
+          url: "/Login/login.php",  
+          data: "email=" + email + "&password=" + password,
+          dataType: "html",
+          success: function(risposta) {  
+          	console.log(risposta);
+                
+            //Quando le credenziali sono errate, viene rilasciata un token con 7 spazi vuoti
+            if(risposta.length != 7){
+                var token = risposta; //Token utilizzato per effettuare le richieste
+
+                caricaPagina();//Inizia il caricamento della pagina fino a quando i file non sono stati creati
+
+                //Se le credenziali sono corrette, creo i file json per la lettura
+                $.ajax({
+					type:'POST',
+					url: '/php/json_creation.php',
+					data: "email=" + email + "&password=" + password + "&token=" + token,
+					dataType: "html",
+					success:function(response){
+						alert(response);
+						document.cookie ="myrror="+email;
+						if (response.localeCompare("ok") == 1) {
+							showPage(); //Termino il caricmaneto e mostro la pagina
+						}
+					}
+				});
+                
+
+            }else{
+           		window.alert("Email o password errata");
+            }
+
+            
+          },
+          error: function(){
+            alert("Chiamata fallita!");
+          } 
+        }); 
+        return false;  
+      });
+    });
+    </script>  
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="Login/images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" id="form">
+					<span class="login100-form-title">
+						Myrror Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" id="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" id="password"  placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" value="invia" id="invia" type="submit">
+							Login
+						</button>
+						<div>
+							<a class="txt2" href="guest.html">
+								Login come Guest
+							</a>
+						</div>
+					</div>
+
+					<div id="loader"></div>
+
+					<!--<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>-->
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="http://90.147.102.243:9090/">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="Login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="Login/vendor/bootstrap/js/popper.js"></script>
+	<script src="Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="Login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="Login/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="Login/js/main.js"></script>
+
+
+<!-- SCRIPT PER IL LOADER -->
+<script>
+	var myVar;
+
+	function caricaPagina() {
+	  document.getElementById("loader").style.display = "inline";
+	  //myVar = setTimeout(showPage, 3000);
+	}
+
+	function showPage() {
+	  document.getElementById("loader").style.display = "none";
+	  window.location.href = '/chatbot.html';
+	}
+</script>
+
+</body>
+</html>	

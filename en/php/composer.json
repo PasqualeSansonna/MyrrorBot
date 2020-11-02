@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/cloud-dialogflow": "^0.8.3",
+        "jwilsson/spotify-web-api-php": "^2.6"
+    }
+}
