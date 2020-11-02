@@ -5,7 +5,7 @@ var timestamp;
 var imageURL;
 var email = "cat@cat.it";
 //email = 'demo@demo.it'; decomentare qui e riga 108  e commentare le righe window.location.href per DEMO
-
+//prova git
 var flagcitta = false;
 
 function getEmail() {
