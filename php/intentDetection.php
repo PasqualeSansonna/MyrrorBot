@@ -31,7 +31,7 @@ include 'Tv.php';
 $city = "Bari";
 header('Content-type: text/plain; charset=utf-8');
  ini_set('display_errors', 1);
-//Controllo se la variabile 'testo' ricevuta è nulla
+//Controllo se la variabile 'testo' ricevuta Ã¨ nulla
 if (isset($_POST{'testo'})) {
     $testo = $_POST{'testo'};
     if( stripos($testo, 'weekend') !== false  
@@ -172,11 +172,18 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Emozioni binario':
                 $answer = getSentimentBinario(1,$resp,$parameters,$email);
                 break;
-
+            case 'Forma fisica':
+                $answer = getFormaFisica($resp,$parameters,$text,$email);
+                break;
+            case 'Sesso':
+                $answer = getSesso($resp,$parameters,$text,$email);
+                break;
+            case 'Nazione':
+                $answer = getNazione($resp,$parameters,$text,$email);
+                break;
             case 'Umore':
                 $answer = getSentiment(0,$resp,$parameters,$email);
                 break;
-
             case 'Umore binario':
                 $answer = getSentimentBinario(0,$resp,$parameters,$email);
                 break;
@@ -349,6 +356,7 @@ try {
     $responseBody = $exception->getResponse()->getBody(true);
     echo $responseBody;
 }
+
 
 
 

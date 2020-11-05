@@ -166,7 +166,7 @@ function citta($email)
 		$param = "";
 		$json_data = queryMyrror($param,$email);
 		$result = null;
-		$città = null;
+		$cittÃ  = null;
 		//echo"la mail e".$email;
 		foreach ($json_data as $key1 => $value1) {
 			if(isset($value1['location'])){
@@ -180,15 +180,15 @@ function citta($email)
 		}
 
 		if(isset($result['value'])){
-			$città = $result['value'];
+			$cittÃ  = $result['value'];
 		}
-		return $città;
+		return $cittÃ ;
 
 }
 
 
 //Funzione che legge il parametro Location[{"value"}] del profilo olistico e restituisce
-//una risposta relativa alla città dove si vive
+//una risposta relativa alla cittÃ  dove si vive
 function Ultimacitta($email)
 {
 		$answer = "";
@@ -196,7 +196,7 @@ function Ultimacitta($email)
 		if(isset($city)) {
 			$answer = "Vivi a ".$city."";
 		}else{
-			$answer = "Non sono riuscito a reperire le informazioni relative alla tua ultima città. Verifica che sia presente nel tuo account";
+			$answer = "Non sono riuscito a reperire le informazioni relative alla tua ultima cittÃ . Verifica che sia presente nel tuo account";
 		}
 		return $answer;
 
@@ -286,5 +286,58 @@ function email($resp,$parameters,$text,$email){
 	}
 
 	return $answer;
+}
+
+function getSesso($resp,$parameters,$text,$email){
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $result = null;
+
+    foreach ($json_data as $key1 => $value1) {
+        if(isset($value1['gender'])){
+
+            foreach ($value1['gender'] as $key2 => $value2) {
+                if ($key2 == "value") {
+                    $result = $value2;
+                }
+            }
+        }
+    }
+
+    if (isset($result)) {
+
+        $answer = str_replace("X",$result['value'],$resp);
+
+    }else{
+        $answer = "Non sono riuscito a reperire le informazioni relative al tuo sesso &#x1F62D;. Verifica che sia presente nel tuo account";
+    }
+
+    return $answer;
+}
+function getNazione($resp,$parameters,$text,$email){
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $result = null;
+
+    foreach ($json_data as $key1 => $value1) {
+        if(isset($value1['country'])){
+
+            foreach ($value1['country'] as $key2 => $value2) {
+                if ($key2 == "value") {
+                    $result = $value2;
+                }
+            }
+        }
+    }
+
+    if (isset($result)) {
+
+        $answer = str_replace("X",$result['value'],$resp);
+
+    }else{
+        $answer = "Non sono riuscito a reperire le informazioni relative alla tua nazionalitÃ  &#x1F62D;. Verifica che sia presente nel tuo account";
+    }
+
+    return $answer;
 }
 
