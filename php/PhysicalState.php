@@ -1426,21 +1426,21 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 
 
 
-/*function getAnalysisControl($resp,$parameters,$email){
+function getAnalysisControl($resp,$parameters,$email){
 
-	$param = "";
+    $param = "";
 	$json_data = queryMyrror($param,$email);
 
 	$analysisArray = array();
 
-	foreach ($json_data as $key2 => $value2) {
+    foreach ($json_data as $key2 => $value2) {
 
-		if($key2 == "physicalStates"){
-			foreach ($value2 as $key1 => $value1) {
+        if($key2 == "physicalStates"){
+            foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
                     foreach($value1 as $key => $value){
-                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'analysisName'
+                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
 
                             $result = $value['result'];
                             $min = $value['min'];
@@ -1448,52 +1448,50 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 
                             if($result >= $max || $result<= $min){
 
-                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            
-                            $analysisArray[] = $analysis;
+                                $analysis = $value['analysisName']; //Prendo il nome dell'analisi
+                        
+                                $analysisArray[] = $analysis;
                             }
+                    
+
                         }
                     }
                 }
-				
-			}
-        }	
+            }
+        }
+    }  
+    
+    //Se è valorizzato l'array, stampo le analisi
+    if (isset($analysisArray)) {
+        $answer = $resp;
+
+        if (count($analysisArray) != 0) {
+            foreach ($analysisArray as $key => $value){
+                $answer = $answer . " " . $value .", " ;
+            }
+
+            //Rimuovo lo spazio con la virgola finale
+            $answer = substr($answer, 0, -2);
+        }else {
+            $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+        }
+
+    }else{
+        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
     }
 
-    //Se è valorizzato l'array, stampo le analisi
-	if (isset($analysisArray)) {
-		$answer = $resp;
-
-		if (count($analysisArray) != 0) {
-			foreach ($analysisArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
-
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
-		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
-		}
-
-	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
-	}
-
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
-	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
-	}
+    //A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+    if ($answer == null) {
+        $answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+    }
 
 	return $answer;
 
+}
 
 
-
-}*/
-
-
-//Restuisce l'elenco delle analisi
-/*function getAnalysisResult($resp,$parameters,$email){
+//Restuisce il risultato delle analisi
+function getAnalysisResult($resp,$parameters,$email){
 
 	$param = "";
 	$json_data = queryMyrror($param,$email);
@@ -1508,7 +1506,7 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
                     foreach($value1 as $key => $value){
                         if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
 
-                            $result = $value['result']; //Prendo il nome dell'analisi
+                            $result = $value['result']; //Prendo il risultato dell'analisi
                             
                         }
                     }
@@ -1516,22 +1514,20 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 				
 			}
         }	
-    }
-
-    
-		$answer = $resp;
-
-   				$answer = $answer . " " . $result;
-        		
+    }    
+		
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
-	if ($answer == null) {
+	if ($result == null) {
 		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
-	}
+    }
+    else {
+        $answer = $resp . " " . $result;
+    }
 
 	return $answer;
 
-}*/
+}
 
 
 

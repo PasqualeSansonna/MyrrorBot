@@ -292,13 +292,13 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getAnalysisPeriod($resp,$parameters,$text,$email);
                 break;
 
-            /*case 'Analisi sotto controllo':
+            case 'Analisi sotto controllo':
                 $answer = getAnalysisControl($resp,$parameters,$email);
                 break;
 
             case 'Risultati analisi':
                 $answer = getAnalysisResult($resp,$parameters,$email);
-                break;*/
+                break;
 
             case 'Terapie':
                 $answer = getTherapies($resp,$parameters,$email);
