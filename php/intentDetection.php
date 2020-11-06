@@ -278,7 +278,44 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
 
             case 'Raccomandazione programma':
             	$answer = recommendTV($resp,$parameters,$text,$email);
-            	break;         
+                break; 
+
+            case 'Diagnosi':
+                $answer = getDiagnosis($resp,$parameters,$email);
+                break;
+            
+            case 'Analisi':
+                $answer = getAnalysis($resp,$parameters,$email);
+                break;
+            
+            /*case 'Analisi periodo':
+                $answer = getAnalysisPeriod($resp,$parameters,$text,$email);
+
+            case 'Analisi sotto controllo':
+                $answer = getAnalysisControl($resp,$parameters,$email);
+
+            case 'Risultati analisi':
+                $answer = getAnalysisResult($resp,$parameters,$email);*/
+
+            case 'Terapie':
+                $answer = getTherapies($resp,$parameters,$email);
+                break;
+
+            case 'Area medica':
+                $answer = getMedicalAreas($resp,$parameters,$email);
+                break;
+
+            case 'Visite mediche':
+                $answer = getMedicalVisits($resp,$parameters,$email);
+                break;
+
+            case 'Patologie':
+                $answer = getDiseases($resp,$parameters,$email);
+                break;
+
+            case 'Ricoveri':
+                $answer = getHospitalizations($resp,$parameters,$email);
+                break;
                 
 			
             default:

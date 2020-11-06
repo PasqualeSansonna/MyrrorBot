@@ -1306,7 +1306,573 @@ function getBmi($json){
     return $foundBmi;
 }
 
+//Restuisce l'elenco delle analisi
+function getAnalysis($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$analysisArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+
+                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
+                            
+                            $analysisArray[] = $analysis;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le analisi
+	if (isset($analysisArray)) {
+		$answer = $resp;
+
+		if (count($analysisArray) != 0) {
+			foreach ($analysisArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle analisi di un certo periodo
+/*function getAnalysisPeriod($resp,$parameters, $text,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$analysisArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+
+                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
+                            
+                            $data = $value['timestamp'];
+                            $startDate = substr($parameters['date-period']['startDate'], 0, 10);
+                            $endDate = substr($parameters['date-period']['endDate'], 0, 10);
+                            
+                            if($data <= $endDate && $data >= $startDate) {
+                            $analysisArray[] = $analysis;
+                            }
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le analisi
+	if (isset($analysisArray)) {
+		$answer = $resp;
+
+		if (count($analysisArray) != 0) {
+			foreach ($analysisArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}*/
+
+
+
+/*function getAnalysisControl($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$analysisArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'analysisName'
+
+                            $result = $value['result'];
+                            $min = $value['min'];
+                            $max = $value['max'];
+
+                            if($result >= $max || $result<= $min){
+
+                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
+                            
+                            $analysisArray[] = $analysis;
+                            }
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le analisi
+	if (isset($analysisArray)) {
+		$answer = $resp;
+
+		if (count($analysisArray) != 0) {
+			foreach ($analysisArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
 
 
 
 
+}*/
+
+
+//Restuisce l'elenco delle analisi
+/*function getAnalysisResult($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
+
+                            $result = $value['result']; //Prendo il nome dell'analisi
+                            
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    
+		$answer = $resp;
+
+   				$answer = $answer . " " . $result;
+        		
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}*/
+
+
+
+//Restuisce l'elenco delle diagnosi
+function getDiagnosis($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$diagnosisArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "diagnosis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
+
+                            $diagnosis = $value['diagnosis_name']; //Prendo il nome delle diagnosi
+                            
+                            $diagnosisArray[] = $diagnosis;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le diagnosi
+	if (isset($diagnosisArray)) {
+		$answer = $resp;
+
+		if (count($diagnosisArray) != 0) {
+			foreach ($diagnosisArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle terapie
+function getTherapies($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$therapiesArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
+
+                            $therapy = $value['therapyName']; //Prendo il nome delle terapie
+                            
+                            $therapiesArray[] = $therapy;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le terapie
+	if (isset($therapiesArray)) {
+		$answer = $resp;
+
+		if (count($therapiesArray) != 0) {
+			foreach ($therapiesArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle aree mediche
+function getMedicalAreas($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$medicalAreasArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalAreas"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['medicalArea'])) {//Verifico se è valorizzata la variabile 'medicalArea'
+
+                            $medicalArea = $value['medicalArea']; //Prendo il nome delle area medica
+                            
+                            $medicalAreasArray[] = $medicalArea;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le aree mediche
+	if (isset($medicalAreasArray)) {
+		$answer = $resp;
+
+		if (count($medicalAreasArray) != 0) {
+			foreach ($medicalAreasArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue aree mediche &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle visite mediche
+function getMedicalVisits($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$medicalVisitsArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalVisits"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
+
+                            $medicalVisit = $value['nameVisit']; //Prendo il nome delle visita medica
+                            
+                            $medicalVisitsArray[] = $medicalVisit;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le visite mediche
+	if (isset($medicalVisitsArray)) {
+		$answer = $resp;
+
+		if (count($medicalVisitsArray) != 0) {
+			foreach ($medicalVisitsArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle patologie
+function getDiseases($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$diseasesArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "diseases"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['nameDisease'])) {//Verifico se è valorizzata la variabile 'nameDisease'
+
+                            $disease = $value['nameDisease']; //Prendo il nome delle patologia
+                            
+                            $diseasesArray[] = $disease;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le patologie
+	if (isset($diseasesArray)) {
+		$answer = $resp;
+
+		if (count($diseasesArray) != 0) {
+			foreach ($diseasesArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue patologie &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco dei ricoveri
+function getHospitalizations($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$hospitalizationsArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "hospitalizations"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
+
+                            $hospitalization = $value['name']; //Prendo il nome dei ricoveri
+                            
+                            $hospitalizationsArray[] = $hospitalization;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le patologie
+	if (isset($hospitalizationsArray)) {
+		$answer = $resp;
+
+		if (count($hospitalizationsArray) != 0) {
+			foreach ($hospitalizationsArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare i tuoi ricoveri &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
