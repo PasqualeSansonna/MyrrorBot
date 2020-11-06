@@ -1364,7 +1364,7 @@ function getAnalysis($resp,$parameters,$email){
 
 
 //Restuisce l'elenco delle analisi di un certo periodo
-/*function getAnalysisPeriod($resp,$parameters, $text,$email){
+function getAnalysisPeriod($resp,$parameters, $text,$email){
 
 	$param = "";
 	$json_data = queryMyrror($param,$email);
@@ -1380,13 +1380,14 @@ function getAnalysis($resp,$parameters,$email){
                     foreach($value1 as $key => $value){
                         if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
 
+                            $timestamp = $value['timestamp'];
+                            $data = substr($timestamp, 0, 10);
+
+                            $startDate = strtotime($parameters['date-period']['startDate']);
+                            $endDate = strtotime($parameters['date-period']['endDate']);
+                            
+                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
                             $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            
-                            $data = $value['timestamp'];
-                            $startDate = substr($parameters['date-period']['startDate'], 0, 10);
-                            $endDate = substr($parameters['date-period']['endDate'], 0, 10);
-                            
-                            if($data <= $endDate && $data >= $startDate) {
                             $analysisArray[] = $analysis;
                             }
                         }
@@ -1398,7 +1399,7 @@ function getAnalysis($resp,$parameters,$email){
     }
 
     //Se è valorizzato l'array, stampo le analisi
-	if (isset($analysisArray)) {
+	
 		$answer = $resp;
 
 		if (count($analysisArray) != 0) {
@@ -1409,12 +1410,10 @@ function getAnalysis($resp,$parameters,$email){
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+			$answer = "Non ci sono analisi nel periodo specificato.";
 		}
 
-	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
-	}
+	
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($answer == null) {
@@ -1423,7 +1422,7 @@ function getAnalysis($resp,$parameters,$email){
 
 	return $answer;
 
-}*/
+}
 
 
 
