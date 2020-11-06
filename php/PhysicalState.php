@@ -1442,6 +1442,27 @@ function getAnalysisControl($resp,$parameters,$email){
                     foreach($value1 as $key => $value){
                         if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
 
+                            if(isset($parameters['Analisi'])){
+                                if($parameters['Analisi'] == $value['analysisName']){
+                                    $result = $value['result'];
+                                    $min = $value['min'];
+                                    $max = $value['max'];
+
+                                    if($result <= $max && $result>= $min){
+                                        $answer = $resp . " " . "è nella media";
+                                        return $answer;
+                                    }else{
+                                        if($result > $max){
+                                            $answer = $resp . " " . "è sopra la media";
+                                            return $answer;
+                                        }else{
+                                            $answer = $resp . " " . "è sotto la media";
+                                            return $answer;
+                                        }
+                                    }
+                                }
+                            }
+
                             $result = $value['result'];
                             $min = $value['min'];
                             $max = $value['max'];
@@ -1529,6 +1550,35 @@ function getAnalysisResult($resp,$parameters,$email){
 
 }
 
+function getAnalysisBinary($parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
+                            $answer = "Si, hai effettuato quest'analisi.";
+                        }
+                    }
+			    }
+            }	
+        }    
+    }
+    
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($parameters['Analisi'] == '') {
+		$answer = "No, non hai effettuato quest'analisi.";
+    }
+	return $answer;
+
+}
 
 
 //Restuisce l'elenco delle diagnosi

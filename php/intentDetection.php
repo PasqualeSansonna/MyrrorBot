@@ -287,6 +287,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Analisi':
                 $answer = getAnalysis($resp,$parameters,$email);
                 break;
+
+            case 'Analisi binario':
+                $answer = getAnalysisBinary($parameters,$email);
+                break;
             
             case 'Analisi periodo':
                 $answer = getAnalysisPeriod($resp,$parameters,$text,$email);
