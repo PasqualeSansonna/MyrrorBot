@@ -1825,7 +1825,8 @@ function getMedicalAreas($resp,$parameters,$email){
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$medicalAreasArray = array();
+    $medicalAreasArray = array();
+    
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -1846,6 +1847,18 @@ function getMedicalAreas($resp,$parameters,$email){
 			}
         }	
     }
+
+    if(isset($parameters['ultimo'])){
+
+        $ultimo = end($medicalAreasArray);
+        $answer = $resp . " " . $ultimo;
+
+        return $answer;
+
+    }
+
+
+
 
     //Se è valorizzato l'array, stampo le aree mediche
 	if (isset($medicalAreasArray)) {
