@@ -1638,6 +1638,69 @@ function getDiagnosis($resp,$parameters,$email){
 }
 
 
+//Restuisce l'elenco delle diagnosi di un certo periodo
+function getDiagnosisPeriod($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$diagnosisArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "diagnosis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
+
+                            $timestamp = $value['timestamp'];
+                            $data = substr($timestamp, 0, 10);
+
+                            $startDate = strtotime($parameters['date-period']['startDate']);
+                            $endDate = strtotime($parameters['date-period']['endDate']);
+                            
+                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            $diagnosis = $value['diagnosis_name']; //Prendo il nome della diagnosi
+                            $diagnosisArray[] = $diagnosis;
+                            }
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le diagnosi
+	
+		$answer = $resp;
+
+		if (count($diagnosisArray) != 0) {
+			foreach ($diagnosisArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Non ci sono diagnosi nel periodo specificato.";
+		}
+
+	
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+
 //Restuisce l'elenco delle terapie
 function getTherapies($resp,$parameters,$email){
 
@@ -1684,6 +1747,67 @@ function getTherapies($resp,$parameters,$email){
 	}else{
 		$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
 	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+//Restuisce l'elenco delle terapie di un certo periodo
+function getTherapiesPeriod($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$therapiesArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
+
+                            
+                            $data = strtotime($value['start_date']);
+                            $startDate = strtotime($parameters['date-period']['startDate']);
+                            $endDate = strtotime($parameters['date-period']['endDate']);
+                            
+                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            $therapies = $value['therapyName']; //Prendo il nome della terapia
+                            $therapiesArray[] = $therapies;
+                            }
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le terapie
+	
+		$answer = $resp;
+
+		if (count($therapiesArray) != 0) {
+			foreach ($therapiesArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+			$answer = "Non ci sono terapie nel periodo specificato.";
+		}
+
+	
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($answer == null) {
