@@ -1722,16 +1722,6 @@ function getTherapies($resp,$parameters,$email){
                             $therapy = $value['therapyName']; //Prendo il nome delle terapie
                             $therapiesArray[] = $therapy; //tutte le terapie
 
-                            if(isset($parameters['Durata_terapia'])){
-                                $durata = $parameters['Durata_terapia'];
-                                if($durata == "conclusa" || $durata == "concluse" || $durata == "concluso" || $durata == "conclusi"){
-                                    if (isset($value['endDate'])){
-                                        $therapiesEndedArray[] = $therapy;
-                                    }else{
-                                        $therapiesInProgressArray[] = $therapy;
-                                    }
-                                }
-                            }
                         }
                     }
 				}
@@ -1826,6 +1816,79 @@ function getTherapiesPeriod($resp,$parameters,$email){
 
 	return $answer;
 
+}
+
+function getTherapiesInProgEnded($resp,$parameters,$email){
+    $param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $therapiesInProgArray = array();
+    $therapiesEndedArray = array();
+    $today = strtotime("now"); //data odierna
+    
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
+
+                            if(isset($parameters['Durata_terapia'])){
+                                $durata = $parameters['Durata_terapia'];
+                                $endDate = strtotime($value['end_date']);
+                                if($durata == "concluso" || $durata == "conclusa" || $durata == "conclusi" || $durata == "concluse" ){
+                                    if(($value['end_date'] != null) && ($endDate < $today)){
+                                        $therapies = $value['therapyName']; //Prendo il nome della terapia
+                                        $therapiesEndedArray[] = $therapies;
+                                    }
+                                }else{
+                                    if(($value['end_date'] == null) || ($endDate > $today)){
+                                    $therapies = $value['therapyName']; //Prendo il nome della terapia
+                                    $therapiesInProgArray[] = $therapies;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    //Se è valorizzato l'array, stampo le terapie
+	
+		$answer = $resp;
+
+		if (count($therapiesInProgArray)!=0) {
+            
+            foreach ($therapiesInProgArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}else {
+
+			foreach ($therapiesEndedArray as $key => $value){
+   				$answer = $answer . " " . $value .", " ;
+        	}
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+		}
+	
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
 }
 
 

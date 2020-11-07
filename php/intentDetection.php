@@ -316,6 +316,9 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getTherapiesPeriod($resp,$parameters,$email);
                 break;
 
+            case 'Terapie in corso/concluse':
+                $answer = getTherapiesInProgEnded($resp,$parameters,$email);
+                break;
             case 'Area medica':
                 $answer = getMedicalAreas($resp,$parameters,$email);
                 break;
