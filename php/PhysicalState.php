@@ -1699,7 +1699,31 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
 }
 
+function giorno($d){
+ 
+    //attento la data deve essere nel formato yyyy-mm-gg
+    //anche come separatori (se altri separatori devi modificare)
+    $d_ex=explode("-", $d);//attento al separatore
+    $d_ts=mktime(0,0,0,$d_ex[1],$d_ex[2],$d_ex[0]);
+    $num_gg=(int)date("N",$d_ts);//1 (for Monday) through 7 (for Sunday)
+    //per nomi in italiano
+    $giorno=array('','lunedì','martedì','mercoledì','giovedì','venerdì','sabato','domenica');//0 vuoto
+    return $giorno[$num_gg];
+}
 
+
+function delta_tempo ($data_iniziale,$data_finale,$unita) {
+    
+        switch($unita) {
+               case "m": $unita = 1/60; break;       //MINUTI
+               case "h": $unita = 1; break;          //ORE
+               case "g": $unita = 24; break;         //GIORNI
+               case "a": $unita = 8760; break;         //ANNI
+        }
+     
+     $differenza = (($data_finale-$data_iniziale)/3600)/$unita;
+     return $differenza;
+}
 
 //Restuisce l'elenco delle terapie
 function getTherapies($resp,$parameters,$email){
@@ -1707,7 +1731,10 @@ function getTherapies($resp,$parameters,$email){
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$therapiesArray = array();
+    $therapiesArray = array();
+    $answerDrug = $resp;
+    
+    
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -1715,7 +1742,64 @@ function getTherapies($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+
                     foreach($value1 as $key => $value){
+
+                        if(isset($parameters['date'])){
+                            $today = strtotime($parameters['date']);
+                            $giornoToday = giorno(substr($parameters['date'], 0, 10));
+                            $startDate = strtotime($value['start_date']);
+                            $endDate = strtotime($value['end_date']);
+
+
+                            if(($value['end_date'] == null) || ($endDate > $today)){
+
+                                $type=$value['type'];
+
+                                switch($type){
+
+                                    case "EVERY_DAY":
+                                        $drugName = $value['drug_name']; //Prendo il nome del farmaco
+                                        $answerDrug = $answerDrug . " " . $drugName;
+                                        break;
+                                        
+
+                                    case "INTERVAL":
+                                        $intervalDays = $value['interval_days'];
+                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
+                                        if((int)($giorniDaStartDate % $intervalDays) == 0){
+                                            $drugName = $value['drug_name'];
+                                            $answerDrug = $answerDrug . " " . $drugName;
+                                        }
+                                        break;
+
+                                    case "SOME_DAY":
+                                        if($value['day'] == $giornoToday){
+
+                                            $drugName = $value['drug_name']; //Prendo il nome del farmaco
+                                            $answerDrug = $answerDrug . " " . $drugName;
+
+                                        }
+                                        break;
+
+                                        case "ODD_DAY":
+                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
+                                        $answerDrug = $answerDrug . " kitty ";
+                                        $resto = (int)($giorniDaStartDate % 2);
+                                        if($resto == 0){
+                                            $drugName = $value['drug_name'];
+                                            $answerDrug = $answerDrug . " " . $drugName;
+                                        }
+                                        break;
+                                            
+                                }
+                                
+
+                            }
+                            
+                                
+                        }
+
 
                         if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
 
@@ -1723,7 +1807,11 @@ function getTherapies($resp,$parameters,$email){
                             $therapiesArray[] = $therapy; //tutte le terapie
 
                         }
+
                     }
+                    return $answerDrug;
+
+                    
 				}
             }	
         }
