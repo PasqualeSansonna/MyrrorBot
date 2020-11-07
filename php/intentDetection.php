@@ -319,6 +319,7 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Terapie in corso/concluse':
                 $answer = getTherapiesInProgEnded($resp,$parameters,$email);
                 break;
+
             case 'Area medica':
                 $answer = getMedicalAreas($resp,$parameters,$email);
                 break;
@@ -326,13 +327,29 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Visite mediche':
                 $answer = getMedicalVisits($resp,$parameters,$email);
                 break;
-
+    
+            case 'Visite mediche periodo':
+                $answer = getMedicalVisitsPeriod($resp,$parameters,$email);
+                break;
+    
             case 'Patologie':
                 $answer = getDiseases($resp,$parameters,$email);
+                break;
+    
+            case 'Patologie periodo':
+                $answer = getDiseasesPeriod($resp,$parameters,$email);
+                break;
+    
+            case 'Patologie binario':
+                $answer = getDiseasesBinary($parameters,$email);
                 break;
 
             case 'Ricoveri':
                 $answer = getHospitalizations($resp,$parameters,$email);
+                break;
+
+            case 'Ricoveri periodo':
+                $answer = getHospitalizationsPeriod($resp,$parameters,$email);
                 break;
                 
 			
