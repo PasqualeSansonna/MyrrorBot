@@ -1716,17 +1716,27 @@ function getTherapies($resp,$parameters,$email){
 
                 if($key1 == "therapies"){
                     foreach($value1 as $key => $value){
+
                         if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
 
                             $therapy = $value['therapyName']; //Prendo il nome delle terapie
-                            
-                            $therapiesArray[] = $therapy;
+                            $therapiesArray[] = $therapy; //tutte le terapie
+
+                            if(isset($parameters['Durata_terapia'])){
+                                $durata = $parameters['Durata_terapia'];
+                                if($durata == "conclusa" || $durata == "concluse" || $durata == "concluso" || $durata == "conclusi"){
+                                    if (isset($value['endDate'])){
+                                        $therapiesEndedArray[] = $therapy;
+                                    }else{
+                                        $therapiesInProgressArray[] = $therapy;
+                                    }
+                                }
+                            }
                         }
                     }
-                }
-				
-			}
-        }	
+				}
+            }	
+        }
     }
 
     //Se è valorizzato l'array, stampo le terapie
