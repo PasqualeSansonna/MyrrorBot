@@ -1984,6 +1984,63 @@ function getMedicalVisits($resp,$parameters,$email){
                             $medicalVisitsArray[] = $medicalVisit;
                         }
                     }
+
+                    if(isset($parameters['ultimo'])){
+
+                        $ultimo = end($medicalVisitsArray);
+                        foreach($value1 as $key => $value){
+                            if($value['nameVisit'] == $ultimo){
+                                $dateVisit = $value['dateVisit'];
+                                $nameDoctor = $value['nameDoctor'];
+                                $surnameDoctor = $value['surnameDoctor'];
+                                $nameFacility = $value['nameFacility'];
+                                $cityFacility = $value['cityFacility'];
+                                $descriptionFacility = $value['descriptionFacility'];
+                                $typology = $value['typology'];
+                                $diagnosis = $value['diagnosis'];
+                                $medicalPrescription = $value['medicalPrescription'];
+                                $notePatient = $value['notePatient'];
+                
+                                $answer = $resp . " " . $ultimo;
+
+                                if(isset($typology)){
+                                    $answer = $answer . " (" . $typology . ")";
+                                }
+                                if(isset($startDate)){
+                                    $answer = $answer . " in data " . $dateVisit ;
+                                }
+                                if(isset($nameDoctor) || isset($surnameDoctor)){
+                                    $answer = $answer . " eseguita dal dottor " . $nameDoctor . " " . $surnameDoctor;
+                                }
+                                if(isset($nameFacility)){
+                                    $answer = $answer . " presso la struttura" . $nameFacility;
+                                }
+                                if(isset($cityFacility)){
+                                    $answer = $answer . " della città di " . $cityFacility;
+                                }
+                                if(isset($descriptionFacility)){
+                                    $answer = $answer . "(" . $descriptionFacility . ")";
+                                }
+                                if(isset($diagnosis)){
+                                    $answer = $answer . ". La diagnosi è stata " . $diagnosis;
+                                }
+                                if(isset($medicalPrescription)){
+                                    $answer = $answer . ". Il dottore ti ha prescritto " . $medicalPrescription;
+                                }
+                                if(isset($note)){
+                                    $answer = $answer . ". NOTE: " . $note;
+                                }
+                                
+                
+                
+                            }
+                
+                        }
+                
+                
+                        return $answer;
+                
+                    }
                 }
 				
 			}
@@ -1991,14 +2048,6 @@ function getMedicalVisits($resp,$parameters,$email){
     }
 
 
-    if(isset($parameters['ultimo'])){
-
-        $ultimo = end($medicalVisitsArray);
-        $answer = $resp . " " . $ultimo;
-
-        return $answer;
-
-    }
 
     //Se è valorizzato l'array, stampo le visite mediche
 	if (isset($medicalVisitsArray)) {
