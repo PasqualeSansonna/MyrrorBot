@@ -1745,71 +1745,22 @@ function getTherapies($resp,$parameters,$email){
 
                     foreach($value1 as $key => $value){
 
-                        if(isset($parameters['date'])){
-                            $today = strtotime($parameters['date']);
-                            $giornoToday = giorno(substr($parameters['date'], 0, 10));
-                            $startDate = strtotime($value['start_date']);
-                            $endDate = strtotime($value['end_date']);
+                        
 
 
-                            if(($value['end_date'] == null) || ($endDate > $today)){
-
-                                $type=$value['type'];
-
-                                switch($type){
-
-                                    case "EVERY_DAY":
-                                        $drugName = $value['drug_name']; //Prendo il nome del farmaco
-                                        $answerDrug = $answerDrug . " " . $drugName;
-                                        break;
-                                        
-
-                                    case "INTERVAL":
-                                        $intervalDays = $value['interval_days'];
-                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
-                                        if((int)($giorniDaStartDate % $intervalDays) == 0){
-                                            $drugName = $value['drug_name'];
-                                            $answerDrug = $answerDrug . " " . $drugName;
-                                        }
-                                        break;
-
-                                    case "SOME_DAY":
-                                        if($value['day'] == $giornoToday){
-
-                                            $drugName = $value['drug_name']; //Prendo il nome del farmaco
-                                            $answerDrug = $answerDrug . " " . $drugName;
-
-                                        }
-                                        break;
-
-                                        case "ODD_DAY":
-                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
-                                        $answerDrug = $answerDrug . " kitty ";
-                                        $resto = (int)($giorniDaStartDate % 2);
-                                        if($resto == 0){
-                                            $drugName = $value['drug_name'];
-                                            $answerDrug = $answerDrug . " " . $drugName;
-                                        }
-                                        break;
-                                            
-                                }
-                                
-
-                            }
-                            
-                                
-                        }
-
-
-                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
+                         if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
 
                             $therapy = $value['therapyName']; //Prendo il nome delle terapie
                             $therapiesArray[] = $therapy; //tutte le terapie
 
                         }
+                        
 
                     }
-                    return $answerDrug;
+                    
+                    if(isset($parameters['date'])){
+                        return $answerDrug;
+                    }
 
                     
 				}
@@ -1842,6 +1793,126 @@ function getTherapies($resp,$parameters,$email){
 	}
 
 	return $answer;
+
+}
+
+
+function getDrugToday($resp,$parameters,$email){
+
+    $param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $therapiesArray = array();
+    $answerDrug = $resp . "<br>";
+    $numDrug = 0;
+    
+    
+    
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+
+                    foreach($value1 as $key => $value){
+
+                        if(isset($parameters['date'])){
+                            $today = strtotime($parameters['date']);
+                            $giornoToday = giorno(substr($parameters['date'], 0, 10));
+                            $startDate = strtotime($value['start_date']);
+                            $endDate = strtotime($value['end_date']);
+
+
+                            if(($value['end_date'] == null) || ($endDate > $today)){
+
+
+                                
+                                $type=$value['type'];
+                                $drugName = $value['drug_name']; //Prendo il nome del farmaco
+
+                                switch($type){
+
+                                    case "EVERY_DAY":
+                                        $answerDrug = $answerDrug . "-" . $drugName;
+                                        if(isset($value['dosage'])){
+                                            $answerDrug = $answerDrug . " " . $value['dosage'];
+                                        }
+                                        if(isset($value['hour'])){
+                                            $answerDrug = $answerDrug . " alle ore " . $value['hour'];
+                                        } 
+                                        $answerDrug = $answerDrug . "<br>" ;
+                                        ++$numDrug;
+                                        break;
+                                        
+
+                                    case "INTERVAL":
+                                        $intervalDays = $value['interval_days'];
+                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
+                                        if((int)($giorniDaStartDate % $intervalDays) == 0){
+                
+                                            $answerDrug = $answerDrug . "-" . $drugName;
+                                            if(isset($value['dosage'])){
+                                                $answerDrug = $answerDrug . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answerDrug = $answerDrug . " alle ore " . $value['hour'];
+                                            } 
+                                            $answerDrug = $answerDrug . "<br>";
+                                            ++$numDrug;
+                                        }
+                                        
+                                        break;
+
+                                    case "SOME_DAY":
+                                        if($value['day'] == $giornoToday){
+                                            $answerDrug = $answerDrug . "-" . $drugName;
+                                            if(isset($value['dosage'])){
+                                                $answerDrug = $answerDrug . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answerDrug = $answerDrug . " alle ore " . $value['hour'];
+                                            } 
+                                            $answerDrug = $answerDrug . "<br>";
+                                            ++$numDrug;
+                                        }
+                                        break;
+
+                                    case "ODD_DAY":
+                                        $giorniDaStartDate = delta_tempo($startDate, $today, "g");
+                                        $resto = (int)($giorniDaStartDate % 2);
+                                        if($resto == 0){
+                                            $answerDrug = $answerDrug . "-" . $drugName;
+                                            if(isset($value['dosage'])){
+                                                $answerDrug = $answerDrug . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answerDrug = $answerDrug . " alle ore " . $value['hour'];
+                                            } 
+                                            $answerDrug = $answerDrug . "<br>";
+                                            ++$numDrug;
+                                        }
+                                        
+                                        break;
+                                            
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if($numDrug!=0){
+        //Rimuovo lo spazio con la virgola finale
+        $answerDrug = substr($answerDrug, 0, -2);
+    }
+    else {
+        $answerDrug = "Oggi non devi prendere nessuna terapia";
+        }
+
+    return $answerDrug;
 
 }
 

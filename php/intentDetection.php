@@ -320,6 +320,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getTherapiesInProgEnded($resp,$parameters,$email);
                 break;
 
+            case 'Farmaco oggi':
+                $answer = getDrugToday($resp,$parameters,$email);
+                break;
+
             case 'Area medica':
                 $answer = getMedicalAreas($resp,$parameters,$email);
                 break;
