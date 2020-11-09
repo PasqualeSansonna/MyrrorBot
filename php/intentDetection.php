@@ -304,6 +304,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getAnalysisControl($resp,$parameters,$email);
                 break;
 
+            case 'Dettagli analisi':
+                $answer = getAnalysisDetails($parameters,$email);
+                break;
+
             case 'Risultati analisi':
                 $answer = getAnalysisResult($resp,$parameters,$email);
                 break;
@@ -322,6 +326,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
 
             case 'Farmaco oggi':
                 $answer = getDrugToday($resp,$parameters,$email);
+                break;
+
+            case 'Dettagli terapia':
+                $answer = getTherapyDetails($parameters,$email);
                 break;
 
             case 'Area medica':

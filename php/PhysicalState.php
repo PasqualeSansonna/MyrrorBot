@@ -1312,7 +1312,8 @@ function getAnalysis($resp,$parameters,$email){
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$analysisArray = array();
+    $analysisArray = array();
+   
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -1336,15 +1337,16 @@ function getAnalysis($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le analisi
 	if (isset($analysisArray)) {
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($analysisArray) != 0) {
 			foreach ($analysisArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+   				$answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
 		}
@@ -1550,6 +1552,39 @@ function getAnalysisResult($resp,$parameters,$email){
 
 }
 
+function getAnalysisDetails($parameters,$email){
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $numAnalysis = 0;
+
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        ++$numAnalysis;
+                        if($numAnalysis == $parameters['number']){
+
+                            $answer = "Il risultato di " . $value['analysisName'] . " dovrebbe essere compreso tra " . $value['min'] . $value['unit'] .  " e " . $value['max'] . $value['unit'] . ". Il tuo risultato è " . $value['result'] . $value['unit'];
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['number'] > $numAnalysis){
+        $answer = "Non c'è un'analisi con questo numero";
+    }
+
+    return $answer;
+
+}
+
 function getAnalysisBinary($parameters,$email){
 
 	$param = "";
@@ -1699,6 +1734,8 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
 }
 
+
+//restituisce il giorno della settimana
 function giorno($d){
  
     //attento la data deve essere nel formato yyyy-mm-gg
@@ -1712,6 +1749,7 @@ function giorno($d){
 }
 
 
+//restituisce il numero di giorni trascorsi tra due date
 function delta_tempo ($data_iniziale,$data_finale,$unita) {
     
         switch($unita) {
@@ -1733,6 +1771,7 @@ function getTherapies($resp,$parameters,$email){
 
     $therapiesArray = array();
     $answerDrug = $resp;
+    $num = 0;
     
     
 
@@ -1744,8 +1783,6 @@ function getTherapies($resp,$parameters,$email){
                 if($key1 == "therapies"){
 
                     foreach($value1 as $key => $value){
-
-                        
 
 
                          if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
@@ -1774,11 +1811,11 @@ function getTherapies($resp,$parameters,$email){
 
 		if (count($therapiesArray) != 0) {
 			foreach ($therapiesArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br> " . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Terapia con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
 		}
@@ -2048,6 +2085,100 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 	}
 
 	return $answer;
+}
+
+
+function getTherapyDetails($parameters,$email){
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $numTherapies = 0;
+
+
+	foreach ($json_data as $key2 => $value2) {
+    
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+                    foreach($value1 as $key => $value){
+                        ++$numTherapies;
+                        if($numTherapies == $parameters['number']){
+
+                            $type=$value['type'];
+                            $today = strtotime("now");
+                            $endDate = strtotime($value['end_date']);
+
+
+                            if($value['end_date'] == null){
+                                $answer = "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'];
+                            }else if ($endDate > $today){
+                                $answer = "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'] . " e finirà il " . $value['end_date'];
+                            }else {
+                                $answer = "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'] . " ed è finita il " . $value['end_date'];
+                            }
+
+                                switch($type){
+
+                                    case "EVERY_DAY":
+                                        $answer = $answer . " e prevede tutti i giorni " . $value['drug_name'] . " ";
+                                        if(isset($value['dosage'])){
+                                            $answer = $answer . " " . $value['dosage'];
+                                        }
+                                        if(isset($value['hour'])){
+                                            $answer = $answer . " alle ore " . $value['hour'];
+                                        } 
+                                        break;
+                                        
+
+                                    case "INTERVAL":
+                
+                                            $answer = $answer . " e prevede ogni " . $value['interval_days'] . " giorni " . $value['drug_name'] . " ";
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            } 
+                                        break;
+
+                                    case "SOME_DAY":
+                                        
+                                            $answer = $answer . " e prevede il " . $value['day'] . " " . $value['drug_name'];
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            } 
+                                        
+                                        break;
+
+                                    case "ODD_DAY":
+                                            $answer = $answer . " e prevede a giorni alterni " . $value['drug_name'];
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            }                                         
+                                        break;
+
+                                }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['number'] > $numTherapies){
+        $answer = "Non c'è una terapia con questo numero";
+    }
+
+    return $answer;
+
 }
 
 
