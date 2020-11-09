@@ -1402,15 +1402,17 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 
     //Se è valorizzato l'array, stampo le analisi
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($analysisArray) != 0) {
 			foreach ($analysisArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+         $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
+        
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono analisi nel periodo specificato.";
 		}
@@ -1487,14 +1489,15 @@ function getAnalysisControl($resp,$parameters,$email){
     //Se è valorizzato l'array, stampo le analisi
     if (isset($analysisArray)) {
         $answer = $resp;
+        $num = 0;
 
         if (count($analysisArray) != 0) {
             foreach ($analysisArray as $key => $value){
-                $answer = $answer . " " . $value .", " ;
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
             }
+            $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
 
-            //Rimuovo lo spazio con la virgola finale
-            $answer = substr($answer, 0, -2);
         }else {
             $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
         }
@@ -1646,15 +1649,16 @@ function getDiagnosis($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le diagnosi
 	if (isset($diagnosisArray)) {
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($diagnosisArray) != 0) {
 			foreach ($diagnosisArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Diagnosi con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
 		}
@@ -1710,15 +1714,16 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le diagnosi
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($diagnosisArray) != 0) {
 			foreach ($diagnosisArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Diagnosi con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono diagnosi nel periodo specificato.";
 		}
@@ -1771,10 +1776,8 @@ function getTherapies($resp,$parameters,$email){
 
     $therapiesArray = array();
     $answerDrug = $resp;
-    $num = 0;
     
     
-
 	foreach ($json_data as $key2 => $value2) {
 
 		if($key2 == "physicalStates"){
@@ -1807,7 +1810,8 @@ function getTherapies($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le terapie
 	if (isset($therapiesArray)) {
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($therapiesArray) != 0) {
 			foreach ($therapiesArray as $key => $value){
@@ -1842,8 +1846,6 @@ function getDrugToday($resp,$parameters,$email){
     $therapiesArray = array();
     $answerDrug = $resp . "<br>";
     $numDrug = 0;
-    
-    
     
 
 	foreach ($json_data as $key2 => $value2) {
@@ -1990,15 +1992,16 @@ function getTherapiesPeriod($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le terapie
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($therapiesArray) != 0) {
 			foreach ($therapiesArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Terapia con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono terapie nel periodo specificato.";
 		}
@@ -2021,7 +2024,8 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
     $therapiesInProgArray = array();
     $therapiesEndedArray = array();
     $today = strtotime("now"); //data odierna
-    
+
+    $question = 0; //0 se la domanda richiede le terapie in progress, 1 altrimenti terapie ended    
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -2036,6 +2040,7 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
                                 $durata = $parameters['Durata_terapia'];
                                 $endDate = strtotime($value['end_date']);
                                 if($durata == "concluso" || $durata == "conclusa" || $durata == "conclusi" || $durata == "concluse" ){
+                                    $question = 1;
                                     if(($value['end_date'] != null) && ($endDate < $today)){
                                         $therapies = $value['therapyName']; //Prendo il nome della terapia
                                         $therapiesEndedArray[] = $therapies;
@@ -2060,22 +2065,37 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 	
 		$answer = $resp;
 
-		if (count($therapiesInProgArray)!=0) {
-            
-            foreach ($therapiesInProgArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+		if($question = 0){
+
+		    if (count($therapiesInProgArray)!=0) {
+
+                foreach ($therapiesInProgArray as $key => $value){
+                    $answer = $answer . " " . $value .", " ;
+        	    }
 
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
-		}else {
 
-			foreach ($therapiesEndedArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+            } else {
+                $answer ="Non ci sono terapie in corso";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
+            }
+        }else {
+
+            if (count($therapiesEndedArray)!=0) {
+
+			    foreach ($therapiesEndedArray as $key => $value){
+                    $answer = $answer . " " . $value .", " ;
+        	    }
+
+        	    //Rimuovo lo spazio con la virgola finale
+        	    $answer = substr($answer, 0, -2);
+            }
+            else {
+                $answer ="Non ci sono terapie concluse";
+
+            }
+
 		}
 	
 
@@ -2086,6 +2106,7 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 
 	return $answer;
 }
+
 
 
 function getTherapyDetails($parameters,$email){
@@ -2274,10 +2295,69 @@ function getMedicalVisits($resp,$parameters,$email){
                             $medicalVisitsArray[] = $medicalVisit;
                         }
                     }
+                }
+				
+			}
+        }	
+    }
 
-                    if(isset($parameters['ultimo'])){
+
+
+    //Se è valorizzato l'array, stampo le visite mediche
+	if (isset($medicalVisitsArray)) {
+        $answer = $resp;
+        $num = 0;
+
+		if (count($medicalVisitsArray) != 0) {
+			foreach ($medicalVisitsArray as $key => $value){
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Visita Medica con il relativo numero per maggiori dettagli";
+
+		}else {
+			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+	}
+
+	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	if ($answer == null) {
+		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova più tardi";
+	}
+
+	return $answer;
+
+}
+
+
+function getLastMedicalVisit($resp,$parameters,$email){
+
+
+    $param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$medicalVisitsArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalVisits"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
+
+                            $medicalVisit = $value['nameVisit']; //Prendo il nome delle visita medica
+                            
+                            $medicalVisitsArray[] = $medicalVisit;
+                        }
+                    }
 
                         $ultimo = end($medicalVisitsArray);
+
                         foreach($value1 as $key => $value){
                             if($value['nameVisit'] == $ultimo){
                                 $dateVisit = $value['dateVisit'];
@@ -2326,44 +2406,13 @@ function getMedicalVisits($resp,$parameters,$email){
                             }
                 
                         }
-                
-                
-                        return $answer;
-                
-                    }
                 }
-				
-			}
-        }	
+            }
+        }
     }
-
-
-
-    //Se è valorizzato l'array, stampo le visite mediche
-	if (isset($medicalVisitsArray)) {
-		$answer = $resp;
-
-		if (count($medicalVisitsArray) != 0) {
-			foreach ($medicalVisitsArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
-
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
-		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
-		}
-
-	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
-	}
-
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
-	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova più tardi";
-	}
-
-	return $answer;
+                
+                
+    return $answer;
 
 }
 
@@ -2404,15 +2453,16 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le visite mediche
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($medicalVisitsArray) != 0) {
 			foreach ($medicalVisitsArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Visita Medica con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono visite mediche nel periodo specificato.";
 		}
@@ -2425,6 +2475,83 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 	}
 
 	return $answer;
+
+}
+
+
+
+function getMedicalVisitDetails($parameters,$email){
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $numMedicalVisits = 0;
+
+
+	foreach ($json_data as $key2 => $value2) {
+    
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalVisits"){
+                    foreach($value1 as $key => $value){
+                        ++$numMedicalVisits;
+                        if($numMedicalVisits == $parameters['number']){
+
+                            $nameVisit = $value['nameVisit'];
+                            $dateVisit = $value['dateVisit'];
+                            $nameDoctor = $value['nameDoctor'];
+                            $surnameDoctor = $value['surnameDoctor'];
+                            $nameFacility = $value['nameFacility'];
+                            $cityFacility = $value['cityFacility'];
+                            $descriptionFacility = $value['descriptionFacility'];
+                            $typology = $value['typology'];
+                            $diagnosis = $value['diagnosis'];
+                            $medicalPrescription = $value['medicalPrescription'];
+                            $notePatient = $value['notePatient'];
+                
+                            $answer = "La visita medica " . $nameVisit ;
+
+                            if(isset($typology)){
+                                $answer = $answer . " (" . $typology . ")";
+                            }
+                            if(isset($startDate)){
+                                $answer = $answer . " è stata effettuata in data " . $dateVisit ;
+                            }
+                            if(isset($nameDoctor) || isset($surnameDoctor)){
+                                $answer = $answer . " eseguita dal dottor " . $nameDoctor . " " . $surnameDoctor;
+                            }
+                            if(isset($nameFacility)){
+                                $answer = $answer . " presso la struttura " . $nameFacility;
+                            }
+                            if(isset($cityFacility)){
+                                $answer = $answer . " della città di " . $cityFacility;
+                            }
+                            if(isset($descriptionFacility)){
+                                $answer = $answer . "(" . $descriptionFacility . ")";
+                            }
+                            if(isset($diagnosis)){
+                                $answer = $answer . ". La diagnosi è stata " . $diagnosis;
+                            }
+                            if(isset($medicalPrescription)){
+                                $answer = $answer . ". Il dottore ti ha prescritto " . $medicalPrescription;
+                            }
+                            if(isset($note)){
+                                $answer = $answer . ". NOTE: " . $note;
+                            }
+
+                        break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['number'] > $numMedicalVisits){
+        $answer = "Non c'è una visita medica con questo numero";
+    }
+
+    return $answer;
 
 }
 
@@ -2494,15 +2621,16 @@ function getDiseases($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le patologie
 	if (isset($diseasesArray)) {
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($diseasesArray) != 0) {
 			foreach ($diseasesArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Patologia con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
 		}
@@ -2590,12 +2718,15 @@ function getDiseasesPeriod($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo le terapie
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($diseasesArray) != 0) {
 			foreach ($diseasesArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Patologia con il relativo numero per maggiori dettagli";
 
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
@@ -2611,6 +2742,67 @@ function getDiseasesPeriod($resp,$parameters,$email){
 	}
 
 	return $answer;
+
+}
+
+
+function getDiseaseDetails($parameters, $email){
+
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $numDiseases = 0;
+
+
+	foreach ($json_data as $key2 => $value2) {
+    
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "diseases"){
+                    foreach($value1 as $key => $value){
+                        ++$numDiseases;
+                        if($numDiseases == $parameters['number']){
+
+                            $nameDisease = $value['nameDisease'];
+                            $dateDiagnosis = $value['dateDiagnosis'];
+                            $nameDoctor = $value['nameDoctor'];
+                            $surnameDoctor = $value['surnameDoctor'];
+                            $placeDiagnosis = $value['placeDiagnosis'];
+                            $completeDiagnosis = $value['completeDiagnosis'];
+                            $note = $value['note'];
+
+                            $answer = "La patologia " . $nameDisease;
+        
+                            if($dateDiagnosis != NULL){
+                                $answer = $answer . " è stata diagnosticata in data " . $dateDiagnosis;
+                            }
+                            if($nameDoctor!= NULL || $surnameDoctor!= NULL){
+                                $answer = $answer . " dal dottor " . $surnameDoctor . " " . $nameDoctor;
+                            }
+                            if ($placeDiagnosis != NULL){
+                                $answer = $answer . " presso " . $placeDiagnosis;
+                            }
+                            if ($completeDiagnosis != NULL){
+                                $answer = $answer . ". La diagnosi completa è " . $completeDiagnosis . ". ";
+                            }
+                            if ($note!= NULL){
+                                $answer = $answer . "NOTE: " . $note;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['number'] > $numDiseases){
+        $answer = "Non c'è una patologia con questo numero";
+    }
+
+    return $answer;
+    
 
 }
 
@@ -2643,63 +2835,23 @@ function getHospitalizations($resp,$parameters,$email){
         }	
     }
 
-
-    if(isset($parameters['ultimo'])){
-
-        $ultimo = end($hospitalizationsArray);
-        foreach($value1 as $key => $value){
-            if($value['name'] == $ultimo){
-                $startDate = $value['start_date'];
-                $endDate = $value['end_date'];
-                $nameDoctor = $value['nameDoctor'];
-                $surnameDoctor = $value['surnameDoctor'];
-                $hospitalWard = $value['hospitalWard'];
-                $diagnosisHospitalization = $value['diagnosisHospitalization'];
-                $medicalPrescription = $value['medicalPrescription'];
-                $note = $value['note'];
-
-                $answer = $resp . " " . $ultimo;
-
-                if(isset($startDate) && isset($endDate)){
-                    $answer = $answer . " dal " . $startDate . " al " . $endDate;
-                }
-                if(isset($nameDoctor) || isset($surnameDoctor)){
-                    $answer = $answer . " prescritto dal dottor " . $nameDoctor . " " . $surnameDoctor;
-                }
-                if(isset($hospitalWard)){
-                    $answer = $answer . " nel reparto di " . $hospitalWard;
-                }
-                if(isset($diagnosisHospitalization)){
-                    $answer = $answer . " presso la struttura " . $diagnosisHospitalization . ". ";
-                }
-                if(isset($medicalPrescription)){
-                    $answer = $answer . "Il medico ti ha prescritto  " . $medicalPrescription . ". ";
-                }
-                if(isset($note)){
-                    $answer = $answer . "NOTE  " . $note . ". ";
-                }
+    
 
 
-            }
-
-        }
-
-
-        return $answer;
-
-    }
+    
 
     //Se è valorizzato l'array, stampo le patologie
 	if (isset($hospitalizationsArray)) {
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($hospitalizationsArray) != 0) {
 			foreach ($hospitalizationsArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Ricovero con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 		}
@@ -2707,6 +2859,8 @@ function getHospitalizations($resp,$parameters,$email){
 	}else{
 		$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 	}
+
+    
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($answer == null) {
@@ -2755,15 +2909,16 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 
     //Se è valorizzato l'array, stampo i ricoveri
 	
-		$answer = $resp;
+        $answer = $resp;
+        $num = 0;
 
 		if (count($hospitalizationsArray) != 0) {
 			foreach ($hospitalizationsArray as $key => $value){
-   				$answer = $answer . " " . $value .", " ;
-        	}
+                ++$num;
+                $answer = $answer . "<br>" . $num . ". " . $value;
+            }
+            $answer = $answer . "<br><br>Digita Ricovero con il relativo numero per maggiori dettagli";
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono ricoveri nel periodo specificato.";
 		}
@@ -2776,5 +2931,135 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 	}
 
 	return $answer;
+
+}
+
+function getLastHospitalization($resp, $parameters, $email){
+
+    $param = "";
+	$json_data = queryMyrror($param,$email);
+
+	$hospitalizationsArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "hospitalizations"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
+
+                            $hospitalization = $value['name']; //Prendo il nome dei ricoveri
+                            
+                            $hospitalizationsArray[] = $hospitalization;
+                        }
+                    }
+
+
+                        $ultimo = end($hospitalizationsArray);
+                        foreach($value1 as $key => $value){
+                            if($value['name'] == $ultimo){
+                                $startDate = $value['start_date'];
+                                $endDate = $value['end_date'];
+                                $nameDoctor = $value['nameDoctor'];
+                                $surnameDoctor = $value['surnameDoctor'];
+                                $hospitalWard = $value['hospitalWard'];
+                                $diagnosisHospitalization = $value['diagnosisHospitalization'];
+                                $medicalPrescription = $value['medicalPrescription'];
+                                $note = $value['note'];
+                
+                                $answer = $resp . " " . $ultimo;
+                
+                                if(isset($startDate) && isset($endDate)){
+                                    $answer = $answer . " dal " . $startDate . " al " . $endDate;
+                                }
+                                if(isset($nameDoctor) || isset($surnameDoctor)){
+                                    $answer = $answer . " prescritto dal dottor " . $nameDoctor . " " . $surnameDoctor;
+                                }
+                                if(isset($hospitalWard)){
+                                    $answer = $answer . " nel reparto di " . $hospitalWard;
+                                }
+                                if(isset($diagnosisHospitalization)){
+                                    $answer = $answer . " presso la struttura " . $diagnosisHospitalization . ". ";
+                                }
+                                if(isset($medicalPrescription)){
+                                    $answer = $answer . "Il medico ti ha prescritto  " . $medicalPrescription . ". ";
+                                }
+                                if(isset($note)){
+                                    $answer = $answer . "NOTE  " . $note . ". ";
+                                }
+                            }
+                        }
+                }
+			}
+        }	
+    }
+    return $answer;
+}
+
+
+function getHospitalizationDetails($parameters, $email){
+
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+    $numHospitalizations = 0;
+
+
+	foreach ($json_data as $key2 => $value2) {
+    
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "hospitalizations"){
+                    foreach($value1 as $key => $value){
+                        ++$numHospitalizations;
+                        if($numHospitalizations == $parameters['number']){
+
+                            $name = $value['name'];
+                            $startDate = $value['start_date'];
+                            $endDate = $value['end_date'];
+                            $nameDoctor = $value['nameDoctor'];
+                            $surnameDoctor = $value['surnameDoctor'];
+                            $hospitalWard = $value['hospitalWard'];
+                            $diagnosisHospitalization = $value['diagnosisHospitalization'];
+                            $medicalPrescription = $value['medicalPrescription'];
+                            $note = $value['note'];
+                
+                            $answer = "Il ricovero " . $name;
+                
+                            if(isset($startDate) && isset($endDate)){
+                                $answer = $answer . " è durato dal " . $startDate . " al " . $endDate;
+                            }
+                            if(isset($nameDoctor) || isset($surnameDoctor)){
+                                $answer = $answer . ", è stato prescritto dal dottor " . $nameDoctor . " " . $surnameDoctor;
+                            }
+                            if(isset($hospitalWard)){
+                                $answer = $answer . " nel reparto di " . $hospitalWard;
+                            }
+                            if(isset($diagnosisHospitalization)){
+                                $answer = $answer . " presso la struttura " . $diagnosisHospitalization . ". ";
+                            }
+                            if(isset($medicalPrescription)){
+                                $answer = $answer . "Il medico ti ha prescritto  " . $medicalPrescription . ". ";
+                            }
+                            if(isset($note)){
+                                $answer = $answer . "NOTE  " . $note . ". ";
+                            }
+                        break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['number'] > $numHospitalizations){
+        $answer = "Non c'è un ricovero con questo numero";
+    }
+
+    return $answer;
+    
 
 }

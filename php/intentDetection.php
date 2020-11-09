@@ -287,6 +287,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Diagnosi periodo':
                 $answer = getDiagnosisPeriod($resp,$parameters,$email);
                 break;
+
+            case 'Dettagli diagnosi':
+                $answer = getDiagnosyDetails($parameters,$email);
+                break;
             
             case 'Analisi':
                 $answer = getAnalysis($resp,$parameters,$email);
@@ -343,7 +347,15 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Visite mediche periodo':
                 $answer = getMedicalVisitsPeriod($resp,$parameters,$email);
                 break;
-    
+
+            case 'Dettagli visita medica':
+                $answer = getMedicalVisitDetails($parameters,$email);
+                break;
+
+            case 'Ultima visita medica':
+                $answer = getLastMedicalVisit($resp,$parameters,$email);
+                break;
+
             case 'Patologie':
                 $answer = getDiseases($resp,$parameters,$email);
                 break;
@@ -356,12 +368,24 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getDiseasesBinary($parameters,$email);
                 break;
 
+            case 'Dettagli patologia':
+                $answer = getDiseaseDetails($parameters,$email);
+                break;
+
             case 'Ricoveri':
                 $answer = getHospitalizations($resp,$parameters,$email);
                 break;
 
             case 'Ricoveri periodo':
                 $answer = getHospitalizationsPeriod($resp,$parameters,$email);
+                break;
+
+            case 'Ultimo ricovero':
+                $answer = getLastHospitalization($resp,$parameters,$email);
+                break;
+
+            case 'Dettagli ricovero':
+                $answer = getHospitalizationDetails($parameters,$email);
                 break;
                 
 			
