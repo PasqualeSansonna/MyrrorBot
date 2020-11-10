@@ -308,6 +308,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getAnalysisControl($resp,$parameters,$email);
                 break;
 
+            case 'Analisi sotto controllo binario':
+                $answer = getAnalysisControlBinary($resp,$parameters,$email);
+                break;
+
             case 'Dettagli analisi':
                 $answer = getAnalysisDetails($parameters,$email);
                 break;

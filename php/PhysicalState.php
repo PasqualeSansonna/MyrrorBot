@@ -1435,7 +1435,7 @@ function getAnalysisControl($resp,$parameters,$email){
     $param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$analysisArray = array();
+    $analysisArray = array();
 
     foreach ($json_data as $key2 => $value2) {
 
@@ -1447,21 +1447,22 @@ function getAnalysisControl($resp,$parameters,$email){
                         if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
 
                             if(isset($parameters['Analisi'])){
+                                $answerInterval = $resp;
                                 if($parameters['Analisi'] == $value['analysisName']){
                                     $result = $value['result'];
                                     $min = $value['min'];
                                     $max = $value['max'];
 
                                     if($result <= $max && $result>= $min){
-                                        $answer = $resp . " " . "è nella media";
-                                        return $answer;
+                                        $answerInterval =  $answerInterval . " è nella media";
+                                        return $answerInterval;
                                     }else{
                                         if($result > $max){
-                                            $answer = $resp . " " . "è sopra la media";
-                                            return $answer;
+                                            $answerInterval = $answerInterval . " è sopra la media";
+                                            return $answerInterval;
                                         }else{
-                                            $answer = $resp . " " . "è sotto la media";
-                                            return $answer;
+                                            $answerInterval = $answerInterval . " è sotto la media";
+                                            return $answerInterval;
                                         }
                                     }
                                 }
@@ -1489,14 +1490,15 @@ function getAnalysisControl($resp,$parameters,$email){
     //Se è valorizzato l'array, stampo le analisi
     if (isset($analysisArray)) {
         $answer = $resp;
-        $num = 0;
 
         if (count($analysisArray) != 0) {
             foreach ($analysisArray as $key => $value){
-                ++$num;
-                $answer = $answer . "<br>" . $num . ". " . $value;
-            }
-            $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
+                $answer = $answer . " " . $value .", " ;
+        	    }
+
+        	//Rimuovo lo spazio con la virgola finale
+        	$answer = substr($answer, 0, -2);
+            
 
         }else {
             $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
@@ -1512,6 +1514,56 @@ function getAnalysisControl($resp,$parameters,$email){
     }
 
 	return $answer;
+
+}
+
+function getAnalysisControlBinary($resp,$parameters,$email){
+
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+
+    foreach ($json_data as $key2 => $value2) {
+
+        if($key2 == "physicalStates"){
+            foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
+
+                                if($parameters['Analisi'] == $value['analysisName']){
+                                    $result = $value['result'];
+                                    $min = $value['min'];
+                                    $max = $value['max'];
+
+                                    if($result <= $max && $result>= $min){
+                                        $answer =  $resp . " nella media";
+                                    }else{
+                                        if($result > $max){
+                                            $answer = $resp . " sopra la media";
+                                        }else{
+                                            $answer = $resp . " sotto la media";
+                                        }
+                                    }
+                                }
+                                
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if($parameters['Analisi'] == null){
+        $answer = $resp;
+    }
+    
+    if(!(isset($answer))){
+        $answer = "Non hai mai effettuato quest'analisi";
+    }
+    
+    return $answer;             
 
 }
 
@@ -2000,7 +2052,6 @@ function getTherapiesPeriod($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Terapia con il relativo numero per maggiori dettagli";
 
 		}else {
 			$answer = "Non ci sono terapie nel periodo specificato.";
@@ -2065,7 +2116,7 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 	
 		$answer = $resp;
 
-		if($question = 0){
+		if($question == 0){
 
 		    if (count($therapiesInProgArray)!=0) {
 
