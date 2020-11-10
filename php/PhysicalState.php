@@ -1365,13 +1365,13 @@ function getAnalysis($resp,$parameters,$email){
 }
 
 
-//Restuisce l'elenco delle analisi
+//Restuisce l'ultima analisi
 function getLastAnalysis($resp,$parameters,$email){
 
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-    $analysisArray = array();
+    $ultimo = 0;
    
 
 	foreach ($json_data as $key2 => $value2) {
@@ -1383,16 +1383,16 @@ function getLastAnalysis($resp,$parameters,$email){
                     foreach($value1 as $key => $value){
                         if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
 
-                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            
-                            $analysisArray[] = $analysis;
+                            $startDate=$value['timestamp']/1000;
+                            if($startDate > $ultimo){
+                                $ultimo = $startDate;
+                                $lastAnalysis = $value['analysisName'];
+                            }
                         }
                     }
 
-                    $ultimo = end($analysisArray);
-
                     foreach($value1 as $key => $value){
-                        if($value['analysisName'] == $ultimo){
+                        if($value['analysisName'] == $lastAnalysis){
         
                             $answer = $resp . " " . $value['analysisName'] . "<br>" . "Il risultato di " . $value['analysisName'] . " dovrebbe essere compreso tra " . $value['min'] . $value['unit'] .  " e " . $value['max'] . $value['unit'] . ". Il tuo risultato è " . $value['result'] . $value['unit'];
         
@@ -1939,7 +1939,7 @@ function getLastTherapy($resp,$parameters,$email){
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-    $therapiesArray = array();
+    $ultimo=0;
     
     
     
@@ -1955,18 +1955,20 @@ function getLastTherapy($resp,$parameters,$email){
 
                          if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
 
-                            $therapy = $value['therapyName']; //Prendo il nome delle terapie
-                            $therapiesArray[] = $therapy; //tutte le terapie
+                            $startDate=$value['timestamp']/1000;
+                            if($startDate > $ultimo){
+                                $ultimo = $startDate;
+                                $lastTherapy = $value['therapyName'];;
+                            }
                         }
                         
 
                     }
                     
-                    $ultimo = end($therapiesArray);
-                    $answer = $resp . " " . $ultimo . "<br>";
+                    $answer = $resp . " " . $lastTherapy . "<br>";
 
                     foreach($value1 as $key => $value){
-                        if($value['therapyName'] == $ultimo){
+                        if($value['therapyName'] == $lastTherapy){
 
                             $type=$value['type'];
                             $today = strtotime("now");
@@ -2463,7 +2465,7 @@ function getMedicalAreas($resp,$parameters,$email){
 
 }
 
-function getLastMedicalAreas($resp,$parameters,$email){
+function getLastMedicalArea($resp,$parameters,$email){
 
     $param = "";
 	$json_data = queryMyrror($param,$email);
@@ -2564,7 +2566,7 @@ function getLastMedicalVisit($resp,$parameters,$email){
     $param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$medicalVisitsArray = array();
+    $ultimo = 0;
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -2575,16 +2577,17 @@ function getLastMedicalVisit($resp,$parameters,$email){
                     foreach($value1 as $key => $value){
                         if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
 
-                            $medicalVisit = $value['nameVisit']; //Prendo il nome delle visita medica
-                            
-                            $medicalVisitsArray[] = $medicalVisit;
+                            $startDate=$value['timestamp']/1000;
+                            if($startDate > $ultimo){
+                                $ultimo = $startDate;
+                                $lastMedicalVisit = $value['nameVisit'];
+                            }
                         }
                     }
 
-                        $ultimo = end($medicalVisitsArray);
 
                         foreach($value1 as $key => $value){
-                            if($value['nameVisit'] == $ultimo){
+                            if($value['nameVisit'] == $lastMedicalVisit){
                                 $dateVisit = $value['dateVisit'];
                                 $nameDoctor = $value['nameDoctor'];
                                 $surnameDoctor = $value['surnameDoctor'];
@@ -2596,7 +2599,7 @@ function getLastMedicalVisit($resp,$parameters,$email){
                                 $medicalPrescription = $value['medicalPrescription'];
                                 $notePatient = $value['notePatient'];
                 
-                                $answer = $resp . " " . $ultimo;
+                                $answer = $resp . " " . $lastMedicalVisit;
 
                                 if(isset($typology)){
                                     $answer = $answer . " (" . $typology . ")";
@@ -3161,7 +3164,7 @@ function getLastHospitalization($resp, $parameters, $email){
     $param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$hospitalizationsArray = array();
+	$ultimo = 0;
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -3171,17 +3174,17 @@ function getLastHospitalization($resp, $parameters, $email){
                 if($key1 == "hospitalizations"){
                     foreach($value1 as $key => $value){
                         if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
-
-                            $hospitalization = $value['name']; //Prendo il nome dei ricoveri
                             
-                            $hospitalizationsArray[] = $hospitalization;
+                            $startDate=$value['timestamp']/1000;
+                            if($startDate > $ultimo){
+                                $ultimo = $startDate;
+                                $lastHospitalization = $value['name'];
+                            }
                         }
                     }
 
-
-                        $ultimo = end($hospitalizationsArray);
                         foreach($value1 as $key => $value){
-                            if($value['name'] == $ultimo){
+                            if($value['name'] == $lastHospitalization){
                                 $startDate = $value['start_date'];
                                 $endDate = $value['end_date'];
                                 $nameDoctor = $value['nameDoctor'];
@@ -3191,7 +3194,7 @@ function getLastHospitalization($resp, $parameters, $email){
                                 $medicalPrescription = $value['medicalPrescription'];
                                 $note = $value['note'];
                 
-                                $answer = $resp . " " . $ultimo;
+                                $answer = $resp . " " . $lastHospitalization;
                 
                                 if(isset($startDate) && isset($endDate)){
                                     $answer = $answer . " dal " . $startDate . " al " . $endDate;

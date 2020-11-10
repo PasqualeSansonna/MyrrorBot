@@ -349,7 +349,7 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 break;
 
             case 'Ultima area medica':
-                $answer = getLastMedicalAreas($resp,$parameters,$email);
+                $answer = getLastMedicalArea($resp,$parameters,$email);
                 break;
 
             case 'Visite mediche':
