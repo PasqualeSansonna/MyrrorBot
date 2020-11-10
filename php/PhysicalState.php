@@ -1585,6 +1585,7 @@ function getAnalysisResult($resp,$parameters,$email){
                         if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
 
                             $result = $value['result']; //Prendo il risultato dell'analisi
+                            break;
                             
                         }
                     }
@@ -1592,16 +1593,18 @@ function getAnalysisResult($resp,$parameters,$email){
 				
 			}
         }	
-    }    
-
-    $answer = $resp;
+    }
+    
+    if($parameters['Analisi'] == null){
+        return $answer = $resp;
+    }
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
-	if ($result == null) {
-		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+	if (!isset($result)) {
+		$answer = "Non hai mai effettuato quest'analisi";
     }
     else {
-        $answer = $answer . " " . $result;
+        $answer = $resp . " " . $result;
     }
 
 	return $answer;
