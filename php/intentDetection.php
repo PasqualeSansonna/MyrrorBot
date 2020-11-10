@@ -287,10 +287,6 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
             case 'Diagnosi periodo':
                 $answer = getDiagnosisPeriod($resp,$parameters,$email);
                 break;
-
-            case 'Dettagli diagnosi':
-                $answer = getDiagnosyDetails($parameters,$email);
-                break;
             
             case 'Analisi':
                 $answer = getAnalysis($resp,$parameters,$email);

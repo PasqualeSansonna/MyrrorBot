@@ -1677,7 +1677,7 @@ function getDiagnosis($resp,$parameters,$email){
 	$param = "";
 	$json_data = queryMyrror($param,$email);
 
-	$diagnosisArray = array();
+    $diagnosisArray = array();
 
 	foreach ($json_data as $key2 => $value2) {
 
@@ -1709,7 +1709,6 @@ function getDiagnosis($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Diagnosi con il relativo numero per maggiori dettagli";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
@@ -1774,7 +1773,6 @@ function getDiagnosisPeriod($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Diagnosi con il relativo numero per maggiori dettagli";
 
 		}else {
 			$answer = "Non ci sono diagnosi nel periodo specificato.";
@@ -2512,7 +2510,6 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Visita Medica con il relativo numero per maggiori dettagli";
 
 		}else {
 			$answer = "Non ci sono visite mediche nel periodo specificato.";
@@ -2777,7 +2774,6 @@ function getDiseasesPeriod($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Patologia con il relativo numero per maggiori dettagli";
 
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
@@ -2968,7 +2964,6 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Ricovero con il relativo numero per maggiori dettagli";
 
 		}else {
 			$answer = "Non ci sono ricoveri nel periodo specificato.";
