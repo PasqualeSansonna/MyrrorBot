@@ -1572,7 +1572,7 @@ function getAnalysisControlBinary($resp,$parameters,$email){
 function getAnalysisResult($resp,$parameters,$email){
 
 	$param = "";
-	$json_data = queryMyrror($param,$email);
+    $json_data = queryMyrror($param,$email);
 
 
 	foreach ($json_data as $key2 => $value2) {
@@ -1593,14 +1593,15 @@ function getAnalysisResult($resp,$parameters,$email){
 			}
         }	
     }    
-		
+
+    $answer = $resp;
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($result == null) {
 		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
     }
     else {
-        $answer = $resp . " " . $result;
+        $answer = $answer . " " . $result;
     }
 
 	return $answer;
@@ -2281,16 +2282,6 @@ function getMedicalAreas($resp,$parameters,$email){
         }	
     }
 
-    if(isset($parameters['ultimo'])){
-
-        $ultimo = end($medicalAreasArray);
-        $answer = $resp . " " . $ultimo;
-
-        return $answer;
-
-    }
-
-
 
 
     //Se è valorizzato l'array, stampo le aree mediche
@@ -2318,6 +2309,40 @@ function getMedicalAreas($resp,$parameters,$email){
 	}
 
 	return $answer;
+
+}
+
+function getLastMedicalAreas($resp,$parameters,$email){
+
+    $param = "";
+	$json_data = queryMyrror($param,$email);
+
+    
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalAreas"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['medicalArea'])) {//Verifico se è valorizzata la variabile 'medicalArea'
+
+                            $medicalArea = $value['medicalArea']; //Prendo il nome delle area medica
+                            
+                            $medicalAreasArray[] = $medicalArea;
+                        }
+                    }
+                }
+				
+			}
+        }	
+    }
+
+    $ultimo = end($medicalAreasArray);
+    $answer = $resp . " " . $ultimo;
+
+    return $answer;
+
 
 }
 
