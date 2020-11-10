@@ -292,6 +292,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getAnalysis($resp,$parameters,$email);
                 break;
 
+            case 'Ultima analisi':
+                $answer = getLastAnalysis($resp,$parameters,$email);
+                break;
+
             case 'Analisi binario':
                 $answer = getAnalysisBinary($parameters,$email);
                 break;
@@ -320,6 +324,10 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getTherapies($resp,$parameters,$email);
                 break;
 
+            case 'Ultima terapia':
+                $answer = getLastTherapy($resp,$parameters,$email);
+                break;
+
             case 'Terapie periodo':
                 $answer = getTherapiesPeriod($resp,$parameters,$email);
                 break;
@@ -330,7 +338,7 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
 
             case 'Farmaco oggi':
                 $answer = getDrugToday($resp,$parameters,$email);
-                break;
+                break;            
 
             case 'Dettagli terapia':
                 $answer = getTherapyDetails($parameters,$email);

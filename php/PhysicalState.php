@@ -1365,6 +1365,48 @@ function getAnalysis($resp,$parameters,$email){
 }
 
 
+//Restuisce l'elenco delle analisi
+function getLastAnalysis($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $analysisArray = array();
+   
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+
+                            $analysis = $value['analysisName']; //Prendo il nome dell'analisi
+                            
+                            $analysisArray[] = $analysis;
+                        }
+                    }
+
+                    $ultimo = end($analysisArray);
+
+                    foreach($value1 as $key => $value){
+                        if($value['analysisName'] == $ultimo){
+        
+                            $answer = $resp . " " . $value['analysisName'] . "<br>" . "Il risultato di " . $value['analysisName'] . " dovrebbe essere compreso tra " . $value['min'] . $value['unit'] .  " e " . $value['max'] . $value['unit'] . ". Il tuo risultato è " . $value['result'] . $value['unit'];
+        
+                        }
+                    }
+                        
+                }
+            }
+				
+		}
+    }	
+    return $answer;
+}
+
 //Restuisce l'elenco delle analisi di un certo periodo
 function getAnalysisPeriod($resp,$parameters, $text,$email){
 
@@ -1889,6 +1931,112 @@ function getTherapies($resp,$parameters,$email){
 
 	return $answer;
 
+}
+
+
+function getLastTherapy($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $therapiesArray = array();
+    
+    
+    
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "therapies"){
+
+                    foreach($value1 as $key => $value){
+
+
+                         if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
+
+                            $therapy = $value['therapyName']; //Prendo il nome delle terapie
+                            $therapiesArray[] = $therapy; //tutte le terapie
+                        }
+                        
+
+                    }
+                    
+                    $ultimo = end($therapiesArray);
+                    $answer = $resp . " " . $ultimo . "<br>";
+
+                    foreach($value1 as $key => $value){
+                        if($value['therapyName'] == $ultimo){
+
+                            $type=$value['type'];
+                            $today = strtotime("now");
+                            $endDate = strtotime($value['end_date']);
+
+
+                            if($value['end_date'] == null){
+                                $answer = $answer . "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'];
+                            }else if ($endDate > $today){
+                                $answer = $answer . "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'] . " e finirà il " . $value['end_date'];
+                            }else {
+                                $answer = $answer . "La terapia " . $value['therapyName'] . " è iniziata il " . $value['start_date'] . " ed è finita il " . $value['end_date'];
+                            }
+
+                                switch($type){
+
+                                    case "EVERY_DAY":
+                                        $answer = $answer . " e prevede tutti i giorni " . $value['drug_name'] . " ";
+                                        if(isset($value['dosage'])){
+                                            $answer = $answer . " " . $value['dosage'];
+                                        }
+                                        if(isset($value['hour'])){
+                                            $answer = $answer . " alle ore " . $value['hour'];
+                                        } 
+                                        break;
+                                        
+
+                                    case "INTERVAL":
+                
+                                            $answer = $answer . " e prevede ogni " . $value['interval_days'] . " giorni " . $value['drug_name'] . " ";
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            } 
+                                        break;
+
+                                    case "SOME_DAY":
+                                        
+                                            $answer = $answer . " e prevede il " . $value['day'] . " " . $value['drug_name'];
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            } 
+                                        
+                                        break;
+
+                                    case "ODD_DAY":
+                                            $answer = $answer . " e prevede a giorni alterni " . $value['drug_name'];
+                                            if(isset($value['dosage'])){
+                                                $answer = $answer . " " . $value['dosage'];
+                                            }
+                                            if(isset($value['hour'])){
+                                                $answer = $answer . " alle ore " . $value['hour'];
+                                            }                                         
+                                        break;
+
+                                }
+                            break;
+                        }
+                    }
+                    
+				}
+            }	
+        }
+    }
+    return $answer;
 }
 
 
