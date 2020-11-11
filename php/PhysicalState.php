@@ -1345,7 +1345,7 @@ function getAnalysis($resp,$parameters,$email){
                 ++$num;
    				$answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita \"Analisi\" con il corrispondete numero per maggiori dettagli (esempio:Analisi 1)";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
@@ -1940,7 +1940,7 @@ function getTherapies($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br> " . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Terapia con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita \"Terapia\" con il corrispondete numero per maggiori dettagli (esempio:Terapia 1)";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
@@ -2590,7 +2590,7 @@ function getMedicalVisits($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Visita Medica con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita \"Visita medica\" con il corrispondete numero per maggiori dettagli (esempio:Visita medica 1)";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
@@ -2918,7 +2918,7 @@ function getDiseases($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Patologia con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita \"Patologia\" con il corrispondete numero per maggiori dettagli (esempio:Patologia 1)";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
@@ -3146,7 +3146,7 @@ function getHospitalizations($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Ospedalizzazione con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita \"Ospedalizzazione\" con il corrispondete numero per maggiori dettagli (esempio:Ospedalizzazione 1)";
 
 		}else {
 			$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
