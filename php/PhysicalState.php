@@ -1380,6 +1380,10 @@ function getLastAnalysis($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
 
@@ -1421,6 +1425,10 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
 
@@ -1452,7 +1460,6 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-         $answer = $answer . "<br><br>Digita Analisi con il relativo numero per maggiori dettagli";
         
 
 		}else {
@@ -1571,6 +1578,10 @@ function getAnalysisControlBinary($resp,$parameters,$email){
             foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }                    
                     foreach($value1 as $key => $value){
                         if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
 
@@ -1621,8 +1632,11 @@ function getAnalysisResult($resp,$parameters,$email){
 
 		if($key2 == "physicalStates"){
 			foreach ($value2 as $key1 => $value1) {
-
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
 
@@ -1665,6 +1679,10 @@ function getAnalysisDetails($parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         ++$numAnalysis;
                         if($numAnalysis == $parameters['number']){
@@ -1698,6 +1716,10 @@ function getAnalysisBinary($parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
                             $answer = "Si, hai effettuato quest'analisi.";
@@ -1788,6 +1810,10 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "diagnosis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
 
@@ -1949,6 +1975,10 @@ function getLastTherapy($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
 
                     foreach($value1 as $key => $value){
 
@@ -2058,6 +2088,10 @@ function getDrugToday($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
 
                     foreach($value1 as $key => $value){
 
@@ -2174,6 +2208,10 @@ function getTherapiesPeriod($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
 
@@ -2236,6 +2274,10 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
 
@@ -2325,6 +2367,10 @@ function getTherapyDetails($parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "therapies"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         ++$numTherapies;
                         if($numTherapies == $parameters['number']){
@@ -2477,6 +2523,10 @@ function getLastMedicalArea($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "medicalAreas"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['medicalArea'])) {//Verifico se è valorizzata la variabile 'medicalArea'
 
@@ -2574,6 +2624,10 @@ function getLastMedicalVisit($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "medicalVisits"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
 
@@ -2659,6 +2713,10 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "medicalVisits"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
 
@@ -2720,6 +2778,10 @@ function getMedicalVisitDetails($parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "medicalVisits"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         ++$numMedicalVisits;
                         if($numMedicalVisits == $parameters['number']){
@@ -2887,6 +2949,10 @@ function getDiseasesBinary($parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "diseases"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
 
                         if(isset($parameters['Patologia'])){
@@ -2923,6 +2989,10 @@ function getDiseasesPeriod($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "diseases"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['nameDisease'])) {//Verifico se è valorizzata la variabile 'nameDisease'
 
@@ -2986,6 +3056,10 @@ function getDiseaseDetails($parameters, $email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "diseases"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         ++$numDiseases;
                         if($numDiseases == $parameters['number']){
@@ -3033,7 +3107,7 @@ function getDiseaseDetails($parameters, $email){
 }
 
 
-//Restuisce l'elenco dei ricoveri
+//Restuisce l'elenco delle ospedalizzazione
 function getHospitalizations($resp,$parameters,$email){
 
 	$param = "";
@@ -3061,12 +3135,8 @@ function getHospitalizations($resp,$parameters,$email){
         }	
     }
 
-    
 
-
-    
-
-    //Se è valorizzato l'array, stampo le patologie
+    //Se è valorizzato l'array, stampo le ospedalizzazioni
 	if (isset($hospitalizationsArray)) {
         $answer = $resp;
         $num = 0;
@@ -3076,21 +3146,21 @@ function getHospitalizations($resp,$parameters,$email){
                 ++$num;
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
-            $answer = $answer . "<br><br>Digita Ricovero con il relativo numero per maggiori dettagli";
+            $answer = $answer . "<br><br>Digita Ospedalizzazione con il relativo numero per maggiori dettagli";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare i tuoi ricoveri &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 	}
 
     
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare i tuoi ricoveri &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova più tardi";
 	}
 
 	return $answer;
@@ -3113,6 +3183,10 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "hospitalizations"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
 
@@ -3145,14 +3219,14 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
             }
 
 		}else {
-			$answer = "Non ci sono ricoveri nel periodo specificato.";
+			$answer = "Non ci sono ospedalizzazioni nel periodo specificato.";
 		}
 
 	
 
 	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare i tuoi ricoveri &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova più tardi";
 	}
 
 	return $answer;
@@ -3172,6 +3246,10 @@ function getLastHospitalization($resp, $parameters, $email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "hospitalizations"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
                             
@@ -3238,6 +3316,10 @@ function getHospitalizationDetails($parameters, $email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "hospitalizations"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
                     foreach($value1 as $key => $value){
                         ++$numHospitalizations;
                         if($numHospitalizations == $parameters['number']){
@@ -3252,7 +3334,7 @@ function getHospitalizationDetails($parameters, $email){
                             $medicalPrescription = $value['medicalPrescription'];
                             $note = $value['note'];
                 
-                            $answer = "Il ricovero " . $name;
+                            $answer = "L'ospedalizzazione " . $name;
                 
                             if(isset($startDate) && isset($endDate)){
                                 $answer = $answer . " è durato dal " . $startDate . " al " . $endDate;
@@ -3281,7 +3363,7 @@ function getHospitalizationDetails($parameters, $email){
     }
 
     if($parameters['number'] > $numHospitalizations){
-        $answer = "Non c'è un ricovero con questo numero";
+        $answer = "Non c'è un'ospedalizzazione con questo numero";
     }
 
     return $answer;

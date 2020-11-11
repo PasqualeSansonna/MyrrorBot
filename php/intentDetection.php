@@ -384,19 +384,19 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getDiseaseDetails($parameters,$email);
                 break;
 
-            case 'Ricoveri':
+            case 'Ospedalizzazioni':
                 $answer = getHospitalizations($resp,$parameters,$email);
                 break;
 
-            case 'Ricoveri periodo':
+            case 'Ospedalizzazioni periodo':
                 $answer = getHospitalizationsPeriod($resp,$parameters,$email);
                 break;
 
-            case 'Ultimo ricovero':
+            case 'Ultima ospedalizzazione':
                 $answer = getLastHospitalization($resp,$parameters,$email);
                 break;
 
-            case 'Dettagli ricovero':
+            case 'Dettagli ospedalizzazione':
                 $answer = getHospitalizationDetails($parameters,$email);
                 break;
                 
