@@ -1306,7 +1306,10 @@ function getBmi($json){
     return $foundBmi;
 }
 
-//Restuisce l'elenco delle analisi
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce un elenco indicizzato contenente tutte le analisi
+*/
 function getAnalysis($resp,$parameters,$email){
 
 	$param = "";
@@ -1364,8 +1367,10 @@ function getAnalysis($resp,$parameters,$email){
 
 }
 
-
-//Restuisce l'ultima analisi
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce l'ultima analisi inserita in HAB
+*/
 function getLastAnalysis($resp,$parameters,$email){
 
 	$param = "";
@@ -1411,7 +1416,11 @@ function getLastAnalysis($resp,$parameters,$email){
     return $answer;
 }
 
-//Restuisce l'elenco delle analisi di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters startDate e endDate ricevute da dialogflow su cui effettuare la ricerca in base al periodo
+il metodo restituisce un elenco indicizzato contenente tutte le analisi
+*/
 function getAnalysisPeriod($resp,$parameters, $text,$email){
 
 	$param = "";
@@ -1478,7 +1487,12 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 }
 
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters Analisi ricevuta da dialogflow su cui effettuare il controllo
+il metodo restituisce un elenco con tutte le analisi da tenere
+sotto controllo
+*/
 function getAnalysisControl($resp,$parameters,$email){
 
     $param = "";
@@ -1566,6 +1580,12 @@ function getAnalysisControl($resp,$parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters Analisi ricevuta da dialogflow su cui effettuare il controllo
+il metodo restituisce una risposta che indica se il risultato dell'analisi
+passata come parameters è sotto, sopra o nella media
+*/
 function getAnalysisControlBinary($resp,$parameters,$email){
 
 
@@ -1621,7 +1641,11 @@ function getAnalysisControlBinary($resp,$parameters,$email){
 }
 
 
-//Restuisce il risultato delle analisi
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters l'Analisi di cui si vuole sapere il risultato ricevuta da dialogflow
+il metodo restituisce il risultato dell'analisi passata come parameters
+*/
 function getAnalysisResult($resp,$parameters,$email){
 
 	$param = "";
@@ -1667,6 +1691,11 @@ function getAnalysisResult($resp,$parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters Analisi ricevuta da dialogflow su cui effettuare il controllo
+il metodo restituisce l'Analisi richiesta dall'utente indicata mediante l'indice
+*/
 function getAnalysisDetails($parameters,$email){
     $param = "";
     $json_data = queryMyrror($param,$email);
@@ -1704,6 +1733,11 @@ function getAnalysisDetails($parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters Analisi ricevuta da dialogflow su cui effettuare il controllo di presenza
+il metodo restituisce si o no se l'analisi è stata effettuata o meno dall'utente
+*/
 function getAnalysisBinary($parameters,$email){
 
 	$param = "";
@@ -1739,7 +1773,10 @@ function getAnalysisBinary($parameters,$email){
 }
 
 
-//Restuisce l'elenco delle diagnosi
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce l'elenco delle diagnosi effettuate
+*/
 function getDiagnosis($resp,$parameters,$email){
 
 	$param = "";
@@ -1795,8 +1832,11 @@ function getDiagnosis($resp,$parameters,$email){
 
 }
 
-
-//Restuisce l'elenco delle diagnosi di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters startDate e endDate ricevute da dialogflow su cui effettuare la ricerca in base al periodo
+il metodo restituisce un elenco indicizzato contenente tutte le diagnosi
+*/
 function getDiagnosisPeriod($resp,$parameters,$email){
 
 	$param = "";
@@ -1890,7 +1930,10 @@ function delta_tempo ($data_iniziale,$data_finale,$unita) {
      return $differenza;
 }
 
-//Restuisce l'elenco delle terapie
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce un elenco contenente tutte le terapie
+*/
 function getTherapies($resp,$parameters,$email){
 
 	$param = "";
@@ -1959,7 +2002,11 @@ function getTherapies($resp,$parameters,$email){
 
 }
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce la terapia più recente
+confrontando le relative date tra loro 
+*/
 function getLastTherapy($resp,$parameters,$email){
 
 	$param = "";
@@ -2071,7 +2118,12 @@ function getLastTherapy($resp,$parameters,$email){
     return $answer;
 }
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters La data di oggi restituita da dialogflow
+il metodo restituisce il farmaco da prendere nella giornata odierna 
+confrontando la data di oggi con le date in cui prendere il farmaco
+*/
 function getDrugToday($resp,$parameters,$email){
 
     $param = "";
@@ -2194,7 +2246,11 @@ function getDrugToday($resp,$parameters,$email){
 }
 
 
-//Restuisce l'elenco delle terapie di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters startDate e endDate ricevute da dialogflow su cui effettuare la ricerca in base al periodo
+il metodo restituisce un elenco contenente tutte le terapie nel periodo specificato
+*/
 function getTherapiesPeriod($resp,$parameters,$email){
 
 	$param = "";
@@ -2258,6 +2314,11 @@ function getTherapiesPeriod($resp,$parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters startDate e endDate ricevute da dialogflow su cui effettuare la ricerca in base al periodo
+il metodo restituisce un elenco di terapie distinguendole se in corso o concluse
+*/
 function getTherapiesInProgEnded($resp,$parameters,$email){
     $param = "";
 	$json_data = queryMyrror($param,$email);
@@ -2353,7 +2414,13 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 }
 
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters numero della terapia di cui si desidera 
+avere maggiori dettagli
+il metodo analizza il parametro e prende dal file json n-esimo
+elemento delle terapie
+*/
 function getTherapyDetails($parameters,$email){
 
     $param = "";
@@ -2451,8 +2518,11 @@ function getTherapyDetails($parameters,$email){
 
 }
 
-
-//Restuisce l'elenco delle aree mediche
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restiuisce un elenco di tutte le 
+aree mediche ricercate
+*/
 function getMedicalAreas($resp,$parameters,$email){
 
 	$param = "";
@@ -2511,6 +2581,10 @@ function getMedicalAreas($resp,$parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce l'ultima area medica ricercata 
+*/
 function getLastMedicalArea($resp,$parameters,$email){
 
     $param = "";
@@ -2549,8 +2623,11 @@ function getLastMedicalArea($resp,$parameters,$email){
 
 }
 
-
-//Restuisce l'elenco delle visite mediche
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters null
+il metodo restiuisce un elenco indicizzato di tutte le visite mediche
+*/
 function getMedicalVisits($resp,$parameters,$email){
 
 	$param = "";
@@ -2609,7 +2686,12 @@ function getMedicalVisits($resp,$parameters,$email){
 
 }
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters null
+il metodo restituisce la visita medica più recente
+confrontando le relative date tra loro 
+*/
 function getLastMedicalVisit($resp,$parameters,$email){
 
 
@@ -2698,8 +2780,14 @@ function getLastMedicalVisit($resp,$parameters,$email){
 
 }
 
-
-//Restuisce l'elenco delle visite mediche di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters parametri contenenti le info sui periodi di tempo
+nella frase rilevati da dialogflow
+il metodo analizza i parameters start_date e end_date,
+se la data della visita medica è compresa in questo periodo 
+viene inserita nell'array che sarà stampato
+*/
 function getMedicalVisitsPeriod($resp,$parameters,$email){
 
 	$param = "";
@@ -2764,7 +2852,13 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 }
 
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters numero della visita medica di cui si desidera 
+avere maggiori dettagli
+il metodo analizza il parametro e prende dal file json n-esimo
+elemento delle visite mediche
+*/
 function getMedicalVisitDetails($parameters,$email){
 
     $param = "";
@@ -2845,7 +2939,11 @@ function getMedicalVisitDetails($parameters,$email){
 }
 
 
-//Restuisce l'elenco delle patologie
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters null
+il metodo restiuisce un elenco indicizzato di tutte le patologie
+*/
 function getDiseases($resp,$parameters,$email){
 
 	$param = "";
@@ -2937,7 +3035,12 @@ function getDiseases($resp,$parameters,$email){
 
 }
 
-
+/*
+@parameters parametri contenenti il nome di una patologia
+il metodo analizza il parametro e ricerca il nome della
+patologia nell'elenco 
+restituisce una risposta binaria
+*/
 function getDiseasesBinary($parameters,$email){
     $param = "";
     $json_data = queryMyrror($param,$email);
@@ -2974,8 +3077,14 @@ function getDiseasesBinary($parameters,$email){
 
 
 
-
-//Restuisce l'elenco delle patologie di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters parametri contenenti le info sui periodi di tempo
+nella frase rilevati da dialogflow
+il metodo analizza i parameters start_date e end_date
+se la data della patologia è compresa in questo periodo 
+viene inserita nell'array che sarà stampato
+*/
 function getDiseasesPeriod($resp,$parameters,$email){
 
 	$param = "";
@@ -3041,7 +3150,13 @@ function getDiseasesPeriod($resp,$parameters,$email){
 
 }
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters numero della patologia di cui si desidera 
+avere maggiori dettagli
+il metodo analizza il parametro e prende dal file json n-esimo
+elemento delle patologie
+*/
 function getDiseaseDetails($parameters, $email){
 
 
@@ -3107,7 +3222,10 @@ function getDiseaseDetails($parameters, $email){
 }
 
 
-//Restuisce l'elenco delle ospedalizzazione
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce un elenco indicizzato di tutte le ospedalizzazioni
+*/
 function getHospitalizations($resp,$parameters,$email){
 
 	$param = "";
@@ -3169,7 +3287,14 @@ function getHospitalizations($resp,$parameters,$email){
 
 
 
-//Restuisce l'elenco dei ricoveri di un certo periodo
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters parametri contenenti le info sui periodi di tempo
+nella frase rilevati da dialogflow
+il metodo analizza i parameters start_date e end_date
+se la start_date dell'ospedalizzazione è compresa in questo periodo 
+viene inserita nell'array che sarà stampato
+*/
 function getHospitalizationsPeriod($resp,$parameters,$email){
 
 	$param = "";
@@ -3233,6 +3358,12 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 
 }
 
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters null
+il metodo restituisce l'ospedalizzazione più recente
+confrontandole tra loro 
+*/
 function getLastHospitalization($resp, $parameters, $email){
 
     $param = "";
@@ -3301,7 +3432,13 @@ function getLastHospitalization($resp, $parameters, $email){
     return $answer;
 }
 
-
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters numero dell'ospedalizzazione di cui si desidera 
+avere maggiori dettagli
+il metodo analizza il parametro e prende dal file json n-esimo
+elemento delle ospedalizzazioni
+*/
 function getHospitalizationDetails($parameters, $email){
 
 
