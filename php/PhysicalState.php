@@ -3,12 +3,12 @@
 /*
 il metodo serve a leggere il file json completo preso da
 myrror e cercare al suo interno una data specificata,se la 
-data viene trovata nel file verrÃ  restituita insieme al valore
+data viene trovata nel file verrÃƒÂ  restituita insieme al valore
 corrispondente di restingHeartRate; se non viene trovata la
 data specificata verranno restituiti i dati dell'ultima data disponibile
 @Parameters sono i parametri sui periodi temporali 
 individuati da dialogflow
-@data Ã¨ la data da cercare nel file
+@data ÃƒÂ¨ la data da cercare nel file
 return data e battito cardiaco
 */
 function cardioToday($parameters, $data, $email)
@@ -81,7 +81,7 @@ function cardioToday($parameters, $data, $email)
 @endDate data finale dell'intervallo
 Il seguente metodo ricerca all'interno del file json
 restituito da myrror il dato restingHeartRate di tutte le
-date presenti nell'intervallo specificato, viene fatta cosÃ¬
+date presenti nell'intervallo specificato, viene fatta cosÃƒÂ¬
 una media dei valori del battito cardiaco. 
 return media battito cardiaco al minuto 
 */
@@ -129,7 +129,7 @@ Il metodo controlla la presenza in parameters di date o
 date-period e a seconda dei casi chiama il metodo corrispondente 
 per ottenere i dati del battito cardiaco di un singolo giorno o 
 di un intervallo di tempo. Nel caso nel file json non troviamo
-i dati del giorno o del periodo scelto la risposta verrÃ  costruita
+i dati del giorno o del periodo scelto la risposta verrÃƒÂ  costruita
 utilizzando gli ultimi dati disponibli.
 @return risposta da stampare a schermo
 
@@ -154,8 +154,8 @@ function getCardio($resp, $parameters, $text, $email)
             if ($arr['date'] == $today) {
 
                 /*
-                la risposta di default ($resp) restituita da dialogflow Ã¨
-                costruita per la data di oggi, cosÃ¬ sostituiamo alla X presente
+                la risposta di default ($resp) restituita da dialogflow ÃƒÂ¨
+                costruita per la data di oggi, cosÃƒÂ¬ sostituiamo alla X presente
                 in $resp il valore del battito cardiaco da stampare
                 */
                 $answer = str_replace('X', $arr['heart'], $resp);
@@ -163,7 +163,7 @@ function getCardio($resp, $parameters, $text, $email)
 
                 //risposta standard
                 $answer = "Gli ultimi dati in mio possesso sono relativi al " . $arr['date']
-                    . ". Il battito cardiaco Ã¨ di " . $arr['heart'] . " bpm";
+                    . ". Il battito cardiaco ÃƒÂ¨ di " . $arr['heart'] . " bpm";
             }
 
         } elseif ($yesterday == $date1) {
@@ -177,7 +177,7 @@ function getCardio($resp, $parameters, $text, $email)
 
                 //risposta standard
                 $answer = "Gli ultimi dati in mio possesso sono relativi al " . $arr['date']
-                    . ". Il battito cardiaco Ã¨ di " . $arr['heart'] . " bpm";
+                    . ". Il battito cardiaco ÃƒÂ¨ di " . $arr['heart'] . " bpm";
             }
 
         } elseif (isset($parameters['date-period']['startDate'])) {
@@ -188,7 +188,7 @@ function getCardio($resp, $parameters, $text, $email)
             $average = cardioInterval($startDate, $endDate, $email);
 
             if ($average != 0) {
-                $answer = "In media, il tuo battito cardiaco Ã¨ di " . $average . " bpm.";
+                $answer = "In media, il tuo battito cardiaco ÃƒÂ¨ di " . $average . " bpm.";
             } else {
                 $arr = cardioToday($parameters, "", $email);
                 $answer = "Gli ultimi dati in mio possesso sono relativi al " . $arr['date']
@@ -208,7 +208,7 @@ function getCardio($resp, $parameters, $text, $email)
         $endDate = substr($parameters['date-period']['endDate'], 0, 10);
         $average = cardioInterval($startDate, $endDate, $email);
         if ($average != 0) {
-            $answer = "In media, il tuo battito cardiaco Ã¨ di " . $average . " bpm.";
+            $answer = "In media, il tuo battito cardiaco ÃƒÂ¨ di " . $average . " bpm.";
         } else {
             $arr = cardioToday($parameters, "", $email);
             $answer = "Gli ultimi dati in mio possesso sono relativi al " . $arr['date']
@@ -239,7 +239,7 @@ buono/ottimo da pessimo/cattivo.
 Viene effettuato un controllo sui parametri per verificare se abbiamo dati 
 riguardanti una singola data o un intervallo. Nel caso non ci siano parametri 
 con riferimenti al tempo utilizzeremo la data odierna. Se non vengono trovati 
-dati nella data odierna verrÃ  costruita una risposta utilizzando gli 
+dati nella data odierna verrÃƒÂ  costruita una risposta utilizzando gli 
 ultimi dati presenti nel file.
 @return risposta da stampare a schermo
 */
@@ -447,7 +447,7 @@ function getCardioBinary($resp, $parameters, $text, $email)
 @parameters parametri contenenti le info sui periodi di tempo
 nella frase rilevati da dialogflow
 @text frase scritta dall'utente
-il metodo analizza i parameters se Ã¨ presente la data di ieri
+il metodo analizza i parameters se ÃƒÂ¨ presente la data di ieri
 o di oggi chiama il metodo yestSleepBinary per ottenere i minuti di 
 sonno dell'ultima notte,altrimenti viene fatta una distinzione in base al 
 verbo riconosciuto da dialogflow, se i verbi sono al passato prossimo
@@ -600,19 +600,19 @@ function pastSleepBinary($resp, $parameters, $text, $email)
                 $result = "No, dormi abbastanza. In media dormi " . $hours . " ore e " . $minutes . " minuti";
             }
         }
-    } elseif (strpos($text, 'di piÃ¹')) {
+    } elseif (strpos($text, 'di piÃƒÂ¹')) {
 
         if ($asleepAV >= 390) {
             if ($hours == 1) {
-                $result = "No, non dovresti dormire di piÃ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
+                $result = "No, non dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
             } else {
-                $result = "No, non dovresti dormire di piÃ¹. In media dormi " . $hours . " ore e " . $minutes . " minuti";
+                $result = "No, non dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ore e " . $minutes . " minuti";
             }
         } else {
             if ($hours == 1) {
-                $result = "Si, dovresti dormire di piÃ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
+                $result = "Si, dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
             } else {
-                $result = "Si, dovresti dormire di piÃ¹. In media dormi " . $hours . " ore e " . $minutes . " minuti";
+                $result = "Si, dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ore e " . $minutes . " minuti";
             }
         }
 
@@ -626,9 +626,9 @@ function pastSleepBinary($resp, $parameters, $text, $email)
             }
         } else {
             if ($hours == 1) {
-                $result = "Si, dovresti dormire di piÃ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
+                $result = "Si, dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
             } else {
-                $result = "Si, dovresti dormire di piÃ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
+                $result = "Si, dovresti dormire di piÃƒÂ¹. In media dormi " . $hours . " ora e " . $minutes . " minuti";
             }
         }
 
@@ -650,7 +650,7 @@ nella frase rilevati da dialogflow
 @text frase scritta dall'utente
 @data da cercare
 la funzione ricerca all'interno del file json la data che viene passata
-come parametro , se non la trova verrÃ  presa l'ultima data disponibile ,
+come parametro , se non la trova verrÃƒÂ  presa l'ultima data disponibile ,
 questa distinzione avviene tramite il flag.
 Viene costruita una risposta in base ai token rilevati nella frase
  usando dei valori soglia (390 minuti di sonno) per
@@ -902,23 +902,23 @@ function yestSleepBinary($resp, $parameters, $text, $data, $email)
 
         }
 
-    } elseif (strpos($text, 'di piÃ¹')) {
+    } elseif (strpos($text, 'di piÃƒÂ¹')) {
 
         if ($minutesAsleep >= 390) {
 
             if ($flag == true) {
                 if ($hours == 1) {
-                    $answer = "No, non dovresti dormire di piÃ¹ perchÃ¨ hai dormito per " . $hours . " ora e " . $minutes . " minuti";
+                    $answer = "No, non dovresti dormire di piÃƒÂ¹ perchÃƒÂ¨ hai dormito per " . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "No, non dovresti dormire di piÃ¹ perchÃ¨ hai dormito per " . $hours . " ore e " . $minutes . " minuti";
+                    $answer = "No, non dovresti dormire di piÃƒÂ¹ perchÃƒÂ¨ hai dormito per " . $hours . " ore e " . $minutes . " minuti";
                 }
 
             } else {
                 if ($hours == 1) {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che non dovresti dormire di piÃ¹ visto che hai dormito "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che non dovresti dormire di piÃƒÂ¹ visto che hai dormito "
                         . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che non dovresti dormire di piÃ¹ visto che hai dormito "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che non dovresti dormire di piÃƒÂ¹ visto che hai dormito "
                         . $hours . " ore e " . $minutes . " minuti";
                 }
 
@@ -927,17 +927,17 @@ function yestSleepBinary($resp, $parameters, $text, $data, $email)
         } else {
             if ($flag == true) {
                 if ($hours == 1) {
-                    $answer = "Si, dovresti dormire di piÃ¹. Infatti hai dormito " . $hours . " ora e " . $minutes . " minuti";
+                    $answer = "Si, dovresti dormire di piÃƒÂ¹. Infatti hai dormito " . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "Si, dovresti dormire di piÃ¹. Infatti hai dormito " . $hours . " ore e " . $minutes . " minuti";
+                    $answer = "Si, dovresti dormire di piÃƒÂ¹. Infatti hai dormito " . $hours . " ore e " . $minutes . " minuti";
                 }
 
             } else {
                 if ($hours == 1) {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃ¹ visto che hai dormito solamente per "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃƒÂ¹ visto che hai dormito solamente per "
                         . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃ¹ visto che hai dormito solamente per "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃƒÂ¹ visto che hai dormito solamente per "
                         . $hours . " ore e " . $minutes . " minuti";
                 }
 
@@ -970,17 +970,17 @@ function yestSleepBinary($resp, $parameters, $text, $data, $email)
         } else {
             if ($flag == true) {
                 if ($hours == 1) {
-                    $answer = "Si, dovresti dormire di piÃ¹. Hai dormito " . $hours . " ora e " . $minutes . " minuti";
+                    $answer = "Si, dovresti dormire di piÃƒÂ¹. Hai dormito " . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "Si, dovresti dormire di piÃ¹. Hai dormito " . $hours . " ore e " . $minutes . " minuti";
+                    $answer = "Si, dovresti dormire di piÃƒÂ¹. Hai dormito " . $hours . " ore e " . $minutes . " minuti";
                 }
 
             } else {
                 if ($hours == 1) {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃ¹. Hai dormito solamente "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃƒÂ¹. Hai dormito solamente "
                         . $hours . " ora e " . $minutes . " minuti";
                 } else {
-                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃ¹. Hai dormito solamente "
+                    $answer = "Gli ultimi in mio possesso risalgono al " . $data . " e noto che dovresti dormire di piÃƒÂ¹. Hai dormito solamente "
                         . $hours . " ore e " . $minutes . " minuti";
                 }
 
@@ -1121,8 +1121,8 @@ function fetchYesterdaySleep($resp, $data, $email)
 @parameters parametri contenenti le info sui periodi di tempo
 nella frase rilevati da dialogflow
 @text frase scritta dall'utente
-il metodo analizza i parameters se Ã¨ presente la data di ieri,di oggi
-oppure Ã¨ stato riconosciuto un verbo al passato prossimo nella frase,
+il metodo analizza i parameters se ÃƒÂ¨ presente la data di ieri,di oggi
+oppure ÃƒÂ¨ stato riconosciuto un verbo al passato prossimo nella frase,
  chiama quindi il metodo fetchYesterdaySleep per ottenere i minuti di 
 sonno dell'ultima notte,altrimenti viene chiamata la 
 funzione fetchPastSleep che costruisce la risposta con i dati storici
@@ -1274,11 +1274,11 @@ function getFormaFisica($resp, $parameters, $text, $email)
                 if (isSovrappeso($bmi) == "sovrappeso") {
                     $answer = "Sei sovrappeso,dovresti scendere di peso";
                 } else if (isSovrappeso($bmi) == "obeso classe 1") {
-                    $answer = "Sei lievemente obeso, dovresti perdere qualche chilo e fare attivitÃ  fisica";
+                    $answer = "Sei lievemente obeso, dovresti perdere qualche chilo e fare attivitÃƒÂ  fisica";
                 } else if (isSovrappeso($bmi) == "obeso classe 2") {
-                    $answer = "Sei moderatamente obeso, dovresti perdere qualche chilo e fare attivitÃ  fisica";
+                    $answer = "Sei moderatamente obeso, dovresti perdere qualche chilo e fare attivitÃƒÂ  fisica";
                 } else if (isSovrappeso($bmi) == "obeso classe 3") {
-                    $answer = "Sei in una condizione di obesitÃ  severa, dovresti rivolgerti da uno specialista";
+                    $answer = "Sei in una condizione di obesitÃƒÂ  severa, dovresti rivolgerti da uno specialista";
                 } else {
                     $answer = "No, non sei sovrappeso";
                 }
@@ -1384,13 +1384,20 @@ function getAnalysis($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
+
                     foreach($value1 as $key => $value){
-                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+                        if (isset($value['analysisName'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
 
                             $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            
-                            $analysisArray[] = $analysis;
-                        }
+                            $timestamp = $value['timestamp'];
+                            $data = date('d-m-Y', $timestamp / 1000);
+                            $string = $analysis . " " . $data;
+
+                            $analysisArray[] = $string;                        }
                     }
                 }
 				
@@ -1398,7 +1405,7 @@ function getAnalysis($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le analisi
+    //Se Ã¨ valorizzato l'array, stampo le analisi
 	if (isset($analysisArray)) {
         $answer = $resp;
         $num = 0;
@@ -1411,16 +1418,16 @@ function getAnalysis($resp,$parameters,$email){
             $answer = $answer . "<br><br>Digita \"Analisi\" con il corrispondete numero per maggiori dettagli (esempio:Analisi 1)";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -1446,11 +1453,11 @@ function getLastAnalysis($resp,$parameters,$email){
 
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+                        if (isset($value['analysisName'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
 
                             $startDate=$value['timestamp']/1000;
                             if($startDate > $ultimo){
@@ -1490,6 +1497,63 @@ function getLastAnalysis($resp,$parameters,$email){
 
 /*
 @resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce la data dell'ultima analisi di un certo tipo*/
+function getLastAnalysisSpecified($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $ultimo = 0;
+
+    if($parameters['Analisi'] == null){
+        $answer = $resp;
+        return $answer;
+    }
+   
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
+                    foreach($value1 as $key => $value){
+                        if($value['analysisName'] == $parameters['Analisi']){
+                            if (isset($value['analysisName'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
+
+                                $startDate=$value['timestamp']/1000;
+                                if($startDate > $ultimo){
+                                    $ultimo = $startDate;
+                                    $lastAnalysis = $value['timestamp']/1000;
+                                }
+                            }
+                        }
+                    }
+
+
+                    if(isset($lastAnalysis)){
+                    $answer = $resp . " " . date('d/m/Y', $lastAnalysis);
+                    }
+                    else{
+                        $answer = "Non hai mai effettuato quest'analisi";
+                    }
+        
+                        
+                        
+                }
+            }
+				
+		}
+    }	
+    return $answer;
+}
+
+/*
+@resp frase di risposta standard ricevuta da dialogflow
 @parameters startDate e endDate ricevute da dialogflow su cui effettuare la ricerca in base al periodo
 il metodo restituisce un elenco indicizzato contenente tutte le analisi
 */
@@ -1507,11 +1571,11 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
+                        if (isset($value['analysisName'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
 
                             $timestamp = $value['timestamp'];
                             $data = substr($timestamp, 0, 10);
@@ -1519,11 +1583,12 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
                             $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            $analysisArray[] = $analysis;
-                            }
-                        }
+                            $timestamp = $value['timestamp'];
+                            $data = date('d-m-Y', $timestamp / 1000);
+                            $string = $analysis . " " . $data;
+
+                            $analysisArray[] = $string;                        }
                     }
                 }
 				
@@ -1531,7 +1596,7 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le analisi
+    //Se Ã¨ valorizzato l'array, stampo le analisi
 	
         $answer = $resp;
         $num = 0;
@@ -1549,9 +1614,9 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -1578,8 +1643,13 @@ function getAnalysisControl($resp,$parameters,$email){
             foreach ($value2 as $key1 => $value1) {
 
                 if($key1 == "analysis"){
+			if($value1 == null){
+                          $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                          return $answer;
+                        }
+
                     foreach($value1 as $key => $value){
-                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
+                        if (isset($value['result'])) {//Verifico se Ã¨ valorizzata la variabile 'result'
 
                             $result = $value['result'];
                             $min = $value['min'];
@@ -1588,9 +1658,11 @@ function getAnalysisControl($resp,$parameters,$email){
                             if($result >= $max || $result<= $min){
 
                                 $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                        
-                                $analysisArray[] = $analysis;
-                            }
+                                $timestamp = $value['timestamp'];
+                                $data = date('d-m-Y', $timestamp / 1000);
+                                $string = $analysis . " " . $data;
+
+                                $analysisArray[] = $string;                            }
                     
 
                         }
@@ -1600,7 +1672,7 @@ function getAnalysisControl($resp,$parameters,$email){
         }
     }  
     
-    //Se è valorizzato l'array, stampo le analisi
+    //Se Ã¨ valorizzato l'array, stampo le analisi
     if (isset($analysisArray)) {
         $answer = $resp;
 
@@ -1611,19 +1683,20 @@ function getAnalysisControl($resp,$parameters,$email){
 
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
+		$answer = $answer . ".<br> I risultati sono fuori dall'intervallo.";
             
 
         }else {
-            $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+            $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
         }
 
     }else{
-        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
     }
 
-    //A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+    //A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
     if ($answer == null) {
-        $answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova più tardi";
+        $answer = "Non sono riuscito a caricare le tue analisi &#x1F613; Riprova piÃ¹ tardi";
     }
 
 	return $answer;
@@ -1634,13 +1707,14 @@ function getAnalysisControl($resp,$parameters,$email){
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters Analisi ricevuta da dialogflow su cui effettuare il controllo
 il metodo restituisce una risposta che indica se il risultato dell'analisi
-passata come parameters è sotto, sopra o nella media
+passata come parameters Ã¨ sotto, sopra o nella media
 */
 function getAnalysisControlBinary($resp,$parameters,$email){
 
 
     $param = "";
     $json_data = queryMyrror($param,$email);
+    $ultimo = 0;
 
     foreach ($json_data as $key2 => $value2) {
 
@@ -1649,13 +1723,30 @@ function getAnalysisControlBinary($resp,$parameters,$email){
 
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
-                    }                    
-                    foreach($value1 as $key => $value){
-                        if (isset($value['result'])) {//Verifico se è valorizzata la variabile 'result'
+                    }
 
-                                if($parameters['Analisi'] == $value['analysisName']){
+                    foreach($value1 as $key => $value){
+                        if (isset($value['analysisName'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
+
+                            if($parameters['Analisi'] == $value['analysisName']){
+                                $startDate=$value['timestamp'];
+                                if($startDate > $ultimo){
+                                    $ultimo = $startDate;
+                                }
+                            }
+                        }
+                    }
+
+                    foreach($value1 as $key => $value){
+                        if (isset($value['result'])) {//Verifico se Ã¨ valorizzata la variabile 'result'
+                            
+                            if($ultimo == 0){
+                                break;
+                            }
+
+                                if($parameters['Analisi'] == $value['analysisName'] && $value['timestamp'] == $ultimo){
                                     $result = $value['result'];
                                     $min = $value['min'];
                                     $max = $value['max'];
@@ -1690,7 +1781,6 @@ function getAnalysisControlBinary($resp,$parameters,$email){
 
 }
 
-
 /*
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters l'Analisi di cui si vuole sapere il risultato ricevuta da dialogflow
@@ -1700,6 +1790,7 @@ function getAnalysisResult($resp,$parameters,$email){
 
 	$param = "";
     $json_data = queryMyrror($param,$email);
+    $ultimo = 0;
 
 
 	foreach ($json_data as $key2 => $value2) {
@@ -1708,11 +1799,25 @@ function getAnalysisResult($resp,$parameters,$email){
 			foreach ($value2 as $key1 => $value1) {
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
+
                     foreach($value1 as $key => $value){
-                        if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
+                        if (isset($value['analysisName'])){//Verifico se Ã¨ valorizzata la variabile 'analysisName'
+
+                            if($parameters['Analisi'] == $value['analysisName']){
+                                $startDate=$value['timestamp'];
+                                if($startDate > $ultimo){
+                                    $ultimo = $startDate;
+                                }
+                            }
+                        }
+                    }
+
+                    
+                    foreach($value1 as $key => $value){
+                        if ($value['analysisName'] == $parameters['Analisi'] && $value['timestamp'] == $ultimo) {//Verifico se il nome dell'analisi Ã¨ uguale a quello cercato
 
                             $result = $value['result']; //Prendo il risultato dell'analisi
                             break;
@@ -1729,7 +1834,7 @@ function getAnalysisResult($resp,$parameters,$email){
         return $answer = $resp;
     }
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if (!isset($result)) {
 		$answer = "Non hai mai effettuato quest'analisi";
     }
@@ -1740,7 +1845,6 @@ function getAnalysisResult($resp,$parameters,$email){
 	return $answer;
 
 }
-
 /*
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters Analisi ricevuta da dialogflow su cui effettuare il controllo
@@ -1759,7 +1863,7 @@ function getAnalysisDetails($parameters,$email){
 
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -1786,7 +1890,7 @@ function getAnalysisDetails($parameters,$email){
 /*
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters Analisi ricevuta da dialogflow su cui effettuare il controllo di presenza
-il metodo restituisce si o no se l'analisi è stata effettuata o meno dall'utente
+il metodo restituisce si o no se l'analisi Ã¨ stata effettuata o meno dall'utente
 */
 function getAnalysisBinary($resp, $parameters,$email){
 
@@ -1801,11 +1905,11 @@ function getAnalysisBinary($resp, $parameters,$email){
 
                 if($key1 == "analysis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi è uguale a quello cercato
+                        if ($value['analysisName'] == $parameters['Analisi']  ) {//Verifico se il nome dell'analisi Ã¨ uguale a quello cercato
                             $answer = "Si, hai effettuato quest'analisi.";
                         }
                     }
@@ -1844,7 +1948,7 @@ function getDiagnosis($resp,$parameters,$email){
 
                 if($key1 == "diagnosis"){
                     foreach($value1 as $key => $value){
-                        if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
+                        if (isset($value['diagnosis_name'])) {//Verifico se Ã¨ valorizzata la variabile 'diagnosis_name'
 
                             $diagnosis = $value['diagnosis_name']; //Prendo il nome delle diagnosi
                             
@@ -1857,7 +1961,7 @@ function getDiagnosis($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le diagnosi
+    //Se Ã¨ valorizzato l'array, stampo le diagnosi
 	if (isset($diagnosisArray)) {
         $answer = $resp;
         $num = 0;
@@ -1869,16 +1973,16 @@ function getDiagnosis($resp,$parameters,$email){
             }
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue diagnosi!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -1904,11 +2008,11 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
                 if($key1 == "diagnosis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
+                        if (isset($value['diagnosis_name'])) {//Verifico se Ã¨ valorizzata la variabile 'diagnosis_name'
 
                             $timestamp = $value['timestamp'];
                             $data = substr($timestamp, 0, 10);
@@ -1916,7 +2020,7 @@ function getDiagnosisPeriod($resp,$parameters,$email){
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            if($data <= $endDate && $data >= $startDate) { //se la data Ã¨ inclusa nell'intervallo di tempo
                             $diagnosis = $value['diagnosis_name']; //Prendo il nome della diagnosi
                             $diagnosisArray[] = $diagnosis;
                             }
@@ -1928,7 +2032,7 @@ function getDiagnosisPeriod($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le diagnosi
+    //Se Ã¨ valorizzato l'array, stampo le diagnosi
 	
         $answer = $resp;
         $num = 0;
@@ -1945,9 +2049,9 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -1956,7 +2060,7 @@ function getDiagnosisPeriod($resp,$parameters,$email){
 
 /*
 @resp frase di risposta standard ricevuta da dialogflow
-il metodo restituisce la diagnosi più recente
+il metodo restituisce la diagnosi piÃ¹ recente
 confrontando i relativi timestamp tra loro 
 */
 function getLastDiagnosy($resp,$parameters,$email){
@@ -1974,11 +2078,11 @@ function getLastDiagnosy($resp,$parameters,$email){
 
                 if($key1 == "diagnosis"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue diagnosi &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['diagnosis_name'])) {//Verifico se è valorizzata la variabile 'diagnosis_name'
+                        if (isset($value['diagnosis_name'])) {//Verifico se Ã¨ valorizzata la variabile 'diagnosis_name'
 
                             $startDate=$value['timestamp']/1000;
                             if($startDate > $ultimo){
@@ -2013,7 +2117,7 @@ function giorno($d){
     $d_ts=mktime(0,0,0,$d_ex[1],$d_ex[2],$d_ex[0]);
     $num_gg=(int)date("N",$d_ts);//1 (for Monday) through 7 (for Sunday)
     //per nomi in italiano
-    $giorno=array('','lunedì','martedì','mercoledì','giovedì','venerdì','sabato','domenica');//0 vuoto
+    $giorno=array('','lunedÃ¬','martedÃ¬','mercoledÃ¬','giovedÃ¬','venerdÃ¬','sabato','domenica');//0 vuoto
     return $giorno[$num_gg];
 }
 
@@ -2055,7 +2159,7 @@ function getTherapies($resp,$parameters,$email){
                     foreach($value1 as $key => $value){
 
 
-                         if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
+                         if(isset($value['therapyName'])) {//Verifico se Ã¨ valorizzata la variabile 'therapiesName'
 
                             $therapy = $value['therapyName']; //Prendo il nome delle terapie
                             $therapiesArray[] = $therapy; //tutte le terapie
@@ -2075,7 +2179,7 @@ function getTherapies($resp,$parameters,$email){
         }
     }
 
-    //Se è valorizzato l'array, stampo le terapie
+    //Se Ã¨ valorizzato l'array, stampo le terapie
 	if (isset($therapiesArray)) {
         $answer = $resp;
         $num = 0;
@@ -2088,16 +2192,16 @@ function getTherapies($resp,$parameters,$email){
             $answer = $answer . "<br><br>Digita \"Terapia\" con il corrispondete numero per maggiori dettagli (esempio:Terapia 1)";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue terapie!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2106,7 +2210,7 @@ function getTherapies($resp,$parameters,$email){
 
 /*
 @resp frase di risposta standard ricevuta da dialogflow
-il metodo restituisce la terapia più recente
+il metodo restituisce la terapia piÃ¹ recente
 confrontando le relative date tra loro 
 */
 function getLastTherapy($resp,$parameters,$email){
@@ -2125,14 +2229,14 @@ function getLastTherapy($resp,$parameters,$email){
 
                 if($key1 == "therapies"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
 
                     foreach($value1 as $key => $value){
 
 
-                         if(isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapiesName'
+                         if(isset($value['therapyName'])) {//Verifico se Ã¨ valorizzata la variabile 'therapiesName'
 
                             $startDate=$value['timestamp']/1000;
                             if($startDate > $ultimo){
@@ -2243,7 +2347,7 @@ function getDrugToday($resp,$parameters,$email){
 
                 if($key1 == "therapies"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
 
@@ -2367,18 +2471,18 @@ function getTherapiesPeriod($resp,$parameters,$email){
 
                 if($key1 == "therapies"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
+                        if (isset($value['therapyName'])) {//Verifico se Ã¨ valorizzata la variabile 'therapyName'
 
                             
                             $data = strtotime($value['start_date']);
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            if($data <= $endDate && $data >= $startDate) { //se la data Ã¨ inclusa nell'intervallo di tempo
                             $therapies = $value['therapyName']; //Prendo il nome della terapia
                             $therapiesArray[] = $therapies;
                             }
@@ -2390,7 +2494,7 @@ function getTherapiesPeriod($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le terapie
+    //Se Ã¨ valorizzato l'array, stampo le terapie
 	
         $answer = $resp;
         $num = 0;
@@ -2407,9 +2511,9 @@ function getTherapiesPeriod($resp,$parameters,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2438,11 +2542,11 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 
                 if($key1 == "therapies"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['therapyName'])) {//Verifico se è valorizzata la variabile 'therapyName'
+                        if (isset($value['therapyName'])) {//Verifico se Ã¨ valorizzata la variabile 'therapyName'
 
                             if(isset($parameters['Durata_terapia'])){
                                 $durata = $parameters['Durata_terapia'];
@@ -2469,7 +2573,7 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le terapie
+    //Se Ã¨ valorizzato l'array, stampo le terapie
 	
 		$answer = $resp;
 
@@ -2507,9 +2611,9 @@ function getTherapiesInProgEnded($resp,$parameters,$email){
 		}
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue terapie &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2537,7 +2641,7 @@ function getTherapyDetails($parameters,$email){
 
                 if($key1 == "therapies"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue terapie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -2640,7 +2744,7 @@ function getMedicalAreas($resp,$parameters,$email){
 
                 if($key1 == "medicalAreas"){
                     foreach($value1 as $key => $value){
-                        if (isset($value['medicalArea'])) {//Verifico se è valorizzata la variabile 'medicalArea'
+                        if (isset($value['medicalArea'])) {//Verifico se Ã¨ valorizzata la variabile 'medicalArea'
 
                             $medicalArea = $value['medicalArea']; //Prendo il nome delle area medica
                             
@@ -2655,7 +2759,7 @@ function getMedicalAreas($resp,$parameters,$email){
 
 
 
-    //Se è valorizzato l'array, stampo le aree mediche
+    //Se Ã¨ valorizzato l'array, stampo le aree mediche
 	if (isset($medicalAreasArray)) {
 		$answer = $resp;
 
@@ -2667,16 +2771,16 @@ function getMedicalAreas($resp,$parameters,$email){
         	//Rimuovo lo spazio con la virgola finale
         	$answer = substr($answer, 0, -2);
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue aree mediche!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue aree mediche &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue aree mediche &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2700,11 +2804,11 @@ function getLastMedicalArea($resp,$parameters,$email){
 
                 if($key1 == "medicalAreas"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue aree mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['medicalArea'])) {//Verifico se è valorizzata la variabile 'medicalArea'
+                        if (isset($value['medicalArea'])) {//Verifico se Ã¨ valorizzata la variabile 'medicalArea'
 
                             $medicalArea = $value['medicalArea']; //Prendo il nome delle area medica
                             
@@ -2744,7 +2848,7 @@ function getMedicalVisits($resp,$parameters,$email){
 
                 if($key1 == "medicalVisits"){
                     foreach($value1 as $key => $value){
-                        if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
+                        if (isset($value['nameVisit'])) {//Verifico se Ã¨ valorizzata la variabile 'nameVisit'
 
                             $medicalVisit = $value['nameVisit']; //Prendo il nome delle visita medica
                             
@@ -2759,7 +2863,7 @@ function getMedicalVisits($resp,$parameters,$email){
 
 
 
-    //Se è valorizzato l'array, stampo le visite mediche
+    //Se Ã¨ valorizzato l'array, stampo le visite mediche
 	if (isset($medicalVisitsArray)) {
         $answer = $resp;
         $num = 0;
@@ -2772,16 +2876,16 @@ function getMedicalVisits($resp,$parameters,$email){
             $answer = $answer . "<br><br>Digita \"Visita medica\" con il corrispondete numero per maggiori dettagli (esempio:Visita medica 1)";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue visite mediche!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2791,7 +2895,7 @@ function getMedicalVisits($resp,$parameters,$email){
 /*
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters null
-il metodo restituisce la visita medica più recente
+il metodo restituisce la visita medica piÃ¹ recente
 confrontando le relative date tra loro 
 */
 function getLastMedicalVisit($resp,$parameters,$email){
@@ -2809,11 +2913,11 @@ function getLastMedicalVisit($resp,$parameters,$email){
 
                 if($key1 == "medicalVisits"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
+                        if (isset($value['nameVisit'])) {//Verifico se Ã¨ valorizzata la variabile 'nameVisit'
 
                             $startDate=$value['timestamp']/1000;
                             if($startDate > $ultimo){
@@ -2884,11 +2988,68 @@ function getLastMedicalVisit($resp,$parameters,$email){
 
 /*
 @resp frase di risposta standard ricevuta da dialogflow
+il metodo restituisce la data dell'ultima visita medica di un certo tipo*/
+function getLastMedicalVisitSpecified($resp,$parameters,$email){
+
+	$param = "";
+	$json_data = queryMyrror($param,$email);
+
+    $ultimo = 0;
+
+    if($parameters['TipologiaVisitaMedica'] == null){
+        $answer = $resp;
+        return $answer;
+    }
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+
+                if($key1 == "medicalVisits"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
+                    foreach($value1 as $key => $value){
+                        if($value['typology'] == $parameters['TipologiaVisitaMedica']){
+                            if (isset($value['nameVisit'])) {//Verifico se Ã¨ valorizzata la variabile 'analysisName'
+
+                                $dateVisit=strtotime($value['dateVisit']);
+                                if($dateVisit > $ultimo){
+                                    $ultimo = $dateVisit;
+                                    $lastMedicalVisit = $value['dateVisit'];
+                                }
+                            }
+                        }
+                    }
+
+                    
+
+                    if(isset($lastMedicalVisit)){
+                    $answer = $resp . " " . $lastMedicalVisit;
+                    }
+                    else{
+                        $answer = "Non hai mai fatto questa visita medica";
+                    }
+        
+                }
+            }
+				
+		}
+    }	
+    return $answer;
+}
+
+
+
+/*
+@resp frase di risposta standard ricevuta da dialogflow
 @parameters parametri contenenti le info sui periodi di tempo
 nella frase rilevati da dialogflow
 il metodo analizza i parameters start_date e end_date,
-se la data della visita medica è compresa in questo periodo 
-viene inserita nell'array che sarà stampato
+se la data della visita medica Ã¨ compresa in questo periodo 
+viene inserita nell'array che sarÃ  stampato
 */
 function getMedicalVisitsPeriod($resp,$parameters,$email){
 
@@ -2904,18 +3065,18 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 
                 if($key1 == "medicalVisits"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['nameVisit'])) {//Verifico se è valorizzata la variabile 'nameVisit'
+                        if (isset($value['nameVisit'])) {//Verifico se Ã¨ valorizzata la variabile 'nameVisit'
 
                             
                             $data = strtotime($value['dateVisit']);
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            if($data <= $endDate && $data >= $startDate) { //se la data Ã¨ inclusa nell'intervallo di tempo
                             $medicalVisit = $value['nameVisit']; //Prendo il nome della visita medica
                             $medicalVisitsArray[] = $medicalVisit;
                             }
@@ -2927,7 +3088,7 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le visite mediche
+    //Se Ã¨ valorizzato l'array, stampo le visite mediche
 	
         $answer = $resp;
         $num = 0;
@@ -2944,9 +3105,9 @@ function getMedicalVisitsPeriod($resp,$parameters,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -2975,7 +3136,7 @@ function getMedicalVisitDetails($parameters,$email){
 
                 if($key1 == "medicalVisits"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue visite mediche &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -3095,7 +3256,7 @@ function getDiseases($resp,$parameters,$email){
 
                         }
 
-                        if (isset($value['nameDisease'])) {//Verifico se è valorizzata la variabile 'nameDisease'
+                        if (isset($value['nameDisease'])) {//Verifico se Ã¨ valorizzata la variabile 'nameDisease'
 
                             $disease = $value['nameDisease']; //Prendo il nome delle patologia
                             
@@ -3108,7 +3269,7 @@ function getDiseases($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le patologie
+    //Se Ã¨ valorizzato l'array, stampo le patologie
 	if (isset($diseasesArray)) {
         $answer = $resp;
         $num = 0;
@@ -3121,16 +3282,16 @@ function getDiseases($resp,$parameters,$email){
             $answer = $answer . "<br><br>Digita \"Patologia\" con il corrispondete numero per maggiori dettagli (esempio:Patologia 1)";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue patologie!";
 	}
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue patologie &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue patologie &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -3155,7 +3316,7 @@ function getDiseasesBinary($parameters,$email){
 
                 if($key1 == "diseases"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -3184,8 +3345,8 @@ function getDiseasesBinary($parameters,$email){
 @parameters parametri contenenti le info sui periodi di tempo
 nella frase rilevati da dialogflow
 il metodo analizza i parameters start_date e end_date
-se la data della patologia è compresa in questo periodo 
-viene inserita nell'array che sarà stampato
+se la data della patologia Ã¨ compresa in questo periodo 
+viene inserita nell'array che sarÃ  stampato
 */
 function getDiseasesPeriod($resp,$parameters,$email){
 
@@ -3201,18 +3362,18 @@ function getDiseasesPeriod($resp,$parameters,$email){
 
                 if($key1 == "diseases"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['nameDisease'])) {//Verifico se è valorizzata la variabile 'nameDisease'
+                        if (isset($value['nameDisease'])) {//Verifico se Ã¨ valorizzata la variabile 'nameDisease'
 
                             
                             $data = strtotime($value['dateDiagnosis']);
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            if($data <= $endDate && $data >= $startDate) { //se la data Ã¨ inclusa nell'intervallo di tempo
                             $disease = $value['nameDisease']; //Prendo il nome della patologia
                             $diseasesArray[] = $disease;
                             }
@@ -3224,7 +3385,7 @@ function getDiseasesPeriod($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo le terapie
+    //Se Ã¨ valorizzato l'array, stampo le terapie
 	
         $answer = $resp;
         $num = 0;
@@ -3243,9 +3404,9 @@ function getDiseasesPeriod($resp,$parameters,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue patologie &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue patologie &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -3274,7 +3435,7 @@ function getDiseaseDetails($parameters, $email){
 
                 if($key1 == "diseases"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue patologie &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -3342,7 +3503,7 @@ function getHospitalizations($resp,$parameters,$email){
 
                 if($key1 == "hospitalizations"){
                     foreach($value1 as $key => $value){
-                        if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
+                        if (isset($value['name'])) {//Verifico se Ã¨ valorizzata la variabile 'name'
 
                             $hospitalization = $value['name']; //Prendo il nome dei ricoveri
                             
@@ -3356,7 +3517,7 @@ function getHospitalizations($resp,$parameters,$email){
     }
 
 
-    //Se è valorizzato l'array, stampo le ospedalizzazioni
+    //Se Ã¨ valorizzato l'array, stampo le ospedalizzazioni
 	if (isset($hospitalizationsArray)) {
         $answer = $resp;
         $num = 0;
@@ -3369,18 +3530,18 @@ function getHospitalizations($resp,$parameters,$email){
             $answer = $answer . "<br><br>Digita \"Ospedalizzazione\" con il corrispondete numero per maggiori dettagli (esempio:Ospedalizzazione 1)";
 
 		}else {
-			$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+			$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 		}
 
 	}else{
-		$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
+		$answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti i tuoi ricoveri!";
 	}
 
     
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -3394,8 +3555,8 @@ function getHospitalizations($resp,$parameters,$email){
 @parameters parametri contenenti le info sui periodi di tempo
 nella frase rilevati da dialogflow
 il metodo analizza i parameters start_date e end_date
-se la start_date dell'ospedalizzazione è compresa in questo periodo 
-viene inserita nell'array che sarà stampato
+se la start_date dell'ospedalizzazione Ã¨ compresa in questo periodo 
+viene inserita nell'array che sarÃ  stampato
 */
 function getHospitalizationsPeriod($resp,$parameters,$email){
 
@@ -3411,18 +3572,18 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 
                 if($key1 == "hospitalizations"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
+                        if (isset($value['name'])) {//Verifico se Ã¨ valorizzata la variabile 'name'
 
                             
                             $data = strtotime($value['start_date']);
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
-                            if($data <= $endDate && $data >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                            if($data <= $endDate && $data >= $startDate) { //se la data Ã¨ inclusa nell'intervallo di tempo
                             $hospitalization = $value['name']; //Prendo il nome dei ricoveri
                             $hospitalizationsArray[] = $hospitalization;
                             }
@@ -3434,7 +3595,7 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
         }	
     }
 
-    //Se è valorizzato l'array, stampo i ricoveri
+    //Se Ã¨ valorizzato l'array, stampo i ricoveri
 	
         $answer = $resp;
         $num = 0;
@@ -3451,9 +3612,9 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 
 	
 
-	//A volte la richiesta non restituisce nessun elenco perciò dovrà essere rifatta
+	//A volte la richiesta non restituisce nessun elenco perciÃ² dovrÃ  essere rifatta
 	if ($answer == null) {
-		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova più tardi";
+		$answer = "Non sono riuscito a caricare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi";
 	}
 
 	return $answer;
@@ -3463,7 +3624,7 @@ function getHospitalizationsPeriod($resp,$parameters,$email){
 /*
 @resp frase di risposta standard ricevuta da dialogflow
 @parameters null
-il metodo restituisce l'ospedalizzazione più recente
+il metodo restituisce l'ospedalizzazione piÃ¹ recente
 confrontandole tra loro 
 */
 function getLastHospitalization($resp, $parameters, $email){
@@ -3480,11 +3641,11 @@ function getLastHospitalization($resp, $parameters, $email){
 
                 if($key1 == "hospitalizations"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
-                        if (isset($value['name'])) {//Verifico se è valorizzata la variabile 'name'
+                        if (isset($value['name'])) {//Verifico se Ã¨ valorizzata la variabile 'name'
                             
                             $startDate=$value['timestamp']/1000;
                             if($startDate > $ultimo){
@@ -3556,7 +3717,7 @@ function getHospitalizationDetails($parameters, $email){
 
                 if($key1 == "hospitalizations"){
                     if($value1 == null){
-                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue ospedalizzazioni &#x1F613; Riprova piÃ¹ tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
                         return $answer;
                     }
                     foreach($value1 as $key => $value){
@@ -3609,6 +3770,11 @@ function getHospitalizationDetails($parameters, $email){
     
 
 }
+
+
+
+
+
 
 
 
