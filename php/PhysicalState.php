@@ -1577,18 +1577,18 @@ function getAnalysisPeriod($resp,$parameters, $text,$email){
                     foreach($value1 as $key => $value){
                         if (isset($value['analysisName'])) {//Verifico se è valorizzata la variabile 'analysisName'
 
-                            $timestamp = $value['timestamp'];
-                            $data = substr($timestamp, 0, 10);
-
                             $startDate = strtotime($parameters['date-period']['startDate']);
                             $endDate = strtotime($parameters['date-period']['endDate']);
                             
                             $analysis = $value['analysisName']; //Prendo il nome dell'analisi
-                            $timestamp = $value['timestamp'];
-                            $data = date('d-m-Y', $timestamp / 1000);
+                            $timestamp = $value['timestamp'] / 1000;
+                            $data = date("d-m-Y", $timestamp);
                             $string = $analysis . " " . $data;
 
-                            $analysisArray[] = $string;                        }
+                            if($timestamp <= $endDate && $timestamp >= $startDate) { //se la data è inclusa nell'intervallo di tempo
+                                $analysisArray[] = $string;
+                            }
+                        }
                     }
                 }
 				
@@ -1674,16 +1674,15 @@ function getAnalysisControl($resp,$parameters,$email){
     
     //Se è valorizzato l'array, stampo le analisi
     if (isset($analysisArray)) {
-        $answer = $resp;
+        $answer = $resp . "<br>";
 
         if (count($analysisArray) != 0) {
             foreach ($analysisArray as $key => $value){
-                $answer = $answer . " " . $value .", " ;
+                $answer = $answer . " " . $value . "<br>" ;
         	    }
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
-		$answer = $answer . ".<br> I risultati sono fuori dall'intervallo.";
+        	
+		$answer = $answer . "<br>" . "I risultati sono fuori dall'intervallo.";
             
 
         }else {
@@ -1926,6 +1925,72 @@ function getAnalysisBinary($resp, $parameters,$email){
         $answer = "Non hai mai effettuato quest'analisi";
     }
 
+	return $answer;
+
+}
+
+/*
+@resp frase di risposta standard ricevuta da dialogflow
+@parameters Analisi ricevuta da dialogflow di cui si vuole il risultato
+il metodo restituisce l'andamento dell'analisi
+*/
+function getAnalysisTrend($resp,$parameters,$email){
+
+    $param = "";
+    $json_data = queryMyrror($param,$email);
+
+    $resultsArray = array();
+
+	foreach ($json_data as $key2 => $value2) {
+
+		if($key2 == "physicalStates"){
+			foreach ($value2 as $key1 => $value1) {
+                if($key1 == "analysis"){
+                    if($value1 == null){
+                        $answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+                        return $answer;
+                    }
+
+                    foreach($value1 as $key => $value){
+                        if (isset($parameters['Analisi'])){
+                            if (isset($value['analysisName'])){//Verifico se è valorizzata la variabile 'analysisName'
+
+                            
+                                if($parameters['Analisi'] == $value['analysisName']){
+                                    $data = date('d-m-Y', ($value['timestamp']/1000));
+                                    $resultsArray[] = $value['result'] . $value['unit'] . " " . $data;
+                                }
+                            }
+                        }
+                    }
+
+                }
+				
+			}
+        }	
+    }
+    
+
+    if($parameters['Analisi'] == null){
+        return $answer = $resp;
+    }
+
+    //Se è valorizzato l'array, stampo i risultati
+    if (isset($resultsArray)) {
+        $answer = $resp;
+
+		if (count($resultsArray) != 0) {
+			foreach ($resultsArray as $key => $value){
+                $answer = $answer . "<br>" . $value;
+            }
+
+		}else {
+			$answer = "Non è presente " . $parameters['Analisi'] . " tra le tue analisi";
+		}
+
+	}else{
+		$answer = "Purtroppo non sono riuscito a recuperare le tue analisi &#x1F613; Riprova più tardi oppure controlla se nel tuo profilo sono presenti le tue analisi!";
+	}
 	return $answer;
 
 }
@@ -3396,8 +3461,6 @@ function getDiseasesPeriod($resp,$parameters,$email){
                 $answer = $answer . "<br>" . $num . ". " . $value;
             }
 
-        	//Rimuovo lo spazio con la virgola finale
-        	$answer = substr($answer, 0, -2);
 		}else {
 			$answer = "Non ci sono patologie nel periodo specificato.";
 		}
