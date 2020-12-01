@@ -320,7 +320,7 @@ function selectIntent($email,$intent, $confidence,$text,$resp,$parameters,$city)
                 $answer = getAnalysisResult($resp,$parameters,$email);
                 break;
 
-            case 'Andamento risultati':
+            case 'Andamento risultati analisi':
                 $answer = getAnalysisTrend($resp,$parameters,$email);
                 break;
 

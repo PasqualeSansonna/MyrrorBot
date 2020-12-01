@@ -1938,6 +1938,7 @@ function getAnalysisTrend($resp,$parameters,$email){
 
     $param = "";
     $json_data = queryMyrror($param,$email);
+    $found=0;
 
     $resultsArray = array();
 
@@ -1959,6 +1960,7 @@ function getAnalysisTrend($resp,$parameters,$email){
                                 if($parameters['Analisi'] == $value['analysisName']){
                                     $data = date('d-m-Y', ($value['timestamp']/1000));
                                     $resultsArray[] = $value['result'] . $value['unit'] . " " . $data;
+				    $found=1;
                                 }
                             }
                         }
@@ -1973,6 +1975,10 @@ function getAnalysisTrend($resp,$parameters,$email){
 
     if($parameters['Analisi'] == null){
         return $answer = $resp;
+    }
+    if($found=0){
+       $answer="Non è presente " . $parameters['Analisi'] . " tra le tue analisi";
+       return $answer;
     }
 
     //Se è valorizzato l'array, stampo i risultati
@@ -1994,6 +2000,7 @@ function getAnalysisTrend($resp,$parameters,$email){
 	return $answer;
 
 }
+
 
 /*
 @resp frase di risposta standard ricevuta da dialogflow
